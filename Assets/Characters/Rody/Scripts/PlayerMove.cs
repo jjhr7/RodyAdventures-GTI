@@ -48,16 +48,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.Play("Bola");
         }
-        if (Input.GetKey("z"))
-        {
-            animator.SetBool("Other", true);
-            animator.Play("Golpe1");
-        }
-        if (Input.GetKey("x"))
-        {
-            animator.SetBool("Other", true);
-            animator.Play("Golpe2");
-        }
+        
         if (Input.GetKey("c"))
         {
             animator.SetBool("Other", true);
@@ -67,32 +58,6 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("Other", false);
             animator.Play("Muerte");
-        }
-        if (Input.GetKey("i"))//tienes que estar quieto para poder ver la animacion
-        {
-            animator.SetBool("Other", true);
-            animator.Play("Danyo");
-        }
-        if (Input.GetKey("mouse 0"))//tienes que estar quieto para poder ver la animacion
-        {
-            animator.SetBool("Disparar", false);
-            animator.Play("Dpistola");
-        }
-        if (Input.GetKey("mouse 1"))//tienes que estar quieto para poder ver la animacion
-        {
-            animator.SetBool("Disparar", false);
-            animator.Play("Dfusil");
-        }
-        if (Input.GetKey("f"))//tienes que estar quieto para poder ver la animacion
-        {
-            animator.SetBool("Disparar", true);
-            animator.Play("fusil");
-        }
-
-        if (x > 0 || x < 0 || y > 0 || y < 0)
-        {
-            animator.SetBool("Other", true);
-            animator.SetBool("Disparar", true);
         }
         if(input.y == 0)
         {
