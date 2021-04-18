@@ -13,9 +13,26 @@ namespace AndreyTest
         public float mouseY;
 
         PlayerControls inputActions;
+        CameraHolder cameraHolder;
 
         Vector2 movementInput;
         Vector2 cameraInput;
+
+        private void Awake()
+        {
+            cameraHolder = CameraHolder.singleton;
+        }
+
+        private void FixedUpdate()
+        {
+            float delta = Time.fixedDeltaTime;
+
+            if(cameraHolder != null)
+            {
+                cameraHolder.FollowTarget(delta);
+                cameraHolder.HandleCameraRotation(delta, mouseX, mouseY);
+            }
+        }
 
         public void OnEnable() // OnEnable -> cada vez que se utiliza este script se activa a esta funcion
         {
