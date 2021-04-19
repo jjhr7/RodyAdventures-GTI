@@ -55,11 +55,12 @@ public class ApuntarMurcielago : MonoBehaviour
     void Update()
     {
 
-        //Ponemos roja la esfera si recibe daño
+        //Ponemos roja la esfera si recibe daño y activamos el audio
         if (salud.recibiendoDanyo)
         {
             rend.material.SetColor("_Color", Color.red);
 
+            FindObjectOfType<AudioManager>().Play("deathEscupe");
         }
         else
         {
@@ -95,6 +96,7 @@ public class ApuntarMurcielago : MonoBehaviour
                     {
                         Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                         timer = 0.0;
+                        FindObjectOfType<AudioManager>().Play("shootEscupe");
                     }
                 }
             }

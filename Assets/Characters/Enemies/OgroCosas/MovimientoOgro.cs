@@ -80,6 +80,8 @@ public class MovimientoOgro : MonoBehaviour
         {
             nav.SetDestination(transform.position);
             anim.SetBool("golpeado", true);
+            FindObjectOfType<AudioManager>().Play("deathOgro");
+
         }
 
 

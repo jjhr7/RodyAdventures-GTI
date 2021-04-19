@@ -37,6 +37,7 @@ public class MovimientoTorreta : MonoBehaviour
         if (salud.recibiendoDanyo)
         {
             rend.material.SetColor("_Color", Color.red);
+            FindObjectOfType<AudioManager>().Play("deathTorreta");
 
         }
         else
@@ -68,9 +69,8 @@ public class MovimientoTorreta : MonoBehaviour
                             Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                             balas--;
                             timer = 0.0;
-                            Debug.Log(balas);
+                            FindObjectOfType<AudioManager>().Play("shootTorreta");                        
                         }
-
                     }
                 }
             }
