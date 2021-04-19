@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Play_game : MonoBehaviour
 {
     void Update()
     {
-        if (Input.anyKeyDown){
+        if ( Keyboard.current.anyKey.wasPressedThisFrame){
             SceneManager.LoadScene("prueba_main");
         }
     }
