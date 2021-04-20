@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.45110226, g: 0.4996664, b: 0.56736386, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3764834}
   - component: {fileID: 3764833}
   m_Layer: 0
-  m_Name: Moneda 13
+  m_Name: moneda_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 77249946}
   - component: {fileID: 77249945}
   m_Layer: 0
-  m_Name: Moneda 30
+  m_Name: moneda_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 82385219}
   - component: {fileID: 82385218}
   m_Layer: 0
-  m_Name: Moneda 6
+  m_Name: moneda_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 112506371}
   - component: {fileID: 112506370}
   m_Layer: 0
-  m_Name: Caja 2
+  m_Name: caja_1_M2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 123387358}
   - component: {fileID: 123387357}
   m_Layer: 0
-  m_Name: Moneda 26
+  m_Name: moneda_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 147048378}
   - component: {fileID: 147048377}
   m_Layer: 0
-  m_Name: llave 3
+  m_Name: llave_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 201946599}
   - component: {fileID: 201946598}
   m_Layer: 0
-  m_Name: llave 1
+  m_Name: llave_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257207079}
   m_Layer: 0
-  m_Name: Cajas monedas 2
+  m_Name: caja_monedas_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 270750424}
   - component: {fileID: 270750423}
   m_Layer: 0
-  m_Name: Caja 12
+  m_Name: caja_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1008,7 +1008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270750422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.83, y: 1.55, z: 442.43536}
+  m_LocalPosition: {x: 75.83, y: 1.48, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 283511845}
   - component: {fileID: 283511844}
   m_Layer: 0
-  m_Name: Moneda 4
+  m_Name: moneda_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 287857107}
   - component: {fileID: 287857106}
   m_Layer: 0
-  m_Name: Caja 8
+  m_Name: caja_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1198,7 +1198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287857105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.02, y: 1.55, z: 442.43536}
+  m_LocalPosition: {x: 74.02, y: 1.48, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 299903220}
   - component: {fileID: 299903219}
   m_Layer: 0
-  m_Name: Caja 4
+  m_Name: caja_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 332075478}
   - component: {fileID: 332075477}
   m_Layer: 0
-  m_Name: Moneda 19
+  m_Name: moneda_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 358936614}
   - component: {fileID: 358936613}
   m_Layer: 0
-  m_Name: Caja 1
+  m_Name: caja_1_M1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 376251930}
   - component: {fileID: 376251929}
   m_Layer: 0
-  m_Name: Caja 6
+  m_Name: caja_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1872,7 +1872,7 @@ GameObject:
   - component: {fileID: 438758918}
   - component: {fileID: 438758917}
   m_Layer: 0
-  m_Name: Moneda 7
+  m_Name: moneda_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +1967,7 @@ GameObject:
   - component: {fileID: 438766431}
   - component: {fileID: 438766430}
   m_Layer: 0
-  m_Name: Moneda 11
+  m_Name: moneda_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2158,7 +2158,7 @@ GameObject:
   - component: {fileID: 579843641}
   - component: {fileID: 579843640}
   m_Layer: 0
-  m_Name: Caja 13
+  m_Name: caja_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2234,7 +2234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579843639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.44, y: 2.52, z: 442.43536}
+  m_LocalPosition: {x: 74.44, y: 2.45, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2253,7 +2253,7 @@ GameObject:
   - component: {fileID: 589236005}
   - component: {fileID: 589236004}
   m_Layer: 0
-  m_Name: Caja 16
+  m_Name: caja_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2329,7 +2329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589236003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.48, y: 2.52, z: 442.43536}
+  m_LocalPosition: {x: 73.48, y: 2.45, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 611161381}
   - component: {fileID: 611161380}
   m_Layer: 0
-  m_Name: Moneda 24
+  m_Name: moneda_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2443,7 +2443,7 @@ GameObject:
   - component: {fileID: 633522653}
   - component: {fileID: 633522652}
   m_Layer: 0
-  m_Name: Moneda 3
+  m_Name: moneda_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2538,7 +2538,7 @@ GameObject:
   - component: {fileID: 643018348}
   - component: {fileID: 643018347}
   m_Layer: 0
-  m_Name: Moneda 28
+  m_Name: moneda_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2633,7 +2633,7 @@ GameObject:
   - component: {fileID: 682568054}
   - component: {fileID: 682568053}
   m_Layer: 0
-  m_Name: llave 2
+  m_Name: llave_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2825,7 +2825,7 @@ GameObject:
   - component: {fileID: 693773846}
   - component: {fileID: 693773845}
   m_Layer: 0
-  m_Name: CajaM3
+  m_Name: caja_2_M3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2920,7 +2920,7 @@ GameObject:
   - component: {fileID: 708945792}
   - component: {fileID: 708945791}
   m_Layer: 0
-  m_Name: Moneda 18
+  m_Name: moneda_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3111,7 +3111,7 @@ GameObject:
   - component: {fileID: 789976740}
   - component: {fileID: 789976739}
   m_Layer: 0
-  m_Name: Caja 11
+  m_Name: caja_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3187,7 +3187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789976738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.06, y: 1.55, z: 442.43536}
+  m_LocalPosition: {x: 73.06, y: 1.48, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3239,7 +3239,7 @@ GameObject:
   - component: {fileID: 915165136}
   - component: {fileID: 915165135}
   m_Layer: 0
-  m_Name: Moneda 22
+  m_Name: moneda_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3430,7 +3430,7 @@ GameObject:
   - component: {fileID: 921666334}
   - component: {fileID: 921666333}
   m_Layer: 0
-  m_Name: Caja 2
+  m_Name: caja_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3525,7 +3525,7 @@ GameObject:
   - component: {fileID: 933566664}
   - component: {fileID: 933566663}
   m_Layer: 0
-  m_Name: Caja 10
+  m_Name: caja_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3601,7 +3601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933566662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.189995, y: 1.55, z: 442.43536}
+  m_LocalPosition: {x: 72.189995, y: 1.48, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3716,7 +3716,7 @@ GameObject:
   - component: {fileID: 1096514030}
   - component: {fileID: 1096514029}
   m_Layer: 0
-  m_Name: Moneda 25
+  m_Name: moneda_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3811,7 +3811,7 @@ GameObject:
   - component: {fileID: 1166763850}
   - component: {fileID: 1166763849}
   m_Layer: 0
-  m_Name: CajaM2
+  m_Name: caja_2_M2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3906,7 +3906,7 @@ GameObject:
   - component: {fileID: 1168582006}
   - component: {fileID: 1168582005}
   m_Layer: 0
-  m_Name: Moneda 2
+  m_Name: moneda_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4001,7 +4001,7 @@ GameObject:
   - component: {fileID: 1204353097}
   - component: {fileID: 1204353096}
   m_Layer: 0
-  m_Name: CajaM1
+  m_Name: caja_2_M1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4178,63 +4178,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1265643110
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 72.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 462.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826869, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9150750092423826870, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
-      propertyPath: m_Name
-      value: ptaNormal_Pared3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 60ae6028e59de4fc38970f4270fedef2, type: 3}
 --- !u!1 &1281468853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,7 +4191,7 @@ GameObject:
   - component: {fileID: 1281468855}
   - component: {fileID: 1281468854}
   m_Layer: 0
-  m_Name: Moneda 12
+  m_Name: moneda_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4425,6 +4368,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1307621286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307621289}
+  - component: {fileID: 1307621288}
+  - component: {fileID: 1307621287}
+  m_Layer: 0
+  m_Name: terreno_portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!154 &1307621287
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307621286}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 53c5949c435bd494c88d5215ea6b6c20, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1307621288
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307621286}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 53c5949c435bd494c88d5215ea6b6c20, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1307621289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307621286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.83, y: 0, z: 463.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1320984636
 GameObject:
@@ -4821,7 +4840,7 @@ GameObject:
   - component: {fileID: 1404400081}
   - component: {fileID: 1404400080}
   m_Layer: 0
-  m_Name: Moneda 23
+  m_Name: moneda_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4916,7 +4935,7 @@ GameObject:
   - component: {fileID: 1455669027}
   - component: {fileID: 1455669026}
   m_Layer: 0
-  m_Name: Moneda 9
+  m_Name: moneda_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5011,7 +5030,7 @@ GameObject:
   - component: {fileID: 1481302474}
   - component: {fileID: 1481302473}
   m_Layer: 0
-  m_Name: Moneda 21
+  m_Name: moneda_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5201,7 +5220,7 @@ GameObject:
   - component: {fileID: 1544985079}
   - component: {fileID: 1544985078}
   m_Layer: 0
-  m_Name: Caja 3
+  m_Name: caja_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5296,7 +5315,7 @@ GameObject:
   - component: {fileID: 1554383873}
   - component: {fileID: 1554383872}
   m_Layer: 0
-  m_Name: Moneda 29
+  m_Name: moneda_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5391,7 +5410,7 @@ GameObject:
   - component: {fileID: 1573110505}
   - component: {fileID: 1573110504}
   m_Layer: 0
-  m_Name: Moneda 10
+  m_Name: moneda_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5486,7 +5505,7 @@ GameObject:
   - component: {fileID: 1580471233}
   - component: {fileID: 1580471232}
   m_Layer: 0
-  m_Name: llave 4
+  m_Name: llave_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5582,7 +5601,7 @@ GameObject:
   - component: {fileID: 1614143511}
   - component: {fileID: 1614143510}
   m_Layer: 0
-  m_Name: Moneda 1
+  m_Name: moneda_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5677,7 +5696,7 @@ GameObject:
   - component: {fileID: 1615419977}
   - component: {fileID: 1615419976}
   m_Layer: 0
-  m_Name: Moneda 5
+  m_Name: moneda_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5772,7 +5791,7 @@ GameObject:
   - component: {fileID: 1633883978}
   - component: {fileID: 1633883977}
   m_Layer: 0
-  m_Name: Caja 9
+  m_Name: caja_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5848,7 +5867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633883976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.93, y: 1.55, z: 442.43536}
+  m_LocalPosition: {x: 74.93, y: 1.48, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5963,7 +5982,7 @@ GameObject:
   - component: {fileID: 1648978371}
   - component: {fileID: 1648978370}
   m_Layer: 0
-  m_Name: Caja 3
+  m_Name: caja_1_M3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6058,7 +6077,7 @@ GameObject:
   - component: {fileID: 1663663052}
   - component: {fileID: 1663663051}
   m_Layer: 0
-  m_Name: Moneda 15
+  m_Name: moneda_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6249,7 +6268,7 @@ GameObject:
   - component: {fileID: 1700894771}
   - component: {fileID: 1700894770}
   m_Layer: 0
-  m_Name: Caja 1
+  m_Name: caja_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6344,7 +6363,7 @@ GameObject:
   - component: {fileID: 1704410886}
   - component: {fileID: 1704410885}
   m_Layer: 0
-  m_Name: Moneda 14
+  m_Name: moneda_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6439,7 +6458,7 @@ GameObject:
   - component: {fileID: 1799222284}
   - component: {fileID: 1799222283}
   m_Layer: 0
-  m_Name: Caja 7
+  m_Name: caja_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6534,7 +6553,7 @@ GameObject:
   - component: {fileID: 1800574750}
   - component: {fileID: 1800574749}
   m_Layer: 0
-  m_Name: Caja 5
+  m_Name: caja_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6719,7 +6738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846896203}
   m_Layer: 0
-  m_Name: Cajas monedas
+  m_Name: cajas_monedas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6755,7 +6774,7 @@ GameObject:
   - component: {fileID: 1857844679}
   - component: {fileID: 1857844678}
   m_Layer: 0
-  m_Name: Moneda 27
+  m_Name: moneda_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6849,7 +6868,7 @@ GameObject:
   - component: {fileID: 1880563535}
   - component: {fileID: 1880563534}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: terreno_principal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6911,7 +6930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900972807
 GameObject:
@@ -6926,7 +6945,7 @@ GameObject:
   - component: {fileID: 1900972809}
   - component: {fileID: 1900972808}
   m_Layer: 0
-  m_Name: Caja 14
+  m_Name: caja_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7002,7 +7021,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900972807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.350006, y: 2.52, z: 442.43536}
+  m_LocalPosition: {x: 75.350006, y: 2.45, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7021,7 +7040,7 @@ GameObject:
   - component: {fileID: 1917519820}
   - component: {fileID: 1917519819}
   m_Layer: 0
-  m_Name: Caja 17
+  m_Name: caja_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7097,7 +7116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917519818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.78, y: 1.54, z: 442.43536}
+  m_LocalPosition: {x: 76.78, y: 1.47, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7116,7 +7135,7 @@ GameObject:
   - component: {fileID: 1918887752}
   - component: {fileID: 1918887751}
   m_Layer: 0
-  m_Name: Moneda 20
+  m_Name: moneda_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7211,7 +7230,7 @@ GameObject:
   - component: {fileID: 1940007791}
   - component: {fileID: 1940007790}
   m_Layer: 0
-  m_Name: Caja 15
+  m_Name: caja_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7287,7 +7306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940007789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.61, y: 2.52, z: 442.43536}
+  m_LocalPosition: {x: 72.61, y: 2.45, z: 442.43536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7479,7 +7498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 42.999, y: 8.515, z: 28.492}
 --- !u!1 &2083688563
 GameObject:
@@ -7590,7 +7609,7 @@ GameObject:
   - component: {fileID: 2129351068}
   - component: {fileID: 2129351067}
   m_Layer: 0
-  m_Name: Moneda 17
+  m_Name: moneda_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7685,7 +7704,7 @@ GameObject:
   - component: {fileID: 2133460785}
   - component: {fileID: 2133460784}
   m_Layer: 0
-  m_Name: Moneda 16
+  m_Name: moneda_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
