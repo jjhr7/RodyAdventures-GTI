@@ -53,7 +53,7 @@ public class MovimientoTorreta : MonoBehaviour
 
             if (!salud.recibiendoDanyo)
             {
-                turret.transform.LookAt(target);
+                turret.transform.LookAt(target.position + new Vector3(0,1,0));
 
                 if (balas == 0)
                 {

@@ -82,7 +82,7 @@ public class ApuntarMurcielago : MonoBehaviour
                 //El timer empieza a contar para que al llegar le dispare 
                 timer += Time.deltaTime;
                 //El muriélago apunta al jugador
-                bat.transform.LookAt(target);
+                bat.transform.LookAt(target.position + new Vector3(0, 1, 0));
                 if (dist >= MinDist)
                 {
                     //Lo movemos a la velocidad deseada
