@@ -136,7 +136,6 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   extraHealthBar: {fileID: 0}
   BarraMonedas: {fileID: 0}
-  tiempoContadorMonedasActivo: 5
   extraHealthSpeed: 1
 --- !u!1001 &3027060195931387630
 PrefabInstance:
