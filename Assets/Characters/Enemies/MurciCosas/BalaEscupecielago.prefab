@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7482642898360217248}
   - component: {fileID: 3622914670894937754}
   - component: {fileID: 1916052094139863471}
+  - component: {fileID: 2594670450221850431}
   m_Layer: 0
   m_Name: BalaEscupecielago
   m_TagString: Untagged
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba55e94c5621a214fae9c1333b80a702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danyo: 0.3
+  danyo: 0
   fuerza: 10
 --- !u!54 &1916052094139863471
 Rigidbody:
@@ -127,3 +128,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2594670450221850431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321923726256075879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba55e94c5621a214fae9c1333b80a702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danyo: 5
+  fuerza: 7
