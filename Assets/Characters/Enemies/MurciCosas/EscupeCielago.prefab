@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 4315780744162610016}
   - component: {fileID: 1753132938}
   - component: {fileID: 1387265945}
+  - component: {fileID: 1387265946}
   m_Layer: 0
   m_Name: Murcielago
   m_TagString: Untagged
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506af0f19dbff6d4a918ae4d069f1ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  salud: 1
+  salud: 20
   recibiendoDanyo: 0
   pausa: 0.1
 --- !u!54 &1387265945
@@ -97,6 +98,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!135 &1387265946
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274660331097218156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4789473877338479228
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +277,7 @@ MonoBehaviour:
   bat: {fileID: 4315780744162610016}
   bullet: {fileID: 5600219853223480426, guid: 9970e27eba47d8647b07e200905b8db7, type: 3}
   bulletSpawn: {fileID: 3160046983009585256}
-  cadencia: 2
+  cadencia: 3
   MinDist: 3
   MoveSpeed: 3
   cuerpo: {fileID: 2180654638572408637}

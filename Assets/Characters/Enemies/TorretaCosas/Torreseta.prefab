@@ -68,12 +68,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   turret: {fileID: 3135731142678479926}
-  cuerpo: {fileID: 1415782113153232049}
   bullet: {fileID: 8299626551665287001, guid: b623b5ca4cdc19f48bf8c71818c6f6e7, type: 3}
-  bulletSpawn: {fileID: 0}
-  tiempoRecarga: 0
-  cadencia: 0.25
-  cargador: 0
+  bulletSpawn: {fileID: 4246954994571289337}
+  cadencia: 0.4
+  tiempoRecarga: 3
+  cargador: 10
+  cuerpo: {fileID: 1415782113153232049}
 --- !u!1 &782692961045834407
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 3135731142678479926}
   - component: {fileID: 1617812735468723760}
   m_Layer: 0
-  m_Name: Torreta
+  m_Name: Torreseta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506af0f19dbff6d4a918ae4d069f1ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  salud: 1
+  salud: 20
   recibiendoDanyo: 0
-  pausa: 0
+  pausa: 0.1
 --- !u!1 &5317694411912615107
 GameObject:
   m_ObjectHideFlags: 0

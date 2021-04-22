@@ -51,7 +51,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2829436527483826561
 GameObject:
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 2829436527461876492}
   - component: {fileID: 2829436527461876488}
   m_Layer: 0
-  m_Name: Skeleton@Skin
+  m_Name: OgroAngle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 2829436527483826561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0.74, z: -63}
-  m_LocalScale: {x: 33.771465, y: 33.78275, z: 33.771465}
+  m_LocalScale: {x: 11.247427, y: 11.251184, z: 11.247427}
   m_Children:
   - {fileID: 2829436527484317167}
   - {fileID: 2829436527484317093}
@@ -136,7 +136,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -0.15, y: 0.15, z: 0.19}
+  m_Size: {x: 0.1, y: 0.17, z: 0.1}
   m_Center: {x: 0, y: 0.07, z: 0}
 --- !u!114 &2829436527461876495
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
   vel: 10
   me: {fileID: 2829436527484317089}
   area: {fileID: 763810808}
+  damage: 20
 --- !u!195 &2829436527461876492
 NavMeshAgent:
   m_ObjectHideFlags: 0

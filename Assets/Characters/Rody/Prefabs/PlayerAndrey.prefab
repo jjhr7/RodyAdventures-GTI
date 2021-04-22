@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 3027060196407603740}
   - component: {fileID: 3027060196407603741}
   - component: {fileID: 3027060196407603742}
+  - component: {fileID: 1767203319}
   m_Layer: 10
-  m_Name: qlo
-  m_TagString: Untagged
+  m_Name: PlayerAndrey
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,28 @@ MonoBehaviour:
   normalCamera: {fileID: 0}
   movementSpeed: 5
   rotationSpeed: 10
+--- !u!114 &1767203319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968215483161813276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bd02886b4b44e49a509b71f3b44997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 10
+  maxHealth: 100
+  extraHealth: 0
+  extraMaxHealth: 25
+  currentHealth: 0
+  contadorMonedas: 0
+  healthbar: {fileID: 0}
+  extraHealthBar: {fileID: 0}
+  BarraMonedas: {fileID: 0}
+  extraHealthSpeed: 1
 --- !u!1001 &3027060195931387630
 PrefabInstance:
   m_ObjectHideFlags: 0
