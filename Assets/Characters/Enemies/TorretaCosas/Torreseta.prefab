@@ -52,7 +52,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6391321351804471621
 MonoBehaviour:
@@ -70,9 +70,9 @@ MonoBehaviour:
   turret: {fileID: 3135731142678479926}
   bullet: {fileID: 8299626551665287001, guid: b623b5ca4cdc19f48bf8c71818c6f6e7, type: 3}
   bulletSpawn: {fileID: 4246954994571289337}
-  cadencia: 0.4
+  cadencia: 0.3
   tiempoRecarga: 3
-  cargador: 10
+  cargador: 20
   cuerpo: {fileID: 1415782113153232049}
 --- !u!1 &782692961045834407
 GameObject:
