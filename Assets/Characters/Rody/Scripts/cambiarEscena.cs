@@ -6,13 +6,8 @@ using UnityEngine.InputSystem;
 
 public class cambiarEscena : MonoBehaviour
 {
-    public void teleport()
+    private void OnCollisionEnter(Collision collision)
     {
-
-        if (Keyboard.current.anyKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("arena_nyapos");
-        }
-
+        SceneManager.LoadScene("arena_nyapos");
     }
 }
