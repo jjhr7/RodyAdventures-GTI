@@ -5,10 +5,8 @@ using UnityEngine;
 
 namespace SG
 {
-
-    public class RecibirDanyo : MonoBehaviour
+    public class EnemyStats : MonoBehaviour
     {
-
 
         [Range(0, 20)]
         [SerializeField]
@@ -89,5 +87,6 @@ namespace SG
             }
         }
     }
+
 
 }

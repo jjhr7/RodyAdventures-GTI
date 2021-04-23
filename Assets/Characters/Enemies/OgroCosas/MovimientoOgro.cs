@@ -17,12 +17,12 @@ namespace SG
         public float vel = 1;
         private float dist;
         bool correEnemigo;
-        RecibirDanyo salud;
+        EnemyStats stats;
         public Transform me;
         double timer = 0.0;
         public SphereCollider area;
-        PlayerStats playerStats;
         public int damage;
+        public Collider colliderEspada;
 
         void Start()
         {
@@ -30,16 +30,16 @@ namespace SG
             nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
             anim = GetComponent<Animator>();
             targeteado = false;
-            salud = this.gameObject.GetComponent<RecibirDanyo>();
-            playerStats = player.GetComponent<PlayerStats>();
-
+            stats = this.gameObject.GetComponent<EnemyStats>();
+            colliderEspada.enabled = false;
+            timer = 0;
         }
 
         // Update is called once per frame
         void Update()
         {
-            anim.SetBool("golpeado", salud.recibiendoDanyo);
-            if (!salud.recibiendoDanyo)
+            anim.SetBool("golpeado", stats.recibiendoDanyo);
+            if (!stats.recibiendoDanyo)
             {
                 if (targeteado)
                 {
@@ -52,48 +52,52 @@ namespace SG
                         nav.speed = vel;
                         anim.SetBool("corriendo", correEnemigo);
                         anim.SetBool("pegando", false);
+                        colliderEspada.enabled = false;
 
                     }
                     else
                     {
                         nav.SetDestination(transform.position);
                         anim.SetBool("pegando", true);
+                        colliderEspada.enabled = true;
                         timer += Time.deltaTime;
                         if (timer > velocidadAtaque)
                         {
-                            dist = Vector3.Distance(player.position, transform.position);
-                            if (dist <= area.radius)
-                            {
-                                if (playerStats != null)
-                                {
-                                    playerStats.TakeDamage(damage);
-                                }
-                            }
+                            anim.SetBool("pegando", false);
+
+                            colliderEspada.enabled = false;
                             if (targeteado)
                             {
                                 anim.SetBool("corriendo", true);
+                                anim.SetBool("pegando", false);
+                                colliderEspada.enabled = false;
+
+                                Debug.Log("ooooo");
                             }
                             else
                             {
+                                colliderEspada.enabled = false;
+                                anim.SetBool("pegando", false);
                                 anim.SetBool("corriendo", false);
                             }
                             timer = 0;
                         }
-
                     }
                 }
                 else
                 {
                     bool correEnemigo = false;
                     anim.SetBool("corriendo", correEnemigo);
+                    colliderEspada.enabled = false;
                 }
             }
             else
             {
                 nav.SetDestination(transform.position);
                 anim.SetBool("golpeado", true);
+                anim.SetBool("pegando", true);
                 FindObjectOfType<AudioManager>().Play("deathOgro");
-
+                colliderEspada.enabled = false;
             }
 
 

@@ -51,7 +51,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 1.42
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2829436527483826561
 GameObject:
@@ -67,10 +67,10 @@ GameObject:
   - component: {fileID: 2829436527461876490}
   - component: {fileID: 2829436527461876495}
   - component: {fileID: 2829436527461876492}
-  - component: {fileID: 2829436527461876488}
+  - component: {fileID: 4036638057959164529}
   m_Layer: 0
   m_Name: OgroAngle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_Controller: {fileID: 9100000, guid: 982b604b39e60664aaf878a4c212d25c, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -151,11 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  velocidadAtaque: 2
+  velocidadAtaque: 1
   vel: 10
   me: {fileID: 2829436527484317089}
   area: {fileID: 763810808}
   damage: 20
+  colliderEspada: {fileID: 151488488}
 --- !u!195 &2829436527461876492
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2829436527461876488
+--- !u!114 &4036638057959164529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,12 +188,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2829436527483826561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506af0f19dbff6d4a918ae4d069f1ef7, type: 3}
+  m_Script: {fileID: 11500000, guid: e738b410cdf537a4093bac40a0a6402f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  salud: 1
+  salud: 20
   recibiendoDanyo: 0
-  pausa: 0.5
+  pausa: 0
 --- !u!1 &2829436527483826563
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +683,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2829436527484317129}
+  - component: {fileID: 151488488}
+  - component: {fileID: 151488489}
   m_Layer: 0
   m_Name: Bip001 Prop1
   m_TagString: Untagged
@@ -703,6 +706,39 @@ Transform:
   m_Father: {fileID: 2829436527484317167}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &151488488
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829436527483826601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.014201433
+  m_Height: 0.11353047
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.04}
+--- !u!114 &151488489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829436527483826601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f77ff6612eeaa4fac7462d4cf398ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  velocidadAtaque: 2
+  vel: 1
+  me: {fileID: 0}
+  area: {fileID: 0}
+  damage: 20
+  colliderEspada: {fileID: 151488488}
 --- !u!1 &2829436527483826603
 GameObject:
   m_ObjectHideFlags: 0
