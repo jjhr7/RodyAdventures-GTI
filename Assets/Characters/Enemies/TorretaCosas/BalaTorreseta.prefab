@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6647882169601083845}
   - component: {fileID: 6647882169601083846}
   - component: {fileID: 6647882169601083847}
-  - component: {fileID: 6647882169601083840}
+  - component: {fileID: 7342039157278233016}
   m_Layer: 0
   m_Name: BalaTorreseta
   m_TagString: Bala
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6647882169601083840
+--- !u!114 &7342039157278233016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba55e94c5621a214fae9c1333b80a702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danyo: 0.3
-  fuerza: 40
+  danyo: 10
+  fuerza: 60
