@@ -16,12 +16,13 @@ using UnityEngine;
         GameObject[] player;
         private GameObject myplayer;
 
+
         Animator animator;
 
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
-        }
+    }
 
         public int Salud
         {
@@ -62,8 +63,9 @@ using UnityEngine;
             player = GameObject.FindGameObjectsWithTag("Player");
             myplayer = player[0];
             PlayerStats = myplayer.GetComponent<PlayerStats>();
+        Debug.Log("Ha entrado en TakeDamege");
 
-        }
+    }
 
         // Update is called once per frame
         void Update()
@@ -88,10 +90,12 @@ using UnityEngine;
 
         public void TakeDamage(int damage)
         {
-            if (!recibiendoDanyo)
+        Debug.Log("Ha entrado en TakeDamege");
+        if (!recibiendoDanyo)
             {
                 Salud -= damage;
                 recibiendoDanyo = true;
+            
             }
         }
     }
