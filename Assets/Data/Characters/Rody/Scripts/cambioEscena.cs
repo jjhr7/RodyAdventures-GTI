@@ -6,20 +6,18 @@ using UnityEngine.InputSystem;
 
 public class cambioEscena : MonoBehaviour
 {
-
     public Animator transition;
-    public float transitionTime = 1f;
+    public float transitionTime = 5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag.Equals("Player"))
         {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 2));
-
+            StartCoroutine(LoadLevel("arena_nyapos"));
         }
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(string levelIndex)
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
