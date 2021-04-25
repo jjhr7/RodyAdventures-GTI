@@ -9,7 +9,7 @@ public class Play_game : MonoBehaviour
     void Update()
     {
         if ( Keyboard.current.anyKey.wasPressedThisFrame){
-            SceneManager.LoadScene("prueba_main");
+            SceneManager.LoadScene("arena_1");
         }
     }
 }
