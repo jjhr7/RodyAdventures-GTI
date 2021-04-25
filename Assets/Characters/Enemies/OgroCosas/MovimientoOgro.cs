@@ -4,8 +4,6 @@ using UnityEngine;
 
 
 
-namespace SG
-{
     public class MovimientoOgro : MonoBehaviour
     {
 
@@ -123,4 +121,3 @@ namespace SG
         }
     }
 
-}

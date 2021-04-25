@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace SG
-{
 
     public class MovimientoTorreta : MonoBehaviour
     {
@@ -107,4 +105,3 @@ namespace SG
             balas = cargador;
         }
     }
-}

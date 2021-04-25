@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace SG
-{
+
     public class Destruirbala : MonoBehaviour
     {
 
@@ -63,4 +62,3 @@ namespace SG
         }
     }
 
-}

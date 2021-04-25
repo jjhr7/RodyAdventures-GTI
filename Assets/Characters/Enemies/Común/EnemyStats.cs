@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace SG
-{
     public class EnemyStats : MonoBehaviour
     {
 
-        [Range(0, 20)]
+        [Range(0, 100)]
         [SerializeField]
-        private float salud = 20f;
+        private int salud = 20;
         public bool recibiendoDanyo;
         double timer = 0.0;
         public float pausa;
         PlayerStats PlayerStats;
         GameObject[] player;
         private GameObject myplayer;
-        public float Salud
+
+        Animator animator;
+
+        private void Awake()
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+
+        public int Salud
         {
             get { return salud; }
             set
             {
-                salud = Mathf.Clamp01(value);
-                if (salud == 0)
+                salud = value;
+                if (salud <= 0)
                 {
+                    //animator.Play("Dead_01");
                     Destroy(gameObject);
                 }
             }
@@ -39,6 +46,7 @@ namespace SG
             {
                 if (!recibiendoDanyo)
                 {
+                    //animator.Play("Damage_01");
                     Salud -= Dbala.danyo;
                     recibiendoDanyo = true;
                 }
@@ -88,5 +96,3 @@ namespace SG
         }
     }
 
-
-}

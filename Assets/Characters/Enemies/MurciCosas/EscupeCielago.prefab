@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   salud: 10
   recibiendoDanyo: 0
-  pausa: 0
+  pausa: 0.2
 --- !u!1 &4789473877338479228
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace SG
-{
-
     public class RecibirDanyo : MonoBehaviour
     {
 
@@ -89,5 +86,3 @@ namespace SG
             }
         }
     }
-
-}

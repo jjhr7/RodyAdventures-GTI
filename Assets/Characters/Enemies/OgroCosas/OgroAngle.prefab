@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   salud: 20
   recibiendoDanyo: 0
-  pausa: 0
+  pausa: 0.2
 --- !u!1 &2829436527483826563
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   vel: 1
   me: {fileID: 0}
   area: {fileID: 0}
-  damage: 20
+  damage: 15
   colliderEspada: {fileID: 151488488}
 --- !u!1 &2829436527483826603
 GameObject:
