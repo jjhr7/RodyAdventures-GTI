@@ -77,7 +77,7 @@ public class NyaposMovement : MonoBehaviour
 
 
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        caseSwitch = 0;
+        caseSwitch = 1;
         currentBalas = maxbalas;
         colliderBrazo = brazoFuerte.GetComponent<Collider>();
         colliderBrazo.enabled = false;
@@ -117,7 +117,7 @@ public class NyaposMovement : MonoBehaviour
             }
 
 
-            if (stats.Salud < 30)
+            if (stats.Salud < 100)
             {
                 if (!segundaFase)
                 {
@@ -302,9 +302,9 @@ public class NyaposMovement : MonoBehaviour
                     {
                         timer += Time.deltaTime;
                         //Este if permite disparar a la cadencia deseada
-                        if (timer > cadencia * 8)
+                        if (timer > cadencia * 3)
                         {
-                            if (timer > (cadencia * 8) + 0.2)
+                            if (timer > (cadencia * 3) + 0.2)
                             {
                                 //Restamos una bala al cargador, disparamos y reproducimos el sonido
                                 Instantiate(bulletBig, bulletSpawn.position, bulletSpawn.rotation);
