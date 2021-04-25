@@ -22,7 +22,7 @@ public class cambioEscena : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
-        yield return new WaitForSecons(transitionTime);
+        yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
     }
 }
