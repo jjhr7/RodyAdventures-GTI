@@ -6,7 +6,7 @@ using UnityEngine;
     public class EnemyStats : MonoBehaviour
     {
 
-        [Range(0, 100)]
+        [Range(0, 500)]
         [SerializeField]
         private int salud = 20;
         public bool recibiendoDanyo;
