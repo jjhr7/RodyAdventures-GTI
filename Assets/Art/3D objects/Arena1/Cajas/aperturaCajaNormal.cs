@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class aperturaCajaNormal : MonoBehaviour
 {
-    private float salud = 1f;
-  
+ 
 }
