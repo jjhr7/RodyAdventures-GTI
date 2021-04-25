@@ -79,6 +79,15 @@ namespace SG
 
         }
 
+
+        public void TakeDamage(int damage)
+        {
+            if (!recibiendoDanyo)
+            {
+                Salud -= damage;
+                recibiendoDanyo = true;
+            }
+        }
     }
 
 }

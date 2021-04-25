@@ -34,7 +34,7 @@ namespace SG
         PositionData posicionInicial;
 
         //Script de salud + renderer + esfera del murciélago para cambiarle de color al recibir danyo
-        RecibirDanyo salud;
+        EnemyStats stats;
         Renderer rend;
         public Transform cuerpo;
 
@@ -43,7 +43,7 @@ namespace SG
         {
 
             //Inicializamos valores y scripts
-            salud = bat.gameObject.GetComponent<RecibirDanyo>();
+            stats = bat.gameObject.GetComponent<EnemyStats>();
             rend = cuerpo.gameObject.GetComponent<Renderer>();
             rend.material.shader = Shader.Find("Specular");
             rend.material.SetColor("_Color", Color.white);
@@ -59,7 +59,7 @@ namespace SG
         {
 
             //Ponemos roja la esfera si recibe danyo y activamos el audio
-            if (salud.recibiendoDanyo)
+            if (stats.recibiendoDanyo)
             {
                 rend.material.SetColor("_Color", Color.red);
 
@@ -78,7 +78,7 @@ namespace SG
             if (targeteado)
             {
                 //Este if sirve para que el murciélago pare unos instantes al recibir danyo
-                if (!salud.recibiendoDanyo)
+                if (!stats.recibiendoDanyo)
                 {
                     //Calculamos la distancia con el jugador
                     float dist = Vector3.Distance(target.position, bat.position);

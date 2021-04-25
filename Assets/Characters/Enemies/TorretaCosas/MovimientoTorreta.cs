@@ -31,7 +31,7 @@ namespace SG
         bool targeteado;
 
         //Script de salud + renderer + cuerpo para cambiarle de color al recibir danyo
-        RecibirDanyo salud;
+        EnemyStats stats;
         Renderer rend;
         public Transform cuerpo;
 
@@ -40,7 +40,7 @@ namespace SG
         {
             //Inicializamos variables y Gameobjects
             balas = cargador;
-            salud = turret.gameObject.GetComponent<RecibirDanyo>();
+            stats = turret.gameObject.GetComponent<EnemyStats>();
             rend = cuerpo.gameObject.GetComponent<Renderer>();
             rend.material.shader = Shader.Find("Specular");
             rend.material.SetColor("_Color", Color.white);
@@ -49,7 +49,7 @@ namespace SG
         // Update is called once per frame
         void Update()
         {
-            if (salud.recibiendoDanyo)
+            if (stats.recibiendoDanyo)
             {
                 //Animación y sonido de recibir danyo
                 rend.material.SetColor("_Color", Color.red);
@@ -67,7 +67,7 @@ namespace SG
             if (other.tag.Equals("Player"))
             {
 
-                if (!salud.recibiendoDanyo)
+                if (!stats.recibiendoDanyo)
                 {
                     //Miramos al jugador si entra en el trigger
                     turret.transform.LookAt(target.position + new Vector3(0, 1, 0));
