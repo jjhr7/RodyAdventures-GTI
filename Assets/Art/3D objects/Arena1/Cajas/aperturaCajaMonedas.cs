@@ -4,93 +4,31 @@ using UnityEngine;
 
 public class aperturaCajaMonedas : MonoBehaviour
 {
-    [Range(0, 100)]
-    [SerializeField]
-    private int salud = 4;
-    public bool recibiendoDanyo;
-    double timer = 0.0;
-    public float pausa;
-    PlayerStats PlayerStats;
+    PlayerStats playerStats;
     GameObject[] player;
     private GameObject myplayer;
+    public EnemyStats stats;
 
-    Animator animator;
 
-    private void Awake()
+    private void Update()
     {
-        animator = GetComponentInChildren<Animator>();
-    }
-
-    public int Salud
-    {
-        get { return salud; }
-        set
+        if (stats.recibiendoDanyo)
         {
-            salud = value;
-            if (salud <= 0)
-            {
-                //animator.Play("Dead_01");
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            Debug.Log("hola");
+            playerStats.TakeMoney(6);
+            
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        Collider bala = collision.gameObject.GetComponent<Collider>();
-        Destruirbala Dbala = collision.gameObject.GetComponent<Destruirbala>();
-        if (bala.tag.Equals("Bala"))
-        {
-            if (!recibiendoDanyo)
-            {
-                //animator.Play("Damage_01");
-                Salud -= Dbala.danyo;
-                recibiendoDanyo = true;
-            }
-        }
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        recibiendoDanyo = false;
-
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
-        PlayerStats = myplayer.GetComponent<PlayerStats>();
+        playerStats = myplayer.GetComponent<PlayerStats>();
+        stats = gameObject.GetComponent<EnemyStats>();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        if (recibiendoDanyo)
-        {
-            //temporizador recibir danyo
-            timer += Time.deltaTime;
-
-            if (timer > pausa)
-            {
-                recibiendoDanyo = false;
-                timer = 0;
-            }
-        }
-
-
-    }
-
-
-    public void TakeDamage(int damage)
-    {
-        if (!recibiendoDanyo)
-        {
-            Salud -= damage;
-            recibiendoDanyo = true;
-        }
-    }
 }
 
