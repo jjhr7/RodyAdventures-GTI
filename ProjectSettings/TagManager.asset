@@ -8,6 +8,7 @@ TagManager:
   - Puerta
   - Bala
   - coin
+  - arma
   layers:
   - Default
   - TransparentFX
