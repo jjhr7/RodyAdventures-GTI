@@ -79,9 +79,64 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "LeftStick Movement",
+                    "id": "6aa576ec-9585-4bce-ba4c-77d28193b9ba",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "da9b7253-5f25-4ae9-97e7-34251cc7beea",
+                    "path": "<XInputController>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "cf01dbd0-187e-4a82-8f65-11c106a0bd24",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "3dd39a0e-31b0-4831-9849-67301cf52469",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0a01a6b1-0a15-4674-955d-5748ba3f835a",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "43fee56f-0e8d-44cd-bdc5-5a7b7eee1ae3",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<XInputController>/rightStick",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "",
@@ -135,7 +190,7 @@
                 {
                     "name": "",
                     "id": "13db4260-22f2-471d-a596-08a1560712cf",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -167,12 +222,102 @@
                 },
                 {
                     "name": "",
+                    "id": "ce43bf53-0492-4066-983b-e19e7b1316d4",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d21b3fb4-f169-4704-a557-349414bc1b3f",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef140981-624e-415a-832e-4c6de6286858",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Change Weapon",
+            "id": "9e609bde-7e8f-418d-8c19-b7b6a2a5df80",
+            "actions": [
+                {
+                    "name": "ChangeWeapon1",
+                    "type": "Button",
+                    "id": "fc6ce741-8c17-4802-88c7-a3065d7ad3bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ChangeWeapon2",
+                    "type": "Button",
+                    "id": "06f9ac73-759b-4e6e-9ade-8699b88fa851",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "40451652-a841-4ee9-b565-b7e2d79fd00d",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "822ffe51-bf78-4f45-96b9-e8f8121c01bf",
+                    "path": "<XInputController>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "011c6f60-ddc7-4c0f-8931-609707bcc440",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30677d6b-aea9-4758-8de1-a10b022f9e8b",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

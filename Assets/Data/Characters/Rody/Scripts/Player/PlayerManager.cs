@@ -75,6 +75,9 @@ using UnityEngine;
             //inputHandler.sprintflag = false;
             inputHandler.rb_Input = false;
             inputHandler.rt_Input = false;
+            
+            inputHandler.changeWeapon1_input = false;
+            inputHandler.changeWeapon2_input = false;
 
             if (isInAir)  //si esta en el aire
             {
