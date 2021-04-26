@@ -92,11 +92,11 @@ namespace SG
                 }
 
             }
-            //si está recibiendo daño
+            //si estÃ¡ recibiendo daÃ±o
             else
             {
                 rend.material.SetColor("_Color", Color.red);
-                FindObjectOfType<AudioManager>().Play("minionDaño");
+                FindObjectOfType<AudioManager>().Play("minionDanyo");
 
             }
         }

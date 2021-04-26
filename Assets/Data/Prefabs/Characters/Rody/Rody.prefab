@@ -385,8 +385,8 @@ MonoBehaviour:
   extraMaxHealth: 25
   currentHealth: 0
   contadorMonedas: 0
-  healthBar: {fileID: 0}
-  extraHealthBar: {fileID: 0}
+  healthBar: {fileID: 1299515273300509486}
+  extraHealthBar: {fileID: 3355598523103716517}
   BarraMonedas: {fileID: 4317319197611462657}
   tiempoContadorMonedasActivo: 5
   extraHealthSpeed: 1
