@@ -24,13 +24,14 @@ using UnityEngine;
 
         public bool rollflag;
         public bool sprintflag;
+        public bool comboFlag;
         public float rollInputTimer; // var que decide si hace roll o sprint.
         
 
         PlayerControls inputActions; //para configurar los botones en que var tienen que guardarse
         PlayerAttacker playerAttacker; //para hacer ataques
         PlayerInventory playerInventory; //para al atacar usar el arma/utilizarla en la funcion de PlayerAttacker
-
+        PlayerManager playerManager;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -39,6 +40,7 @@ using UnityEngine;
         {
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            playerManager = GetComponent<PlayerManager>();
         }
 
 
@@ -106,7 +108,22 @@ using UnityEngine;
             //Rb input maneja los ataques leves con la mano derecha
             if (rb_Input)
             {
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                if (playerManager.canDoCombo)
+                {
+                    comboFlag = true;
+                    playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
+                    comboFlag = false;
+                }
+                else
+                {
+                    if(playerManager.isInteracting)
+                        return;
+                    
+                    if(playerManager.canDoCombo)
+                        return;
+                    
+                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                }
             }
             //RT -> ataques potentes mano derecha
             if (rt_Input)
