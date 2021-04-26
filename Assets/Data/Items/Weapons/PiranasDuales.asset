@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063ff3f183bce104baf9e8cb4d94fe5e, type: 3}
   m_Name: PiranasDuales
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 20e952dce9ddd4d45872b560c358416c, type: 3}
   itemName: Piranas Duales
   modelPrefab: {fileID: 4904845081180571809, guid: faf89b2fced8d93429a1b2b4a8f5b485, type: 3}
   isUnarmed: 0
