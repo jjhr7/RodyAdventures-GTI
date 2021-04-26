@@ -21,6 +21,8 @@ using UnityEngine;
         public bool b_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool changeWeapon1_input;
+        public bool changeWeapon2_input;
 
         public bool rollflag;
         public bool sprintflag;
@@ -68,6 +70,7 @@ using UnityEngine;
             MoveInput(delta); // conf de botones movimiento
             HandleRollInput(delta); // conf roll/sprinting
             HandleAttackInput(delta); //conf attacks
+            HandleQuickSlotInput();
         }
         private void MoveInput(float delta) //conf de movimiento
         {
@@ -129,6 +132,21 @@ using UnityEngine;
             if (rt_Input)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+        }
+        
+        private void HandleQuickSlotInput()
+        {
+            inputActions.ChangeWeapon.ChangeWeapon1.performed += i => changeWeapon1_input = true;
+            inputActions.ChangeWeapon.ChangeWeapon2.performed += i => changeWeapon2_input = true;
+            
+            if (changeWeapon1_input)
+            {
+                playerInventory.ChangeRightWeapon();
+
+            }else if (changeWeapon2_input)
+            {
+                playerInventory.ChangeLeftWeapon();
             }
         }
     }

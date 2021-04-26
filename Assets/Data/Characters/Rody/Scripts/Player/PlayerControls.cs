@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Data/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
@@ -92,9 +92,64 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""LeftStick Movement"",
+                    ""id"": ""6aa576ec-9585-4bce-ba4c-77d28193b9ba"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""da9b7253-5f25-4ae9-97e7-34251cc7beea"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""cf01dbd0-187e-4a82-8f65-11c106a0bd24"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3dd39a0e-31b0-4831-9849-67301cf52469"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0a01a6b1-0a15-4674-955d-5748ba3f835a"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""43fee56f-0e8d-44cd-bdc5-5a7b7eee1ae3"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""path"": ""<XInputController>/rightStick"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
                     ""groups"": """",
@@ -148,7 +203,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""13db4260-22f2-471d-a596-08a1560712cf"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -180,12 +235,102 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ce43bf53-0492-4066-983b-e19e7b1316d4"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d21b3fb4-f169-4704-a557-349414bc1b3f"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef140981-624e-415a-832e-4c6de6286858"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Change Weapon"",
+            ""id"": ""9e609bde-7e8f-418d-8c19-b7b6a2a5df80"",
+            ""actions"": [
+                {
+                    ""name"": ""ChangeWeapon1"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc6ce741-8c17-4802-88c7-a3065d7ad3bd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeWeapon2"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f9ac73-759b-4e6e-9ade-8699b88fa851"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""40451652-a841-4ee9-b565-b7e2d79fd00d"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""822ffe51-bf78-4f45-96b9-e8f8121c01bf"",
+                    ""path"": ""<XInputController>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""011c6f60-ddc7-4c0f-8931-609707bcc440"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30677d6b-aea9-4758-8de1-a10b022f9e8b"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -203,6 +348,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
         m_PlayerActions_RB = m_PlayerActions.FindAction("RB", throwIfNotFound: true);
         m_PlayerActions_RT = m_PlayerActions.FindAction("RT", throwIfNotFound: true);
+        // Change Weapon
+        m_ChangeWeapon = asset.FindActionMap("Change Weapon", throwIfNotFound: true);
+        m_ChangeWeapon_ChangeWeapon1 = m_ChangeWeapon.FindAction("ChangeWeapon1", throwIfNotFound: true);
+        m_ChangeWeapon_ChangeWeapon2 = m_ChangeWeapon.FindAction("ChangeWeapon2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -338,6 +487,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // Change Weapon
+    private readonly InputActionMap m_ChangeWeapon;
+    private IChangeWeaponActions m_ChangeWeaponActionsCallbackInterface;
+    private readonly InputAction m_ChangeWeapon_ChangeWeapon1;
+    private readonly InputAction m_ChangeWeapon_ChangeWeapon2;
+    public struct ChangeWeaponActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ChangeWeaponActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ChangeWeapon1 => m_Wrapper.m_ChangeWeapon_ChangeWeapon1;
+        public InputAction @ChangeWeapon2 => m_Wrapper.m_ChangeWeapon_ChangeWeapon2;
+        public InputActionMap Get() { return m_Wrapper.m_ChangeWeapon; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ChangeWeaponActions set) { return set.Get(); }
+        public void SetCallbacks(IChangeWeaponActions instance)
+        {
+            if (m_Wrapper.m_ChangeWeaponActionsCallbackInterface != null)
+            {
+                @ChangeWeapon1.started -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon1;
+                @ChangeWeapon1.performed -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon1;
+                @ChangeWeapon1.canceled -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon1;
+                @ChangeWeapon2.started -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon2;
+                @ChangeWeapon2.performed -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon2;
+                @ChangeWeapon2.canceled -= m_Wrapper.m_ChangeWeaponActionsCallbackInterface.OnChangeWeapon2;
+            }
+            m_Wrapper.m_ChangeWeaponActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ChangeWeapon1.started += instance.OnChangeWeapon1;
+                @ChangeWeapon1.performed += instance.OnChangeWeapon1;
+                @ChangeWeapon1.canceled += instance.OnChangeWeapon1;
+                @ChangeWeapon2.started += instance.OnChangeWeapon2;
+                @ChangeWeapon2.performed += instance.OnChangeWeapon2;
+                @ChangeWeapon2.canceled += instance.OnChangeWeapon2;
+            }
+        }
+    }
+    public ChangeWeaponActions @ChangeWeapon => new ChangeWeaponActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -348,5 +538,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnRoll(InputAction.CallbackContext context);
         void OnRB(InputAction.CallbackContext context);
         void OnRT(InputAction.CallbackContext context);
+    }
+    public interface IChangeWeaponActions
+    {
+        void OnChangeWeapon1(InputAction.CallbackContext context);
+        void OnChangeWeapon2(InputAction.CallbackContext context);
     }
 }

@@ -12,9 +12,13 @@ using UnityEngine;
 
         DamageCollider leftHandDamageCollider; //colliders para las manos/armas
         DamageCollider rightHandDamageCollider;
+        
+        Animator animator;
 
         private void Awake()
         {
+            animator = GetComponent<Animator>();
+            
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>(); //array for weapon slots
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots) //bucle que determina que arma va en la L o en la R
             {
@@ -36,11 +40,32 @@ using UnityEngine;
             {
                 leftHandSlot.LoadWeapomodel(weaponItem); //llamamos a la funcion de la clase WeaponHolderSlot.cs para cargar 
                 LoadLeftWeaponDamageCollider(); //metodo que anyade el collider al left hand
+                
+                #region Handle Left  Weapon Idle Animations
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weaponItem.left_hand_idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Left Arm emty", 0.2f);
+                }
+                #endregion
             }
             else //si esta en la derecha
             {
                 rightHandSlot.LoadWeapomodel(weaponItem); //cargar modelo arma
                 LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
+                #region Handle Right Weapon Idle Animations
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Right Arm emty", 0.2f);
+                }
+                #endregion
             }
         }
 
