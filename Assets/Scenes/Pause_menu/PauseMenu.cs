@@ -11,6 +11,13 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject barraMonedas;
+
+    public GameObject barraVida;
+
+    public GameObject canvasLoading;
+
+
     private void Start()
     {
         GameIsPaused = false;
@@ -34,6 +41,9 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        barraMonedas.SetActive(true);
+        barraVida.SetActive(true);
+        canvasLoading.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -41,6 +51,9 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
+        barraMonedas.SetActive(false);
+        barraVida.SetActive(false);
+        canvasLoading.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
