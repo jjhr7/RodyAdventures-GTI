@@ -106,7 +106,6 @@ namespace SG
             if (other.tag.Equals("Player"))
             {
                 targeteado = true;
-                Debug.Log("Ha visto al jugador");
             }
         }
 
@@ -116,7 +115,6 @@ namespace SG
             if (other.tag.Equals("Player"))
             {
                 targeteado = false;
-                Debug.Log("No ha visto al jugador");
             }
         }
 
