@@ -25,6 +25,7 @@ using UnityEngine;
         public bool isSprinting; //bool , true sprint, false no sprint
         public bool isInAir; //bool para saber si esta en el aire
         public bool isGrounded; //bool para saber si esta en el suelo
+        public bool canDoCombo;
 
         private void Awake()
         {
@@ -44,6 +45,7 @@ using UnityEngine;
         {
             float delta = Time.deltaTime;
             isInteracting = anim.GetBool("isInteracting");
+            canDoCombo = anim.GetBool("canDoCombo");
 
             inputHandler.TickInput(delta); // -> primeroo se leen los imput que se utilizan luego los movimientos....
             playerLocomotion.HandleRollingAndSprinting(delta); //IMPORTANTE -> SPRINT y JUMP ACA.
