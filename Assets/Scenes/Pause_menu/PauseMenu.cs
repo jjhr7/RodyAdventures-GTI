@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -42,6 +43,18 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void LoadInventario()
+    {
+        Debug.Log("Load menu funciona");
+        SceneManager.LoadScene("Inventario");
+    }
+
+    public void quitMenu()
+    {
+        Debug.Log("Quit menu funciona");
+        SceneManager.LoadScene("Main_menu");
     }
 }
 
