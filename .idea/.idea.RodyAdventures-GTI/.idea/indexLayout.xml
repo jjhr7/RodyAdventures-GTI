@@ -24,6 +24,9 @@
       <Path>.idea</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>MonoBleedingEdge</Path>
+      <Path>Rody.app</Path>
+      <Path>RodyAdventures-GTI_Data</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>
