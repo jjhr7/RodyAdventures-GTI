@@ -28,12 +28,15 @@ using UnityEngine;
         public bool sprintflag;
         public bool comboFlag;
         public float rollInputTimer; // var que decide si hace roll o sprint.
-        
+        public bool jump_Input;//salto fijo
 
         PlayerControls inputActions; //para configurar los botones en que var tienen que guardarse
         PlayerAttacker playerAttacker; //para hacer ataques
         PlayerInventory playerInventory; //para al atacar usar el arma/utilizarla en la funcion de PlayerAttacker
         PlayerManager playerManager;
+
+        //para el salto
+        PlayerLocomotion playerLocomotion;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -43,7 +46,10 @@ using UnityEngine;
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
-        }
+            
+            playerLocomotion = GetComponent<PlayerLocomotion>();
+    
+        }  
 
 
 
@@ -54,7 +60,10 @@ using UnityEngine;
             {
                 inputActions = new PlayerControls();
                 inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
-                inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>(); 
+                inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+
+                //pra el salto estatico
+                inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
             }
 
             inputActions.Enable();
@@ -71,6 +80,7 @@ using UnityEngine;
             HandleRollInput(delta); // conf roll/sprinting
             HandleAttackInput(delta); //conf attacks
             HandleQuickSlotInput();
+            HandleJumpingInput();//salto estatico
         }
         private void MoveInput(float delta) //conf de movimiento
         {
@@ -147,6 +157,16 @@ using UnityEngine;
             }else if (changeWeapon2_input)
             {
                 playerInventory.ChangeLeftWeapon();
+            }
+        }
+        //salto estatico
+        private void HandleJumpingInput()
+        {
+            if (jump_Input)
+            {
+                jump_Input = false;
+                //playerLocomotion.HandleJump();
+                playerLocomotion.HandleJumping();
             }
         }
     }

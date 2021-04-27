@@ -47,6 +47,12 @@ using UnityEngine;
         float rotationSpeed= 10;
         [SerializeField] //make private variables visible
         float fallingSpeed = 45;
+        
+        //para el salto estatico
+        public bool isJumping;
+        [Header("Jump Speeds")]
+        public float jumpHeight = 3;
+        public float gravityIntensity = -15;
 
 
         void Start()
@@ -72,6 +78,8 @@ using UnityEngine;
 
         private void HandleRotation(float delta) 
         {
+            if (isJumping)
+                return;
             Vector3 targetDir = Vector3.zero; //variable vector(0,0,0)
             float moveOverride = inputHandler.moveAmount;
 
@@ -95,9 +103,11 @@ using UnityEngine;
         
         public void HandleMovement(float delta)
         {
+            if (isJumping)//salto estatico
+                return;
 
             if (inputHandler.rollflag) //si hace roll salirse de esta funcion
-                return;
+                    return;
 
             if (playerManager.isInteracting)
                 return;
@@ -219,7 +229,7 @@ using UnityEngine;
                 {
                     playerManager.isGrounded = false;
                 }
-                if (playerManager.isInAir == false) //si no esta en el aire
+                if (playerManager.isInAir == false && !isJumping) //si no esta en el aire
                 {
                     if(playerManager.isInteracting == false) // si no tiene ninguna interaccion
                     {
@@ -243,6 +253,21 @@ using UnityEngine;
                 {
                     myTransform.position = targetPosition;
                 }
+            }
+
+        }
+        //para el salto estatico
+        public void HandleJumping()
+        {
+            if (playerManager.isGrounded)
+            {
+                animatorHandler.anim.SetBool("isJumping", true);
+                animatorHandler.PlayTargetAnimation("Jump", false);
+
+                float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+                Vector3 playerVelocity = moveDirection;
+                playerVelocity.y = jumpingVelocity;
+                rigidbody.velocity = playerVelocity;
             }
         }
 

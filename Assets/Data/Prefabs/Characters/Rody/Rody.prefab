@@ -303,6 +303,7 @@ MonoBehaviour:
   sprintflag: 0
   comboFlag: 0
   rollInputTimer: 0
+  jump_Input: 0
 --- !u!114 &1299515273838533191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +329,9 @@ MonoBehaviour:
   sprintSpeed: 7
   rotationSpeed: 10
   fallingSpeed: 45
+  isJumping: 0
+  jumpHeight: 3
+  gravityIntensity: -15
 --- !u!114 &1299515273838533187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   canRotate: 1
+  bola: {fileID: 0}
+  rody: {fileID: 0}
 --- !u!114 &1299515273758096163
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,8 +19,12 @@ using UnityEngine;
         int vertical;
         int horizontal;
         public bool canRotate;
+    //Asignacion para el modo bola
+        public GameObject bola;
+        public GameObject rody;
+        bool sprintt;// variable para guardar la velocidad de sprint de modo normal
 
-        public void Initialize()
+    public void Initialize()
         {
             playerManager = GetComponentInParent<PlayerManager>();
             anim = GetComponent<Animator>();
@@ -35,11 +39,21 @@ using UnityEngine;
         {
             var v = ClampMovementDir(verticalMovement);
             var h = ClampMovementDir(horizontalMovement);
-
+            sprintt = isSprinting;
             if (isSprinting) //cuando es true
             {
                 v = 2; //aumenta su velocidad
                 h = horizontalMovement;
+                //para el modo bola
+                bola.gameObject.SetActive(true);
+
+                rody.gameObject.SetActive(false);
+            }
+            else//si no esta en modo bola
+            {
+                bola.gameObject.SetActive(false);
+
+                rody.gameObject.SetActive(true);
             }
 
             anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
@@ -76,9 +90,11 @@ using UnityEngine;
 
         public void PlayTargetAnimation(string targetAnim, bool isInteracting) 
         {
+            if (!sprintt) { //si esta en modo bola
             anim.applyRootMotion = isInteracting;
             anim.SetBool("isInteracting", isInteracting);
             anim.CrossFade(targetAnim, 0.2f);
+            }   
         }
 
         public void CanRotate()

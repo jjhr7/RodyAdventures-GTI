@@ -83,6 +83,10 @@ using UnityEngine;
             {
                 playerLocomotion.inAirTime = playerLocomotion.inAirTime + Time.deltaTime;    
             }
+            //para el salto
+            isInteracting = anim.GetBool("isInteracting");
+            playerLocomotion.isJumping = anim.GetBool("isJumping");
+            anim.SetBool("isGrounded", isGrounded);
         }
     }
 
