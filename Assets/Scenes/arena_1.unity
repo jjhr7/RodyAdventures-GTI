@@ -4856,11 +4856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1299515273838533191, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: sprintSpeed
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1299515273838533191, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: fallingSpeed
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1299515273838533191, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: movementSpeed
