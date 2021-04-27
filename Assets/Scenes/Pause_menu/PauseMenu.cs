@@ -17,6 +17,10 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject canvasLoading;
 
+    public GameObject minimapBorde;
+
+    public GameObject minimap;
+
 
     private void Start()
     {
@@ -44,6 +48,8 @@ public class PauseMenu : MonoBehaviour
         barraMonedas.SetActive(true);
         barraVida.SetActive(true);
         canvasLoading.SetActive(true);
+        minimap.SetActive(true);
+        minimapBorde.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -54,6 +60,8 @@ public class PauseMenu : MonoBehaviour
         barraMonedas.SetActive(false);
         barraVida.SetActive(false);
         canvasLoading.SetActive(false);
+        minimap.SetActive(false);
+        minimapBorde.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
