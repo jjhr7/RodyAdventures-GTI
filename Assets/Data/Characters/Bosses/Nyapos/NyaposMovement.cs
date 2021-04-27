@@ -177,7 +177,7 @@ public class NyaposMovement : MonoBehaviour
                             }
                             if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 60f)
                             {
-                                cuerpoYbrazos.Rotate(direccion * -0.1f);
+                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/60);
                             }
                             else
                             {

@@ -284,7 +284,7 @@ MonoBehaviour:
   cuerpo: {fileID: 2842280168504374777}
   cuerpoYbrazos: {fileID: 3941830649829535613}
   direccion: {x: 0, y: -1, z: 0}
-  MoveSpeed: 7
+  MoveSpeed: 20
   damage: 30
   colliderBrazo: {fileID: 1772194762655903669}
   colliderCuerpo: {fileID: 5632550992756604034}
