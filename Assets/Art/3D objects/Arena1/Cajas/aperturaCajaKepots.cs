@@ -6,7 +6,7 @@ public class aperturaCajaKepots : MonoBehaviour
 {
     EnemyStats stats;
     public int valor = 10;
-    
+    public Transform coin;
     PlayerStats playerStats;
     GameObject[] player;
     private GameObject myplayer;
@@ -28,7 +28,16 @@ public class aperturaCajaKepots : MonoBehaviour
     {
         if (stats.recibiendoDanyo)
         {
-            playerStats.TakeMoney(valor);
+
+            for (int i=0; i < 19; i++)
+            {
+
+                Vector2 r = Random.insideUnitCircle * 3;
+                Vector3 tras = transform.position + new Vector3(r.x, Random.Range(0, 3), r.y);
+                Instantiate(coin, tras, this.transform.rotation);
+
+            }
+            //playerStats.TakeMoney(valor);
             Destroy(gameObject);
         }
     }

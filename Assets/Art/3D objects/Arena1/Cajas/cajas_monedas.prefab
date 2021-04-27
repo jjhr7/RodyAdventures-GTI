@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 10
+  coin: {fileID: 5719702657546246610, guid: dd1740fa176aa4c4dbb3c49a2aa8c904, type: 3}
 --- !u!114 &1837657441851224777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 10
+  coin: {fileID: 5719702657546246610, guid: dd1740fa176aa4c4dbb3c49a2aa8c904, type: 3}
 --- !u!114 &492518579754925090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 10
+  coin: {fileID: 5719702657546246610, guid: dd1740fa176aa4c4dbb3c49a2aa8c904, type: 3}
 --- !u!114 &6168149665712435300
 MonoBehaviour:
   m_ObjectHideFlags: 0

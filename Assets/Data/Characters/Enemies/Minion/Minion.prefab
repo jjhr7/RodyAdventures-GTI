@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bac01b5fa21cb641926af76dcb421a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Col: {fileID: 2278545461008397302}
   player: {fileID: 0}
   velocidadAtaque: 2
   vel: 1
@@ -43,19 +44,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8116180842863000089, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Radius
-      value: 1.6
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Radius
-      value: 0.72
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8116180843765013766, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_RootOrder
@@ -120,6 +121,11 @@ PrefabInstance:
 --- !u!1 &2278545461008397290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8116180843765013785, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+  m_PrefabInstance: {fileID: 8015688804168527603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &2278545461008397302 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
   m_PrefabInstance: {fileID: 8015688804168527603}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2278545459860347684 stripped
