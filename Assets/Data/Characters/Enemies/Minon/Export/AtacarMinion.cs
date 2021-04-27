@@ -59,7 +59,7 @@ namespace SG
             {
                 rend.material.SetColor("_Color", Color.white);
                 //Si el enemigo ve al jugador
-                if (targeteado)
+                if (Vector3.Distance(player.transform.position, transform.position)<10)
                 {
 
                     dist = Vector3.Distance(player.position, this.transform.position);

@@ -7,6 +7,9 @@ public class NyaposMovement : MonoBehaviour
 
     //Atributos de la clase
 
+
+
+    public SphereCollider Col;
     //El jugador
     public Transform target;
 
@@ -121,6 +124,7 @@ public class NyaposMovement : MonoBehaviour
             {
                 if (!segundaFase)
                 {
+                    nav.speed = MoveSpeed * 2;
                     caseSwitch = 6;
                 }
             }
@@ -128,6 +132,8 @@ public class NyaposMovement : MonoBehaviour
             switch (caseSwitch)
             {
                 case 0:
+                    Debug.Log("case 0");
+
                     colliderBrazo.enabled = true;
                     colliderCuerpo.enabled = true;
                     dist = Vector3.Distance(target.position, this.transform.position);
@@ -144,6 +150,11 @@ public class NyaposMovement : MonoBehaviour
                     }
                     break;
                 case 1:
+                    Debug.Log("case 1");
+                    if (segundaFase)
+                    {
+                        caseSwitch = 0;
+                    }
                     dist = Vector3.Distance(target.position, this.transform.position);
                     if (dist > 15)
                     {
@@ -190,6 +201,8 @@ public class NyaposMovement : MonoBehaviour
 
                     break;
                 case 2:
+                    Debug.Log("case 2");
+
                     colliderCuerpo.enabled = false;
                     nav.SetDestination(transform.position);
                     timer += Time.deltaTime;
@@ -222,6 +235,7 @@ public class NyaposMovement : MonoBehaviour
                     }
                     break;
                 case 3:
+                    Debug.Log("case 3");
                     colliderBrazo.enabled = false;
                     dist = Vector3.Distance(target.position, this.transform.position);
                     if (dist > 3)
@@ -235,6 +249,8 @@ public class NyaposMovement : MonoBehaviour
                     }
                     break;
                 case 4:
+                    Debug.Log("case 4");
+
                     timer += Time.deltaTime;
                     if (timer > 1.4)
                     {
@@ -284,6 +300,7 @@ public class NyaposMovement : MonoBehaviour
                     break;
 
                 case 5:
+                    Debug.Log("case 5");
 
                     //La torreta recarga si se le acaban las balas
                     if (currentBalas == 0)
@@ -321,6 +338,8 @@ public class NyaposMovement : MonoBehaviour
                     }
                     break;
                 case 6:
+                    Debug.Log("case 6");
+
                     cuerpoYbrazos.localEulerAngles = Vector3.zero;
                     colliderBrazo.enabled = false;
                     distIni = Vector3.Distance(posicionInicial.Position, this.transform.position);
@@ -328,7 +347,6 @@ public class NyaposMovement : MonoBehaviour
                     {
                         timer = 0;
                         nav.SetDestination(posicionInicial.Position);
-                        nav.speed = MoveSpeed * 2;
                     }
                     else
                     {
@@ -351,6 +369,8 @@ public class NyaposMovement : MonoBehaviour
                     }
                     break;
                 default:
+                    Debug.Log("case -1");
+
                     cuerpoYbrazos.localEulerAngles = Vector3.zero;
                     colliderBrazo.enabled = false;
                     distIni = Vector3.Distance(posicionInicial.Position, this.transform.position);
@@ -402,6 +422,7 @@ public class NyaposMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         empiezaLaPelea = true;
+        Col.radius = 1;
     }
 
 

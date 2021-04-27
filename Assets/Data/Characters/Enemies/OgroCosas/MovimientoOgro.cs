@@ -39,7 +39,7 @@ using UnityEngine;
             anim.SetBool("golpeado", stats.recibiendoDanyo);
             if (!stats.recibiendoDanyo)
             {
-                if (targeteado)
+                if (Vector3.Distance(player.transform.position, transform.position) < 35)
                 {
                     correEnemigo = true;
                     dist = Vector3.Distance(player.position, this.transform.position);

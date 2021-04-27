@@ -51,7 +51,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.42
+  m_Radius: 2.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2829436527483826561
 GameObject:
@@ -121,9 +121,9 @@ SphereCollider:
   m_GameObject: {fileID: 2829436527483826561}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &2829436527461876490
 BoxCollider:
@@ -717,7 +717,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.014201433
-  m_Height: 0.11353047
+  m_Height: 0.17
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!114 &151488489
