@@ -100,6 +100,7 @@ public class NyaposMovement : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(posicionInicial);
         if (empiezaLaPelea)
         {
             //Recibir Danyo
