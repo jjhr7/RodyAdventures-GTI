@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject minimap;
 
+    public GameObject controles;
+
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class PauseMenu : MonoBehaviour
         canvasLoading.SetActive(true);
         minimap.SetActive(true);
         minimapBorde.SetActive(true);
+        controles.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -62,14 +65,32 @@ public class PauseMenu : MonoBehaviour
         canvasLoading.SetActive(false);
         minimap.SetActive(false);
         minimapBorde.SetActive(false);
+        controles.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
 
-    public void LoadInventario()
+
+    public void verControles()
     {
-        Debug.Log("Load menu funciona");
-        SceneManager.LoadScene("Inventario");
+        pauseMenuUI.SetActive(false);
+        barraMonedas.SetActive(false);
+        barraVida.SetActive(false);
+        canvasLoading.SetActive(false);
+        minimap.SetActive(false);
+        minimapBorde.SetActive(false);
+        controles.SetActive(true);
+    }
+
+    public void volverPause()
+    {
+        pauseMenuUI.SetActive(true);
+        barraMonedas.SetActive(false);
+        barraVida.SetActive(false);
+        canvasLoading.SetActive(false);
+        minimap.SetActive(false);
+        minimapBorde.SetActive(false);
+        controles.SetActive(false);
     }
 
     public void quitMenu()
