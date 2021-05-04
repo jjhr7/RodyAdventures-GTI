@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    public class EnemyStats : MonoBehaviour
+    public class EnemyStats : CharacterManager
     {
 
         [Range(0, 500)]
@@ -15,6 +15,8 @@ using UnityEngine;
         PlayerStats PlayerStats;
         GameObject[] player;
         private GameObject myplayer;
+
+       
 
 
         Animator animator;

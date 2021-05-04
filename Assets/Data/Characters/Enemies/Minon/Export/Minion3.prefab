@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7039848663315649389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7206176666153282490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e738b410cdf537a4093bac40a0a6402f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  salud: 36
-  recibiendoDanyo: 0
-  pausa: 0.2
 --- !u!114 &1461806203374000650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bac01b5fa21cb641926af76dcb421a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Col: {fileID: 0}
   player: {fileID: 0}
   velocidadAtaque: 2
   vel: 2.5
@@ -34,6 +20,52 @@ MonoBehaviour:
   area: {fileID: 7206176664363601082}
   danyo: 15
   cuerpo: {fileID: 7206176665011192692}
+--- !u!114 &7039848663315649389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206176666153282490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e738b410cdf537a4093bac40a0a6402f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookOnTransform: {fileID: 5330134017764766691}
+  salud: 36
+  recibiendoDanyo: 0
+  pausa: 0.2
+--- !u!1 &7366862019273921974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5330134017764766691}
+  m_Layer: 0
+  m_Name: Lock On Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5330134017764766691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366862019273921974}
+  m_LocalRotation: {x: -0, y: -0.9271582, z: 0, w: 0.37467018}
+  m_LocalPosition: {x: 0, y: 0.015, z: 0}
+  m_LocalScale: {x: 0.66666657, y: 0.6666667, z: 0.66666657}
+  m_Children: []
+  m_Father: {fileID: 7206176666153282469}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1487045524752692899
 PrefabInstance:
   m_ObjectHideFlags: 0

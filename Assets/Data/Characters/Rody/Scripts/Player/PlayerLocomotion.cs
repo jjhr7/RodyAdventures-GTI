@@ -10,7 +10,7 @@ public class PlayerLocomotion : MonoBehaviour
     -------------------------------
     */
 
-
+    CameraHolder cameraHolder;
     PlayerManager playerManager;
     PlayerStats playerStats;
     Transform cameraObject;
@@ -56,6 +56,9 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Awake()
     {
+        //dejar esto en el awake si se cambia de lugar lo de abajo
+        cameraHolder = FindObjectOfType<CameraHolder>();
+
         playerManager = GetComponent<PlayerManager>();
         playerStats = GetComponent<PlayerStats>();
         rigidbody = GetComponent<Rigidbody>();
@@ -82,26 +85,63 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void HandleRotation(float delta)
     {
-        if (isJumping)
+        if (isJumping) //si esta saltando no rotar
             return;
-        Vector3 targetDir = Vector3.zero; //variable vector(0,0,0)
-        float moveOverride = inputHandler.moveAmount;
 
-        targetDir = cameraObject.forward * inputHandler.vertical;
-        targetDir += cameraObject.right * inputHandler.horizontal;
+        if (inputHandler.lockOnFlag) //si esta en modo enfoque
+        {
+            if (inputHandler.sprintflag || inputHandler.rollflag) //si esta en modo bola o roll
+            {
+                Vector3 targetDirection = Vector3.zero;
+                targetDirection = cameraHolder.cameraTransform.forward * inputHandler.vertical;
+                targetDirection += cameraHolder.cameraTransform.right * inputHandler.horizontal;
+                targetDirection.Normalize();
+                targetDirection.y = 0;
 
-        targetDir.Normalize();
-        targetDir.y = 0;
+                if (targetDirection == Vector3.zero)
+                {
+                    targetDirection = transform.forward;
+                }
 
-        if (targetDir == Vector3.zero)
-            targetDir = myTransform.forward;
+                Quaternion tr = Quaternion.LookRotation(targetDirection);
+                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
 
-        float rs = rotationSpeed;
+                transform.rotation = targetRotation;
+            }
+            else
+            {
+                Vector3 rotationDirection = moveDirection;
+                rotationDirection = cameraHolder.currentLockOnTarget.transform.position - transform.position;
+                rotationDirection.y = 0;
+                rotationDirection.Normalize();
+                Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+                transform.rotation = targetRotation;
+            }
+        }
+        else
+        {
+            
+            Vector3 targetDir = Vector3.zero; //variable vector(0,0,0)
+            float moveOverride = inputHandler.moveAmount;
 
-        Quaternion tr = Quaternion.LookRotation(targetDir); //quaternion -> rotation
-        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+            targetDir = cameraObject.forward * inputHandler.vertical;
+            targetDir += cameraObject.right * inputHandler.horizontal;
 
-        myTransform.rotation = targetRotation;
+            targetDir.Normalize();
+            targetDir.y = 0;
+
+            if (targetDir == Vector3.zero)
+                targetDir = myTransform.forward;
+
+            float rs = rotationSpeed;
+
+            Quaternion tr = Quaternion.LookRotation(targetDir); //quaternion -> rotation
+            Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+
+            myTransform.rotation = targetRotation;
+
+        }
 
     }
 
@@ -148,7 +188,18 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
         rigidbody.velocity = projectedVelocity;
 
-        animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+        //animaciones modo enfoque
+        if (inputHandler.lockOnFlag && inputHandler.sprintflag == false) { //SI ESTA EN MODO ENFOQUE y no esta en modo bola
+
+            animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
+        
+        } else { //sino
+            
+            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+        
+        }
+
+        
 
         if (animatorHandler.canRotate)
         {
