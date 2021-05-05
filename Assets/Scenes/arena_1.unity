@@ -3580,7 +3580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4036638057959164529, guid: ee984bd57f3af3b478195bc790129f4c, type: 3}
       propertyPath: salud
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee984bd57f3af3b478195bc790129f4c, type: 3}

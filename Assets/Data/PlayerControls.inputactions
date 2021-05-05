@@ -218,6 +218,74 @@
             ]
         },
         {
+            "name": "MotoControls",
+            "id": "7a62ddc9-50a0-4fb3-b6d1-58c84cbb883f",
+            "actions": [
+                {
+                    "name": "Jumping",
+                    "type": "Button",
+                    "id": "ad09e8c7-547b-47f9-9ef6-0694236d3b87",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Braking",
+                    "type": "Button",
+                    "id": "64e3d1af-329b-4fa7-b899-2ef83bf3fc9b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "277541c5-c32e-4899-bf70-e32896343281",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c738475-9b16-4e2d-a508-0d2b9c99d87f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4fbb3b5-1d43-4d9a-bd0c-727d104f9651",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Braking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f85d088-4eb4-4ec1-8e98-d86174b84724",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Braking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player Actions",
             "id": "79743d57-1b90-449f-82ba-3ad7023a2c73",
             "actions": [

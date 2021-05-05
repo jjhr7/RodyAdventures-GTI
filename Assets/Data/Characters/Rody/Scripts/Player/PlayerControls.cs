@@ -231,6 +231,74 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ]
         },
         {
+            ""name"": ""MotoControls"",
+            ""id"": ""7a62ddc9-50a0-4fb3-b6d1-58c84cbb883f"",
+            ""actions"": [
+                {
+                    ""name"": ""Jumping"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad09e8c7-547b-47f9-9ef6-0694236d3b87"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Braking"",
+                    ""type"": ""Button"",
+                    ""id"": ""64e3d1af-329b-4fa7-b899-2ef83bf3fc9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""277541c5-c32e-4899-bf70-e32896343281"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jumping"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c738475-9b16-4e2d-a508-0d2b9c99d87f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jumping"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4fbb3b5-1d43-4d9a-bd0c-727d104f9651"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Braking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f85d088-4eb4-4ec1-8e98-d86174b84724"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Braking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Player Actions"",
             ""id"": ""79743d57-1b90-449f-82ba-3ad7023a2c73"",
             ""actions"": [
@@ -465,6 +533,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
         m_PlayerMovement_LockOnTargetLeft = m_PlayerMovement.FindAction("Lock On Target Left", throwIfNotFound: true);
         m_PlayerMovement_LockOnTargetRight = m_PlayerMovement.FindAction("Lock On Target Right", throwIfNotFound: true);
+        // MotoControls
+        m_MotoControls = asset.FindActionMap("MotoControls", throwIfNotFound: true);
+        m_MotoControls_Jumping = m_MotoControls.FindAction("Jumping", throwIfNotFound: true);
+        m_MotoControls_Braking = m_MotoControls.FindAction("Braking", throwIfNotFound: true);
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
@@ -579,6 +651,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
 
+    // MotoControls
+    private readonly InputActionMap m_MotoControls;
+    private IMotoControlsActions m_MotoControlsActionsCallbackInterface;
+    private readonly InputAction m_MotoControls_Jumping;
+    private readonly InputAction m_MotoControls_Braking;
+    public struct MotoControlsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MotoControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jumping => m_Wrapper.m_MotoControls_Jumping;
+        public InputAction @Braking => m_Wrapper.m_MotoControls_Braking;
+        public InputActionMap Get() { return m_Wrapper.m_MotoControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MotoControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IMotoControlsActions instance)
+        {
+            if (m_Wrapper.m_MotoControlsActionsCallbackInterface != null)
+            {
+                @Jumping.started -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnJumping;
+                @Jumping.performed -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnJumping;
+                @Jumping.canceled -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnJumping;
+                @Braking.started -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnBraking;
+                @Braking.performed -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnBraking;
+                @Braking.canceled -= m_Wrapper.m_MotoControlsActionsCallbackInterface.OnBraking;
+            }
+            m_Wrapper.m_MotoControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Jumping.started += instance.OnJumping;
+                @Jumping.performed += instance.OnJumping;
+                @Jumping.canceled += instance.OnJumping;
+                @Braking.started += instance.OnBraking;
+                @Braking.performed += instance.OnBraking;
+                @Braking.canceled += instance.OnBraking;
+            }
+        }
+    }
+    public MotoControlsActions @MotoControls => new MotoControlsActions(this);
+
     // Player Actions
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
@@ -690,6 +803,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnCamera(InputAction.CallbackContext context);
         void OnLockOnTargetLeft(InputAction.CallbackContext context);
         void OnLockOnTargetRight(InputAction.CallbackContext context);
+    }
+    public interface IMotoControlsActions
+    {
+        void OnJumping(InputAction.CallbackContext context);
+        void OnBraking(InputAction.CallbackContext context);
     }
     public interface IPlayerActionsActions
     {

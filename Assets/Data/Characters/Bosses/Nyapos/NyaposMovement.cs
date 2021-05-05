@@ -57,7 +57,6 @@ public class NyaposMovement : MonoBehaviour
     public GameObject cuerpoGO;
 
     DamageColliderNyapos dmColliderBrazo;
-    DamageColliderNyapos dmColliderCuerpo;
 
     private bool girado;
     private int currentBalas;
@@ -65,33 +64,32 @@ public class NyaposMovement : MonoBehaviour
 
     bool segundaFase;
     private bool empiezaLaPelea;
+    public Animator anim;
+
+
 
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
-        rend = cuerpo.gameObject.GetComponent<Renderer>();
-        rend.material.shader = Shader.Find("Specular");
-        rend.material.SetColor("_Color", Color.green);
+        //rend = cuerpo.gameObject.GetComponent<Renderer>();
+        //rend.material.shader = Shader.Find("Specular");
+        //rend.material.SetColor("_Color", Color.green);
 
         empiezaLaPelea = false;
-
-        //Creamos un objeto PositionData para guardar la pos inicial del murcíélago y que no varíe
+        //Creamos un objeto PositionData para guardar la pos inicial del Nyapos y que no varíe
         posicionInicial = new PositionData(transform.position, transform.rotation);
 
 
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        caseSwitch = 1;
+        caseSwitch = 0;
         currentBalas = maxbalas;
         colliderBrazo = brazoFuerte.GetComponent<Collider>();
         colliderBrazo.enabled = false;
         dmColliderBrazo= brazoFuerte.GetComponent<DamageColliderNyapos>();
-        dmColliderCuerpo = cuerpoGO.GetComponent<DamageColliderNyapos>();
+
         dmColliderBrazo.damage = damage;
         dmColliderBrazo.player = target;
         dmColliderBrazo.haspegado = false;
-        dmColliderCuerpo.damage = damage;
-        dmColliderCuerpo.player = target;
-        dmColliderCuerpo.haspegado = false;
         posicionActual = new PositionData(transform.position, transform.rotation);
 
         segundaFase = false;
@@ -106,22 +104,22 @@ public class NyaposMovement : MonoBehaviour
             //Recibir Danyo
             if (stats.recibiendoDanyo)
             {
-                rend.material.SetColor("_Color", Color.magenta);
+                //rend.material.SetColor("_Color", Color.magenta);
             }
             else
             {
                 if (segundaFase)
                 {
-                    rend.material.SetColor("_Color", Color.red);
+                    //rend.material.SetColor("_Color", Color.red);
                 }
                 else
                 {
-                    rend.material.SetColor("_Color", Color.green);
+                    //rend.material.SetColor("_Color", Color.green);
                 }
             }
 
 
-            if (stats.Salud < 100)
+            if (stats.Salud < 1)
             {
                 if (!segundaFase)
                 {
@@ -134,20 +132,21 @@ public class NyaposMovement : MonoBehaviour
             {
                 case 0:
                     Debug.Log("case 0");
-
                     colliderBrazo.enabled = true;
                     colliderCuerpo.enabled = true;
                     dist = Vector3.Distance(target.position, this.transform.position);
-                    if (dist > 5)
+                    if (dist > 8)
                     {
+                        
                         nav.SetDestination(target.position);
                         nav.speed = MoveSpeed;
                     }
                     else
                     {
+                        timer = 0;
+                        anim.SetBool("Corriendo", false);
                         dmColliderBrazo.haspegado = false;
-                        dmColliderCuerpo.haspegado = false;
-                        caseSwitch = Random.Range(2, 4);
+                        caseSwitch = Random.Range(2,4);
                     }
                     break;
                 case 1:
@@ -169,7 +168,7 @@ public class NyaposMovement : MonoBehaviour
 
                             if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 340f)
                             {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed);
+                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/100);
                             }
                             else
                             {
@@ -189,7 +188,7 @@ public class NyaposMovement : MonoBehaviour
                             }
                             if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 60f)
                             {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/60);
+                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/300);
                             }
                             else
                             {
@@ -207,51 +206,45 @@ public class NyaposMovement : MonoBehaviour
                     colliderCuerpo.enabled = false;
                     nav.SetDestination(transform.position);
                     timer += Time.deltaTime;
-                    if (timer > 1)
-                    {
-                        if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 30f)
+                    anim.SetBool("Pegando", true);
+                    if (timer>5)
                         {
-                            if (segundaFase)
-                            {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed / 4);
-                            }
-                            else
-                            {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed / 2);
-                            }
+
+                        cuerpoYbrazos.localEulerAngles = Vector3.zero;
+                        if (Random.Range(0, 2) > 0)
+                        {
+                            anim.SetBool("Pegando", false);
+                            caseSwitch = -1;
                         }
                         else
                         {
-                            cuerpoYbrazos.localEulerAngles = Vector3.zero;
-                            if (Random.Range(0, 2) > 0)
-                            {
-                                caseSwitch = -1;
-                            }
-                            else
-                            {
-                                caseSwitch = 0;
-                            }
-                            timer = 0.0;
+                            anim.SetBool("Pegando", false);
+                            caseSwitch = 0;
                         }
+                        timer = 0.0;
                     }
                     break;
                 case 3:
                     Debug.Log("case 3");
-                    colliderBrazo.enabled = false;
+                    colliderBrazo.enabled = true;
                     dist = Vector3.Distance(target.position, this.transform.position);
-                    if (dist > 3)
+                    timer += Time.deltaTime;
+                    if (dist > 3 || timer<3)
                     {
+                        anim.SetBool("Pegando", true);
                         nav.SetDestination(target.position);
                         nav.speed = MoveSpeed;
                     }
                     else
                     {
+                        colliderBrazo.enabled = false;
+                        timer = 0;
                         caseSwitch = 4;
                     }
                     break;
                 case 4:
                     Debug.Log("case 4");
-
+                    anim.SetBool("Pegando", false);
                     timer += Time.deltaTime;
                     if (timer > 1.4)
                     {
@@ -275,7 +268,6 @@ public class NyaposMovement : MonoBehaviour
                             }
                             timer = 0;
                             girado = false;
-                            colliderCuerpo.enabled = false;
                         }
                         if (timer > 2)
                         {
@@ -289,7 +281,6 @@ public class NyaposMovement : MonoBehaviour
                             }
                             timer = 0;
                             girado = false;
-                            colliderCuerpo.enabled = false;
                         }
                     }
                     else
@@ -374,17 +365,13 @@ public class NyaposMovement : MonoBehaviour
 
                     cuerpoYbrazos.localEulerAngles = Vector3.zero;
                     colliderBrazo.enabled = false;
+                    timer += Time.deltaTime;
                     distIni = Vector3.Distance(posicionInicial.Position, this.transform.position);
-                    if (distIni > 1)
+                    nav.SetDestination(posicionInicial.Position);
+                    nav.speed = MoveSpeed * 2;
+                    if (timer > 1.5)
                     {
-                        nav.SetDestination(posicionInicial.Position);
-                        nav.speed = MoveSpeed * 2;
-                    }
-                    else
-                    {
-
-                        timer += Time.deltaTime;
-                        if (timer < 1.5)
+                        if (timer < 2)
                         {
                             transform.rotation = posicionInicial.Rotation;
                         }
@@ -395,10 +382,12 @@ public class NyaposMovement : MonoBehaviour
                             {
                                 if (Random.Range(0, 2) > 0)
                                 {
+                                    timer = 0;
                                     caseSwitch = 1;
                                 }
                                 else
                                 {
+                                    timer = 0;
                                     caseSwitch = 5;
                                 }
                             }
