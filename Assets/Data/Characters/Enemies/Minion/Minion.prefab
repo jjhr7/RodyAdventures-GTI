@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2278545461008397301}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1325630480
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e738b410cdf537a4093bac40a0a6402f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookOnTransform: {fileID: 2478736098071631954}
   salud: 12
   recibiendoDanyo: 0
   pausa: 0.2
-  lookOnTransform: {fileID: 2478736098071631954}
 --- !u!114 &8501654738794859895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +73,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6270710146492461412, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f351f17cbecfb274e954a5fba0c53bed, type: 2}
+    - target: {fileID: 6270710146492461416, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87c5deda91be54d42b98f8499de4a36a, type: 2}
+    - target: {fileID: 6270710146492461420, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ab84085b1337764b854ffe47a369b3f, type: 2}
+    - target: {fileID: 6270710146492461422, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cc80fcc75a7be445b5082884ab9a7b2, type: 2}
+    - target: {fileID: 6270710146494362498, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270710146494362498, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270710146494362498, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270710146494362502, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270710146494362502, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270710146494362502, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8116180842863000089, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Radius
       value: 1.8
@@ -140,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 8116180843765013767, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: cuerpo
       value: 
-      objectReference: {fileID: 2278545459860347684}
+      objectReference: {fileID: 0}
     - target: {fileID: 8116180843765013785, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Name
       value: Minion
@@ -162,10 +202,5 @@ Transform:
 --- !u!135 &2278545461008397302 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
-  m_PrefabInstance: {fileID: 8015688804168527603}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2278545459860347684 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8116180842617009623, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
   m_PrefabInstance: {fileID: 8015688804168527603}
   m_PrefabAsset: {fileID: 0}
