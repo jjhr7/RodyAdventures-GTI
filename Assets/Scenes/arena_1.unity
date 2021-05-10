@@ -2732,7 +2732,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraMinimap (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5416087450715630039, guid: fda8838cb5f754a4ba59de45b051ccc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fda8838cb5f754a4ba59de45b051ccc1, type: 3}
 --- !u!1 &617715318 stripped
 GameObject:
@@ -6271,6 +6272,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 768118301}
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: leftWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
+    - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: rightWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
+    - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: unarmedWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 666193f846831614ea7be160babeb747, type: 2}
@@ -6285,7 +6294,7 @@ PrefabInstance:
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: weaponInLeftHandSlots.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 2e34e3064b5f741448af37c49e8e9adc, type: 2}
+      objectReference: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: weaponInLeftHandSlots.Array.data[1]
       value: 
@@ -6293,7 +6302,7 @@ PrefabInstance:
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: weaponInRightHandSlots.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 2e34e3064b5f741448af37c49e8e9adc, type: 2}
+      objectReference: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: weaponInRightHandSlots.Array.data[1]
       value: 
