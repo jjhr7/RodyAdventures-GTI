@@ -33,8 +33,6 @@ namespace SG
 
         public int danyo;
 
-        Renderer rend;
-
         public Transform cuerpo;
 
 
@@ -48,17 +46,12 @@ namespace SG
             targeteado = false;
 
             ps = player.GetComponent<PlayerStats>();
-
-            rend = cuerpo.gameObject.GetComponent<Renderer>();
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_Color", Color.white);
         }
 
         void Update()
         {
             if (!stats.recibiendoDanyo)
             {
-                rend.material.SetColor("_Color", Color.white);
                 //Si el enemigo ve al jugador
                 if (targeteado)
                 {
@@ -95,7 +88,7 @@ namespace SG
             }
             else
             {
-                rend.material.SetColor("_Color", Color.red);
+
 
             }
         }

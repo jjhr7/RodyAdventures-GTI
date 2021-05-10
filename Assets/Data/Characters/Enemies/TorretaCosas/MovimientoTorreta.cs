@@ -30,7 +30,6 @@ using UnityEngine;
 
         //Script de salud + renderer + cuerpo para cambiarle de color al recibir danyo
         EnemyStats stats;
-        Renderer rend;
         public Transform cuerpo;
 
         // Start is called before the first frame update
@@ -39,9 +38,6 @@ using UnityEngine;
             //Inicializamos variables y Gameobjects
             balas = cargador;
             stats = turret.gameObject.GetComponent<EnemyStats>();
-            rend = cuerpo.gameObject.GetComponent<Renderer>();
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_Color", Color.white);
         }
 
         // Update is called once per frame
@@ -50,14 +46,17 @@ using UnityEngine;
             if (stats.recibiendoDanyo)
             {
                 //Animación y sonido de recibir danyo
-                rend.material.SetColor("_Color", Color.red);
                 FindObjectOfType<AudioManager>().Play("deathTorreta");
 
             }
             else
             {
-                rend.material.SetColor("_Color", Color.white);
             }
+
+            if(Vector3.Distance(transform.position, target.position) < 45)
+        {
+
+        }
         }
 
         void OnTriggerStay(Collider other)
