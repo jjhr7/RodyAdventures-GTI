@@ -7,6 +7,8 @@ namespace SG
 {
     public class AtacarMinion : MonoBehaviour
     {
+        public SphereCollider Col;
+
         public Transform player;
 
         private NavMeshAgent nav;
@@ -31,8 +33,6 @@ namespace SG
 
         public int danyo;
 
-        Renderer rend;
-
         public Transform cuerpo;
 
 
@@ -46,18 +46,12 @@ namespace SG
             targeteado = false;
 
             ps = player.GetComponent<PlayerStats>();
-
-            rend = cuerpo.gameObject.GetComponent<Renderer>();
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_Color", Color.white);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (!stats.recibiendoDanyo)
             {
-                rend.material.SetColor("_Color", Color.white);
                 //Si el enemigo ve al jugador
                 if (targeteado)
                 {
@@ -92,11 +86,9 @@ namespace SG
                 }
 
             }
-            //si está recibiendo daño
             else
             {
-                rend.material.SetColor("_Color", Color.red);
-                FindObjectOfType<AudioManager>().Play("minionDanyo");
+
 
             }
         }
@@ -105,7 +97,9 @@ namespace SG
         {
             if (other.tag.Equals("Player"))
             {
+                Col.radius = 1;
                 targeteado = true;
+                Debug.Log("Ha visto al jugador");
             }
         }
 
@@ -114,9 +108,9 @@ namespace SG
         {
             if (other.tag.Equals("Player"))
             {
-                targeteado = false;
+                targeteado = true;
+                Debug.Log("No ha visto al jugador");
             }
         }
-
     }
 }

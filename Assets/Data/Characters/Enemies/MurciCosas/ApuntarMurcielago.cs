@@ -33,7 +33,6 @@ using UnityEngine;
 
         //Script de salud + renderer + esfera del murciélago para cambiarle de color al recibir danyo
         EnemyStats stats;
-        Renderer rend;
         public Transform cuerpo;
 
 
@@ -42,9 +41,6 @@ using UnityEngine;
 
             //Inicializamos valores y scripts
             stats = bat.gameObject.GetComponent<EnemyStats>();
-            rend = cuerpo.gameObject.GetComponent<Renderer>();
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_Color", Color.white);
             targeteado = false;
 
             //Creamos un objeto PositionData para guardar la pos inicial del murcíélago y que no varíe
@@ -59,13 +55,12 @@ using UnityEngine;
             //Ponemos roja la esfera si recibe danyo y activamos el audio
             if (stats.recibiendoDanyo)
             {
-                rend.material.SetColor("_Color", Color.red);
 
                 FindObjectOfType<AudioManager>().Play("deathEscupe");
             }
             else
             {
-                rend.material.SetColor("_Color", Color.white);
+
             }
 
 
