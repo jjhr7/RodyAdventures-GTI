@@ -1428,6 +1428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rodytexturas
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b773499686d4841b232c43573cfe2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4525449429480767757, guid: 67b773499686d4841b232c43573cfe2a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
