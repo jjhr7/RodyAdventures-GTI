@@ -22,6 +22,8 @@ public class NyaposMovement : MonoBehaviour
 
     //Cadencia de disparo y contador para llegar a ésta
     double timer = 0.0;
+    double timerBalas = 0.0;
+
     public double cadencia = 2;
 
     //Script de salud + renderer + cuerpo para cambiarle de color al recibir danyo
@@ -57,6 +59,8 @@ public class NyaposMovement : MonoBehaviour
     public GameObject cuerpoGO;
 
     DamageColliderNyapos dmColliderBrazo;
+    DamageColliderNyapos dmColliderCuerpo;
+
 
     private bool girado;
     private int currentBalas;
@@ -66,39 +70,41 @@ public class NyaposMovement : MonoBehaviour
     private bool empiezaLaPelea;
     public Animator anim;
 
+    Rigidbody rb;
 
 
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
-        //rend = cuerpo.gameObject.GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("Specular");
-        //rend.material.SetColor("_Color", Color.green);
-
         empiezaLaPelea = false;
         //Creamos un objeto PositionData para guardar la pos inicial del Nyapos y que no varíe
         posicionInicial = new PositionData(transform.position, transform.rotation);
 
-
+        rb = GetComponent<Rigidbody>();
+        timerBalas = 0;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        caseSwitch = 0;
+        caseSwitch = 2;
         currentBalas = maxbalas;
         colliderBrazo = brazoFuerte.GetComponent<Collider>();
         colliderBrazo.enabled = false;
-        dmColliderBrazo= brazoFuerte.GetComponent<DamageColliderNyapos>();
+        dmColliderCuerpo=cuerpoGO.GetComponent<DamageColliderNyapos>();
+
+        dmColliderBrazo = brazoFuerte.GetComponent<DamageColliderNyapos>();
 
         dmColliderBrazo.damage = damage;
         dmColliderBrazo.player = target;
         dmColliderBrazo.haspegado = false;
+
+        dmColliderCuerpo.damage = damage;
+        dmColliderCuerpo.player = target;
+        dmColliderCuerpo.haspegado = false;
         posicionActual = new PositionData(transform.position, transform.rotation);
 
         segundaFase = false;
     }
 
-
-    void Update()
+    void FixedUpdate()
     {
-        Debug.Log(posicionInicial);
         if (empiezaLaPelea)
         {
             //Recibir Danyo
@@ -119,7 +125,7 @@ public class NyaposMovement : MonoBehaviour
             }
 
 
-            if (stats.Salud < 1)
+            if (stats.Salud < 100)
             {
                 if (!segundaFase)
                 {
@@ -132,13 +138,13 @@ public class NyaposMovement : MonoBehaviour
             {
                 case 0:
                     Debug.Log("case 0");
-                    colliderBrazo.enabled = true;
-                    colliderCuerpo.enabled = true;
-                    dist = Vector3.Distance(target.position, this.transform.position);
-                    if (dist > 8)
+                    colliderBrazo.enabled = false;
+                    colliderCuerpo.enabled = false;
+                    dist = Vector3.Distance(posicionInicial.Position, transform.position);
+                    Debug.Log(dist);
+                    if (dist > 5)
                     {
-                        
-                        nav.SetDestination(target.position);
+                        nav.SetDestination(posicionInicial.Position);
                         nav.speed = MoveSpeed;
                     }
                     else
@@ -156,143 +162,113 @@ public class NyaposMovement : MonoBehaviour
                         caseSwitch = 0;
                     }
                     dist = Vector3.Distance(target.position, this.transform.position);
-                    if (dist > 15)
+                    if (dist > 60)
                     {
                         nav.SetDestination(target.position);
                         nav.speed = MoveSpeed;
                     }
                     else
                     {
-                        if (!girado)
-                        {
-
-                            if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 340f)
-                            {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/100);
-                            }
-                            else
-                            {
-                                girado = true;
-                            }
-                        }
-                        else
-                        {
+                        
                             nav.SetDestination(transform.position);
                             colliderBrazo.enabled = false;
+                            timerBalas += Time.deltaTime;
                             timer += Time.deltaTime;
-                            if (timer > cadencia)
+                            if (timerBalas > cadencia)
                             {
                                 Instantiate(bulletMini, bulletSpawn.position, bulletSpawn.rotation);
-                                timer = 0.0;
+                                timerBalas = 0.0;
                                 FindObjectOfType<AudioManager>().Play("shootTorreta");
                             }
-                            if (Mathf.Round(cuerpoYbrazos.localEulerAngles.y) != 60f)
+                            if (timer<3.5)
                             {
-                                cuerpoYbrazos.Rotate(direccion * MoveSpeed/300);
+                            transform.Rotate(direccion * (MoveSpeed / 5) * Time.deltaTime);
                             }
                             else
                             {
-                                caseSwitch = 0;
+                                Debug.Log("CAMBIO");
+                                rb.rotation=Quaternion.identity;
+                                timer = 0;
+                                caseSwitch = 1;
                                 cuerpoYbrazos.localEulerAngles = Vector3.zero;
                             }
-                        }
-
                     }
 
                     break;
                 case 2:
                     Debug.Log("case 2");
+                    dmColliderBrazo.haspegado = false;
+                    colliderBrazo.enabled = true;
+                    dist = Vector3.Distance(target.position, this.transform.position);
+                    if (dist > 3)
+                    {
+                        anim.SetBool("Corriendo", true);
+                        nav.SetDestination(target.transform.position);
 
-                    colliderCuerpo.enabled = false;
-                    nav.SetDestination(transform.position);
-                    timer += Time.deltaTime;
-                    anim.SetBool("Pegando", true);
-                    if (timer>5)
+                    }else{
+                        timer += Time.deltaTime;
+                        anim.SetBool("Corriendo", false);
+                        anim.SetBool("Pegando", true);
+                        nav.SetDestination(transform.position);
+                        if (timer > 1.5)
                         {
+                            colliderBrazo.enabled = false;
+                            if (Random.Range(0, 2) > 0)
+                            {
+                                anim.SetBool("Pegando", false);
+                                caseSwitch = 3;
+                            }
+                            else
+                            {
+                                anim.SetBool("Pegando", false);
+                                caseSwitch = 0;
+                            }
+                            timer = 0.0;
+                        }
 
-                        cuerpoYbrazos.localEulerAngles = Vector3.zero;
+                    }
+                    
+                    break;
+                case 3:
+                    Debug.Log("case 3");
+                    colliderBrazo.enabled = false;
+                    colliderCuerpo.enabled = true;
+                    dmColliderCuerpo.haspegado = false;
+                    rb.isKinematic = false;
+                    rb.rotation = Quaternion.identity;
+                    caseSwitch = 4;
+                    timer = 0;
+                    nav.speed =MoveSpeed* 5;
+                    break;
+                case 4:
+                    Debug.Log(timer);
+                    anim.SetBool("Embistiendo", true);
+                    timer += Time.deltaTime;
+                    if (timer < 3)
+                    {
+                        nav.SetDestination(target.position);
+                    }
+                    else
+                    {
+                        nav.speed = MoveSpeed / 5;
+                        anim.SetBool("Embistiendo", false);
+                        colliderBrazo.enabled = false;
+                        timer = 0;
                         if (Random.Range(0, 2) > 0)
                         {
-                            anim.SetBool("Pegando", false);
                             caseSwitch = -1;
                         }
                         else
                         {
-                            anim.SetBool("Pegando", false);
                             caseSwitch = 0;
                         }
-                        timer = 0.0;
-                    }
-                    break;
-                case 3:
-                    Debug.Log("case 3");
-                    colliderBrazo.enabled = true;
-                    dist = Vector3.Distance(target.position, this.transform.position);
-                    timer += Time.deltaTime;
-                    if (dist > 3 || timer<3)
-                    {
-                        anim.SetBool("Pegando", true);
-                        nav.SetDestination(target.position);
-                        nav.speed = MoveSpeed;
-                    }
-                    else
-                    {
-                        colliderBrazo.enabled = false;
-                        timer = 0;
-                        caseSwitch = 4;
-                    }
-                    break;
-                case 4:
-                    Debug.Log("case 4");
-                    anim.SetBool("Pegando", false);
-                    timer += Time.deltaTime;
-                    if (timer > 1.4)
-                    {
-                        if (!girado)
-                        {
-                            posicionActual.Position.z -= 0f;
-                            girado = true;
-                        }
-                        nav.SetDestination(posicionActual.Position);
-                        nav.speed = MoveSpeed *200;
-                        if (Vector3.Distance(transform.position, posicionActual.Position) < 1f)
-                        {
-
-                            if (Random.Range(0, 2) > 0)
-                            {
-                                caseSwitch = -1;
-                            }
-                            else
-                            {
-                                caseSwitch = 0;
-                            }
-                            timer = 0;
-                            girado = false;
-                        }
-                        if (timer > 2)
-                        {
-                            if (Random.Range(0, 2) > 0)
-                            {
-                                caseSwitch = -1;
-                            }
-                            else
-                            {
-                                caseSwitch = 0;
-                            }
-                            timer = 0;
-                            girado = false;
-                        }
-                    }
-                    else
-                    {
-                        girado = false;
-                        nav.SetDestination(transform.position);
-                        posicionActual.Position = target.localPosition;
                     }
                     break;
 
                 case 5:
                     Debug.Log("case 5");
+                    nav.SetDestination(transform.position);
+
 
                     //La torreta recarga si se le acaban las balas
                     if (currentBalas == 0)
@@ -313,7 +289,7 @@ public class NyaposMovement : MonoBehaviour
                         //Este if permite disparar a la cadencia deseada
                         if (timer > cadencia * 3)
                         {
-                            if (timer > (cadencia * 3) + 0.2)
+                            if (timer > (cadencia * 3) + 0.1)
                             {
                                 //Restamos una bala al cargador, disparamos y reproducimos el sonido
                                 Instantiate(bulletBig, bulletSpawn.position, bulletSpawn.rotation);
@@ -362,40 +338,27 @@ public class NyaposMovement : MonoBehaviour
                     break;
                 default:
                     Debug.Log("case -1");
-
-                    cuerpoYbrazos.localEulerAngles = Vector3.zero;
                     colliderBrazo.enabled = false;
-                    timer += Time.deltaTime;
-                    distIni = Vector3.Distance(posicionInicial.Position, this.transform.position);
-                    nav.SetDestination(posicionInicial.Position);
-                    nav.speed = MoveSpeed * 2;
-                    if (timer > 1.5)
+                    colliderCuerpo.enabled = false;
+                    nav.speed = MoveSpeed;
+                    dist = Vector3.Distance(posicionInicial.Position, transform.position);
+                    if (dist > 5)
                     {
-                        if (timer < 2)
+                        nav.SetDestination(posicionInicial.Position);
+                        nav.speed = MoveSpeed;
+                    }
+                    else
+                    {
+                        timer = 0;
+                        anim.SetBool("Corriendo", false);
+                        dmColliderBrazo.haspegado = false;
+                        if (Random.Range(0, 2) > 0)
                         {
-                            transform.rotation = posicionInicial.Rotation;
+                            caseSwitch = 1;
                         }
                         else
                         {
-                            transform.LookAt(target);
-                            if (Random.Range(0, 2) > 0)
-                            {
-                                if (Random.Range(0, 2) > 0)
-                                {
-                                    timer = 0;
-                                    caseSwitch = 1;
-                                }
-                                else
-                                {
-                                    timer = 0;
-                                    caseSwitch = 5;
-                                }
-                            }
-                            else
-                            {
-                                caseSwitch = 0;
-                            }
-                            timer = 0;
+                            caseSwitch = 5;
                         }
                     }
                     break;
@@ -403,7 +366,7 @@ public class NyaposMovement : MonoBehaviour
 
 
         }
-
+        
 
 
 
@@ -411,8 +374,11 @@ public class NyaposMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        empiezaLaPelea = true;
-        Col.radius = 1;
+        if (other.tag.Equals("Player"))
+        {
+            empiezaLaPelea = true;
+            Col.radius = 1;
+        }
     }
 
 
