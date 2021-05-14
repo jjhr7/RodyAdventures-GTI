@@ -63,19 +63,6 @@ public class MovimientoOgro : MonoBehaviour
                     if (timer > velocidadAtaque)
                     {
                         anim.SetBool("pegando", false);
-
-                        if (targeteado)
-                        {
-                            anim.SetBool("corriendo", true);
-                            anim.SetBool("pegando", false);
-
-                            Debug.Log("ooooo");
-                        }
-                        else
-                        {
-                            anim.SetBool("pegando", false);
-                            anim.SetBool("corriendo", false);
-                        }
                         timer = 0;
                     }
                 }
@@ -90,30 +77,13 @@ public class MovimientoOgro : MonoBehaviour
         {
             nav.SetDestination(transform.position);
             anim.SetBool("golpeado", true);
-            anim.SetBool("pegando", true);
+            anim.SetBool("pegando", false);
             FindObjectOfType<AudioManager>().Play("deathOgro");
         }
 
 
 
 
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag.Equals("Player"))
-        {
-            targeteado = true;
-        }
-    }
-
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag.Equals("Player"))
-        {
-            targeteado = false;
-        }
     }
 
 

@@ -77,7 +77,6 @@ namespace SG
                             }
                             timer = 0;
                         }
-                        Debug.Log(timer);
                     }
                 }
                 else
@@ -99,7 +98,6 @@ namespace SG
             {
                 Col.radius = 1;
                 targeteado = true;
-                Debug.Log("Ha visto al jugador");
             }
         }
 
@@ -109,7 +107,7 @@ namespace SG
             if (other.tag.Equals("Player"))
             {
                 targeteado = true;
-                Debug.Log("No ha visto al jugador");
+
             }
         }
     }
