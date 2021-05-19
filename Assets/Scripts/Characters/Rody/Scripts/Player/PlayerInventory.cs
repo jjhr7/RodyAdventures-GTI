@@ -73,7 +73,7 @@ using UnityEngine;
             if (currentLeftWeaponIndex == 0 && weaponInLeftHandSlots[0] != null)
             {
                 leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex],false);
+                weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex],true);
             }
             else if(currentLeftWeaponIndex == 0 && weaponInLeftHandSlots[0] == null)
             {
@@ -82,7 +82,7 @@ using UnityEngine;
             }else if (currentLeftWeaponIndex == 1 && weaponInLeftHandSlots[1] != null)
             {
                 leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex], false);
+                weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex], true);
 
             }
             else if(currentLeftWeaponIndex == 1 && weaponInLeftHandSlots[1] == null)
@@ -94,7 +94,7 @@ using UnityEngine;
             {
                 currentLeftWeaponIndex = -1;
                 leftWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
             }
         }
         

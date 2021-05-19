@@ -5791,6 +5791,46 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.019676607
       objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0020020306
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00028481064
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0037984736
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.046487704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.16052209
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9824399
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08296604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 169.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 3.7700043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320659638470475316, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -198.22101
+      objectReference: {fileID: 0}
     - target: {fileID: 8334736989650974427, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_RootOrder
       value: 14
