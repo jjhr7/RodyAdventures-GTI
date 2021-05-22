@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
+  isItem: 1
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2
@@ -301,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
+  isItem: 1
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2
@@ -443,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
+  isItem: 1
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2

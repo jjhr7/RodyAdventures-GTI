@@ -147,31 +147,35 @@ public class CameraHolder : MonoBehaviour
 
             if (character != null)
             {
-                Vector3 lockTargetDirection = character.transform.position - targetTransform.position;// enfoque dirrecion del player
-                float distanceFromTarget = Vector3.Distance(targetTransform.position, character.transform.position); //distancia
-                                                                                                                     //si el target esta fuera de pantalla el enfoque no funciona, siempre tiene que estar a la vista del player
-                float viewableAngle = Vector3.Angle(lockTargetDirection, cameraTransform.forward); //angulo en el que se permite el enfoque
-                RaycastHit hit;
-
-                //este if lo que hace es que no podamos enfocarnos a nosotros mismos , comparando las posicioness
-                if (character.transform.root != targetTransform.transform.root
-                    && viewableAngle > -50 && viewableAngle < 50 && distanceFromTarget <= maximumLockOnDistance)
+                if (!character.isItem) //si no es un item, es un enemigo entonce paa
                 {
-                    if(Physics.Linecast(playerManager.lookOnTransform.position,character.lookOnTransform.position, out hit) ) //si hay pared no hacer enfoque
-                    {
-                        Debug.DrawLine(playerManager.lookOnTransform.position, character.lookOnTransform.position);
+                    Vector3 lockTargetDirection = character.transform.position - targetTransform.position;// enfoque dirrecion del player
+                    float distanceFromTarget = Vector3.Distance(targetTransform.position, character.transform.position); //distancia
+                                                                                                                         //si el target esta fuera de pantalla el enfoque no funciona, siempre tiene que estar a la vista del player
+                    float viewableAngle = Vector3.Angle(lockTargetDirection, cameraTransform.forward); //angulo en el que se permite el enfoque
+                    RaycastHit hit;
 
-                        if(hit.transform.gameObject.layer == enviromentLayer)
+                    //este if lo que hace es que no podamos enfocarnos a nosotros mismos , comparando las posicioness
+                    if (character.transform.root != targetTransform.transform.root
+                        && viewableAngle > -50 && viewableAngle < 50 && distanceFromTarget <= maximumLockOnDistance)
+                    {
+                        if (Physics.Linecast(playerManager.lookOnTransform.position, character.lookOnTransform.position, out hit)) //si hay pared no hacer enfoque
                         {
-                            //no puedes enfocar nada dentras de una pared por ejemplo
+                            Debug.DrawLine(playerManager.lookOnTransform.position, character.lookOnTransform.position);
+
+                            if (hit.transform.gameObject.layer == enviromentLayer)
+                            {
+                                //no puedes enfocar nada dentras de una pared por ejemplo
+                            }
+                            else
+                            {
+                                availableTargets.Add(character); //anyadimos el objeto que nos podemos fijar en la lista
+                            }
                         }
-                        else
-                        {
-                            availableTargets.Add(character); //anyadimos el objeto que nos podemos fijar en la lista
-                        }
+
                     }
-                   
                 }
+                
             }
         }
 

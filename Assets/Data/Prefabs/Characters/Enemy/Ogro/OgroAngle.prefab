@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 3216648277669667421}
+  isItem: 0
   salud: 80
   recibiendoDanyo: 0
   pausa: 0.2
@@ -381,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948202841237079417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1797028, y: 3.7723703, z: 8.624878}
+  m_LocalPosition: {x: 0, y: 1.67, z: 0.175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2829436527484317089}
