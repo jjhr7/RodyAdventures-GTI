@@ -36,11 +36,16 @@ using UnityEngine;
                 this.transform.LookAt(myplayer.transform.position + new Vector3(0, 1, 0));
                 //Lo movemos a la velocidad deseada
                 this.transform.position += this.transform.forward * MoveSpeed * Time.deltaTime;
-            }
-
         }
+        else
+        {
+            transform.Rotate(new Vector3(0, 1, 0) * MoveSpeed * 2 * Time.deltaTime);
+        }
+        
 
-        private void OnTriggerEnter(Collider other)
+    }
+
+    private void OnTriggerEnter(Collider other)
         {
             //Targeteado es true si el jugador entra en el área
             if (other.tag.Equals("Player"))

@@ -797,6 +797,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -93
       objectReference: {fileID: 0}
+    - target: {fileID: 1451961758499462572, guid: c88cd00878d40234488b01d67975e452, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1087903124}
     - target: {fileID: 5231466431010187601, guid: c88cd00878d40234488b01d67975e452, type: 3}
       propertyPath: m_Name
       value: 90C (1)
@@ -11229,6 +11233,11 @@ MonoBehaviour:
   rudder: 0
   isBraking: 0
   isJumping: 0
+--- !u!54 &1087903124 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7340510875712138792, guid: c88cd00878d40234488b01d67975e452, type: 3}
+  m_PrefabInstance: {fileID: 487591071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1120353973
 MonoBehaviour:
   m_ObjectHideFlags: 0

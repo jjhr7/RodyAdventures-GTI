@@ -39,13 +39,13 @@ public class PlayerLocomotion : MonoBehaviour
 
     [Header("Movement Stats")]
     [SerializeField] //make private variables visible
-    float movementSpeed = 5;
+    public float movementSpeed = 5;
     [SerializeField] //make private variables visible
-    float sprintSpeed = 7;
+    public float sprintSpeed = 7;
     [SerializeField] //make private variables visible
-    float rotationSpeed = 10;
+    public float rotationSpeed = 10;
     [SerializeField] //make private variables visible
-    float fallingSpeed = 45;
+    public float fallingSpeed = 45;
 
     //para el salto estatico
     public bool isJumping;

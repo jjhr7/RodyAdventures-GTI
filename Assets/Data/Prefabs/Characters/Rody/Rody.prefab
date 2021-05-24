@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 1787519293532561663}
+  isItem: 0
   isInteracting: 0
   isSprinting: 0
   isInAir: 0
@@ -659,6 +660,11 @@ MonoBehaviour:
   BarraMonedas: {fileID: 4317319197611462657}
   tiempoContadorMonedasActivo: 5
   extraHealthSpeed: 1
+  infectionSpeed: 1
+  FLAGGuende: 0
+  FLAGFuego: 0
+  extraFireDamage: 0
+  fire: {fileID: 4722794962233863986, guid: df5b61be8a48409469d40d8cd1efc724, type: 3}
 --- !u!1 &1299515273840577866
 GameObject:
   m_ObjectHideFlags: 0

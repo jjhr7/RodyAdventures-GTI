@@ -4,92 +4,41 @@ using UnityEngine;
 
 public class aperturaCajaMonedas : MonoBehaviour
 {
-    [Range(0, 100)]
-    [SerializeField]
-    private int salud = 4;
-    public bool recibiendoDanyo;
-    double timer = 0.0;
-    public float pausa;
-    PlayerStats PlayerStats;
+    EnemyStats stats;
+    public int valor = 10;
+    public Transform coin;
+    PlayerStats playerStats;
     GameObject[] player;
     private GameObject myplayer;
-
-    Animator animator;
-
-    private void Awake()
-    {
-        animator = GetComponentInChildren<Animator>();
-    }
-
-    public int Salud
-    {
-        get { return salud; }
-        set
-        {
-            salud = value;
-            if (salud <= 0)
-            {
-                //animator.Play("Dead_01");
-                Destroy(gameObject);
-            }
-        }
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Collider bala = collision.gameObject.GetComponent<Collider>();
-        Destruirbala Dbala = collision.gameObject.GetComponent<Destruirbala>();
-        if (bala.tag.Equals("Bala"))
-        {
-            if (!recibiendoDanyo)
-            {
-                //animator.Play("Damage_01");
-                Salud -= Dbala.danyo;
-                recibiendoDanyo = true;
-            }
-        }
-    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        recibiendoDanyo = false;
+        stats = gameObject.GetComponent<EnemyStats>();
 
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
-        PlayerStats = myplayer.GetComponent<PlayerStats>();
+        playerStats = myplayer.GetComponent<PlayerStats>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (recibiendoDanyo)
+        if (stats.recibiendoDanyo)
         {
-            //temporizador recibir danyo
-            timer += Time.deltaTime;
 
-            if (timer > pausa)
+            for (int i = 0; i < 19; i++)
             {
-                recibiendoDanyo = false;
-                timer = 0;
+
+                Vector2 r = Random.insideUnitCircle * 3;
+                Vector3 tras = transform.position + new Vector3(r.x, Random.Range(0, 3), r.y);
+                Instantiate(coin, tras, this.transform.rotation);
+
             }
-        }
-
-
-    }
-
-
-    public void TakeDamage(int damage)
-    {
-        if (!recibiendoDanyo)
-        {
-            Salud -= damage;
-            recibiendoDanyo = true;
+            //playerStats.TakeMoney(valor);
+            Destroy(gameObject);
         }
     }
 }

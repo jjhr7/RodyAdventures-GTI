@@ -5,18 +5,22 @@ using UnityEngine;
 public class aperturaCajaKepots : MonoBehaviour
 {
     EnemyStats stats;
-    public int valor = 10;
-    public Transform coin;
+    public GameObject box;
+    public Transform coinV;
+    public Transform coinF;
+    public Transform coinD;
+    public Transform transformMe;
+
     PlayerStats playerStats;
     GameObject[] player;
     private GameObject myplayer;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
-        
+
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
         playerStats = myplayer.GetComponent<PlayerStats>();
@@ -28,17 +32,27 @@ public class aperturaCajaKepots : MonoBehaviour
     {
         if (stats.recibiendoDanyo)
         {
-
-            for (int i=0; i < 19; i++)
+            Vector3 tras = transformMe.position;
+            int caso = Random.Range(0, 4);
+            switch (caso)
             {
-
-                Vector2 r = Random.insideUnitCircle * 3;
-                Vector3 tras = transform.position + new Vector3(r.x, Random.Range(0, 3), r.y);
-                Instantiate(coin, tras, this.transform.rotation);
+                case 0:
+                    Instantiate(coinV, tras, this.transformMe.rotation);
+                    break;
+                case 1:
+                    Instantiate(coinF, tras, this.transformMe.rotation);
+                    break;
+                case 2:
+                    Instantiate(coinD, tras, this.transformMe.rotation);
+                    break;
+                case 3:
+                    Instantiate(coinV, tras, this.transformMe.rotation);
+                    break;
 
             }
+
             //playerStats.TakeMoney(valor);
-            Destroy(gameObject);
+            Destroy(box);
         }
     }
 }

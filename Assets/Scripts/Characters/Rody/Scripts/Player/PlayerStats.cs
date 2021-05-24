@@ -48,6 +48,24 @@ public class PlayerStats : MonoBehaviour
 
     AnimatorHandler animatorHandler; //para pasarle las animaciones al centro de control
 
+
+    private double timerGuende;
+    private double timerFuego;
+    private double timerInf;
+    public double infectionSpeed;
+
+
+    public bool FLAGGuende;
+    public bool FLAGFuego;
+    public int extraFireDamage;
+    int vidaGuende;
+
+    public GameObject fire;
+    GameObject fireClone;
+    PlayerLocomotion playerLocomotion;
+    float normalSpeed;
+    float rollSpeed;
+
     private void Awake()
     {
         if (extraHealthActive)
@@ -85,7 +103,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        FLAGGuende = false;
+        FLAGFuego = false;
         maxHealth = SetMaxHealthFromHelathLevel(); // set la vida maxima que tendra el personaje dependido del healthLevel
         currentHealth = maxHealth; //indico al iniciar que la vida esta al maximo
         extraHealth = 0;
@@ -100,6 +119,10 @@ public class PlayerStats : MonoBehaviour
         BarraMonedas.SetActive(false);
         contadorMonedas = 0;
         playerManager = GetComponent<PlayerManager>();
+
+        playerLocomotion = GetComponent<PlayerLocomotion>();
+        normalSpeed = playerLocomotion.movementSpeed;
+        rollSpeed = playerLocomotion.sprintSpeed;
 
 
 
@@ -133,6 +156,73 @@ public class PlayerStats : MonoBehaviour
             timerMonedas = 0;
             contadorMonedasActive = true;
             FLAGcontadorMonedasActive = false;
+        }
+
+        if (FLAGcontadorMonedasActive)
+        {
+            timerMonedas = 0;
+            contadorMonedasActive = true;
+            FLAGcontadorMonedasActive = false;
+        }
+
+        if (FLAGGuende)
+        {
+            timerGuende += Time.deltaTime;
+            if (timerGuende < 20)
+            {
+                staminaRegenTimer = 0;
+                timerInf += Time.deltaTime;
+                if (timerInf >= infectionSpeed)
+                {
+                    if (extraHealth == 0)
+                    {
+                        currentHealth = currentHealth - vidaGuende;  // vida actual - el danyo que te hacen
+
+                        healthBar.SetCurrentHealth(currentHealth); // actualizar la salud
+                        if (currentHealth <= 0)
+                        {
+                            currentHealth = 0;
+                        }
+                    }
+                    else
+                    {
+                        extraHealth -= vidaGuende;
+                        if (extraHealth < 0)
+                        {
+                            currentHealth += extraHealth;
+                            extraHealth = 0;
+                        }
+                        healthBar.SetCurrentHealth(currentHealth);
+                        extraHealthBar.setCurrentHealth(extraHealth);
+                    };
+
+                    if (currentHealth <= 0)
+                    {
+                        animatorHandler.PlayTargetAnimation("Dead_01", true);
+                    }
+                    timerInf = 0;
+                }
+            }
+            else
+            {
+                vidaGuende = 0;
+                timerGuende = 0;
+                playerLocomotion.movementSpeed = normalSpeed;
+                playerLocomotion.sprintSpeed = rollSpeed;
+                FLAGGuende = false;
+            }
+        }
+
+        if (FLAGFuego)
+        {
+            fireClone.transform.position = transform.position;
+            timerFuego += Time.deltaTime;
+            if (timerFuego > 60)
+            {
+                Destroy(fireClone);
+                extraFireDamage = 0;
+                FLAGFuego = false;
+            }
         }
     }
 
@@ -217,6 +307,30 @@ public class PlayerStats : MonoBehaviour
 
     }
 
+    public void TakeGuende(int vida, int speedRody)
+    {
+        vidaGuende = vida;
+        playerLocomotion.sprintSpeed = speedRody * 2;
+        playerLocomotion.movementSpeed = speedRody;
+        FLAGGuende = true;
+    }
+    public void TakeFire(int valor)
+    {
+        if (FLAGFuego)
+        {
+
+            timerFuego = 0;
+        }
+        else
+        {
+
+            timerFuego = 0;
+            Instantiate(fire, transform);
+            fireClone = GameObject.Find("ParticleFire(Clone)");
+            extraFireDamage = valor;
+            FLAGFuego = true;
+        }
+    }
     public void TakeStaminaDamage(int damage)
     {
         currentStamina = currentStamina - damage;
