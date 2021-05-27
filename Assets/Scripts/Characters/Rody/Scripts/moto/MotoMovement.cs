@@ -156,5 +156,11 @@ public class MotoMovement : MonoBehaviour
 				SceneManager.LoadScene(scene.name);
 			}
 		}
+
+		if (collision.gameObject.tag.Equals("Bala"))
+		{
+				UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
+				SceneManager.LoadScene(scene.name);
+		}
 	}
 }

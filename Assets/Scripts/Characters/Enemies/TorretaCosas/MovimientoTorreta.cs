@@ -46,7 +46,7 @@ using UnityEngine;
             if (stats.recibiendoDanyo)
             {
                 //Animación y sonido de recibir danyo
-                FindObjectOfType<AudioManager>().Play("deathTorreta");
+                //FindObjectOfType<AudioManager>().Play("deathTorreta");
 
             }
             else
@@ -86,7 +86,7 @@ using UnityEngine;
                                 Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                                 balas--;
                                 timer = 0.0;
-                                FindObjectOfType<AudioManager>().Play("shootTorreta");
+                                //FindObjectOfType<AudioManager>().Play("shootTorreta");
                             }
                         }
                     }
