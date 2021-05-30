@@ -40,4 +40,36 @@ public class QuickSlotsUI : MonoBehaviour
                 
         }
     }
+    
+    public void UpdateFireWeaponQuickSlotsUI(bool isLeft, FireWeponItem fireWeponItem)
+    {
+        if (!isLeft)
+        {
+            if (fireWeponItem.itemIcon != null)
+            {
+                rightWeaponIcon.sprite = fireWeponItem.itemIcon;
+                rightWeaponIcon.enabled = true;
+            }
+            else
+            {
+                rightWeaponIcon.sprite = null;
+                rightWeaponIcon.enabled = true;
+            }
+                
+        }
+        else
+        {
+            if (fireWeponItem.itemIcon != null)
+            {
+                leftWeaponIcon.sprite = fireWeponItem.itemIcon;
+                leftWeaponIcon.enabled = true;
+            }
+            else
+            {
+                leftWeaponIcon.sprite = null;
+                leftWeaponIcon.enabled = true;
+            }
+                
+        }
+    }
 }

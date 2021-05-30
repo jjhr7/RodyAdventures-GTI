@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +23,8 @@ public class InputHandler : MonoBehaviour
     public bool a_Input;
     public bool rb_Input;
     public bool rt_Input;
-    public bool changeWeapon1_input;
-    public bool changeWeapon2_input;
+    /*public bool changeWeapon1_input;
+    public bool changeWeapon2_input;*/
     //Inventario / UI
     public bool inventory_Input;
 
@@ -53,6 +54,10 @@ public class InputHandler : MonoBehaviour
 
     Vector2 movementInput;
     Vector2 cameraInput;
+    
+    //Acciones Disparo
+    public static Action onStartFire;
+    public static Action onStopFire;
 
     private void Awake()
     {
@@ -84,12 +89,21 @@ public class InputHandler : MonoBehaviour
             //roll / sprint
             inputActions.PlayerActions.Roll.performed += i => b_Input = true; //cuando se pulsa ese boton
             inputActions.PlayerActions.Roll.canceled += i => b_Input = false; //cambia el bool
-            //new input system actions
-            inputActions.PlayerActions.RB.performed += i => rb_Input = true; //si se pulsa las teclas asignadas a RB
-            inputActions.PlayerActions.RT.performed += i => rt_Input = true; //si se pulsa las teclas asignadas a RT
-            //quickslotsUi
-            inputActions.ChangeWeapon.ChangeWeapon1.performed += i => changeWeapon1_input = true;
-            inputActions.ChangeWeapon.ChangeWeapon2.performed += i => changeWeapon2_input = true;
+            
+            
+            //Atacar
+            inputActions.PlayerActions.RB.performed += i => OnRB();
+            inputActions.PlayerActions.RT.performed += i => OnRT();
+            
+            
+            //Cambio de armas
+            inputActions.ChangeWeapon.ChangeWeapon1.performed += i => OnChangeWeapon1();
+            inputActions.ChangeWeapon.ChangeWeapon2.performed += i => OnChangeWeapon2();
+            
+            //Disparar
+            inputActions.PlayerActions.Shoot.performed += i => OnShoot();
+            inputActions.PlayerActions.Shoot.canceled += i => OnStopShoot();
+            
             //modo enfoque
             inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             //cambio modo enfoque
@@ -113,8 +127,6 @@ public class InputHandler : MonoBehaviour
     {
         HandleMoveInput(delta); // conf de botones movimiento
         HandleRollInput(delta); // conf roll/sprinting
-        HandleAttackInput(delta); //conf attacks
-        HandleQuickSlotInput();
         HandleJumpingInput();//salto estatico
         HandleLockOnInput(); //manejador modo enfoque
         HandleInventoryInput(); //inventory button logic
@@ -161,50 +173,90 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    private void HandleAttackInput(float delta)
+ 
+    private void OnRB()
     {
-        
-
-        //Rb input maneja los ataques leves con la mano derecha
-        if (rb_Input)
+        if (playerInventory.isFireWeaponEquiped)
         {
-            if (playerManager.canDoCombo)
-            {
-                comboFlag = true;
-                playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
-                comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-
-                if (playerManager.canDoCombo)
-                    return;
-
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-            }
+            playerInventory.EquipCurrentWeapon();
         }
-        //RT -> ataques potentes mano derecha
-        if (rt_Input)
+
+        if (playerManager.canDoCombo)
         {
+            comboFlag = true;
+            playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
+            comboFlag = false;
+        }
+        else
+        { 
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
+
+            playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+        }
+        
+    }
+    
+    private void OnRT()
+    {
+        if (playerInventory.isFireWeaponEquiped)
+        {
+            playerInventory.EquipCurrentWeapon();
+        }
+
+        if (playerManager.canDoCombo)
+        {
+            comboFlag = true;
+            playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            comboFlag = false;
+        }
+        else
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
             playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
         }
+        
     }
-
-    private void HandleQuickSlotInput()
+    private void OnShoot()
     {
+        if (!playerInventory.isFireWeaponEquiped)
+        {
+            playerInventory.EquipCurrentFireWeapon();
+        }
+        onStartFire?.Invoke(); 
+        //Debug.Log("Invocando Dsiparo");
         
 
-        if (changeWeapon1_input)
-        {
-            playerInventory.ChangeRightWeapon();
+    }
 
-        }
-        else if (changeWeapon2_input)
-        {
-            playerInventory.ChangeLeftWeapon();
-        }
+    private void OnStopShoot()
+    {
+        //Debug.Log("Dejando de disparar");
+        onStopFire?.Invoke();
+    }
+    
+
+    private void OnChangeWeapon1()
+    {
+      
+        playerInventory.ChangeRightWeapon();
+        playerInventory.ChangeLeftWeapon();
+        
+        
+    }
+
+    private void OnChangeWeapon2()
+    {
+        playerInventory.ChangeRightFireWeapon();
+        playerInventory.ChangeLeftFireWeapon();
+
     }
     //salto estatico
     private void HandleJumpingInput()

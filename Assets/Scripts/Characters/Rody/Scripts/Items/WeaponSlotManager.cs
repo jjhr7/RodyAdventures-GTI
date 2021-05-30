@@ -72,6 +72,42 @@ using UnityEngine;
                 #endregion
             }
         }
+        
+        public void LoadFireWeaponOnSlot(FireWeponItem fireWeponItem, bool isLeft)
+        {
+            if (isLeft) // si es para la izquierda
+            {
+                leftHandSlot.LoadFireWeapomodel(fireWeponItem); //llamamos a la funcion de la clase WeaponHolderSlot.cs para cargar 
+                LoadLeftWeaponDamageCollider(); //metodo que anyade el collider al left hand
+                quickSlotsUI.UpdateFireWeaponQuickSlotsUI(true, fireWeponItem);
+                #region Handle Left  Weapon Idle Animations
+                if (fireWeponItem != null)
+                {
+                    animator.CrossFade(fireWeponItem.left_hand_idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Left Arm emty", 0.2f);
+                }
+                #endregion
+            }
+            else //si esta en la derecha
+            {
+                rightHandSlot.LoadFireWeapomodel(fireWeponItem); //cargar modelo arma
+                LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
+                quickSlotsUI.UpdateFireWeaponQuickSlotsUI(false, fireWeponItem);
+                #region Handle Right Weapon Idle Animations
+                if (fireWeponItem != null)
+                {
+                    animator.CrossFade(fireWeponItem.right_hand_idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Right Arm emty", 0.2f);
+                }
+                #endregion
+            } 
+        }
 
         #region Handle Weapons Damage Collider
             private void LoadLeftWeaponDamageCollider()

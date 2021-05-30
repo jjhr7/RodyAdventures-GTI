@@ -13,13 +13,25 @@ using UnityEngine;
         public WeaponItem rightWeapon; //armas R y L
         public WeaponItem leftWeapon;
         
-        public WeaponItem unarmedWeapon;
+        //public WeaponItem unarmedWeapon;
+        
+        public FireWeponItem fireRightWeapon;
+        public FireWeponItem fireLeftWeapon;
+        
         
         public WeaponItem[] weaponInRightHandSlots = new WeaponItem[1];
         public WeaponItem[] weaponInLeftHandSlots = new WeaponItem[1];
         
+        public FireWeponItem[] fireWeaponInRightHandSlots = new FireWeponItem[1];
+        public FireWeponItem[] fireWeaponInLeftHandSlots = new FireWeponItem[1];
+        
         public int currentRightWeaponIndex = 0;
         public int currentLeftWeaponIndex = 0;
+        
+        public int currentRightFireWeaponIndex = 0;
+        public int currentLeftFireWeaponIndex = 0;
+        
+        public bool isFireWeaponEquiped = false;
 
         // Lista con las armas del inventario
         public List<WeaponItem> weaponsInventory;
@@ -27,20 +39,15 @@ using UnityEngine;
         private void Awake() //se llama al cargar la isntancia del script
         {
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+            EquipCurrentFireWeapon();
+            EquipCurrentWeapon();
         }
 
         private void Start() //se llama a start antes que a los metodos update...
         {
             //cargamos las armas
-            //rightWeapon = unarmedWeapon;
-            //leftWeapon = unarmedWeapon;
-            
-            // ---> Lo he cambiado para que aparezca ya con sus armas <--
-            rightWeapon = weaponInRightHandSlots[0];
-            leftWeapon = weaponInLeftHandSlots[0];
-            //cargamos las armas en los slots de rody
-            weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
-            weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
+            rightWeapon = weaponInRightHandSlots[currentRightWeaponIndex];
+            leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
         }
         
         public void ChangeRightWeapon()
@@ -67,14 +74,48 @@ using UnityEngine;
                 currentRightWeaponIndex = currentRightWeaponIndex + 1;
             }
 
-            if (currentRightWeaponIndex > weaponInRightHandSlots.Length -1)
+            if (currentRightWeaponIndex > weaponInRightHandSlots.Length-1 )
             {
-                currentRightWeaponIndex = -1;
-                rightWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+                currentRightWeaponIndex = 0;
+                rightWeapon = weaponInRightHandSlots[currentRightWeaponIndex];
+                weaponSlotManager.LoadWeaponOnSlot(weaponInRightHandSlots[currentRightWeaponIndex], false);
             }
             
         }
+        
+        public void ChangeRightFireWeapon()
+        {
+            currentRightFireWeaponIndex = currentRightFireWeaponIndex + 1;
+            
+            if (currentRightFireWeaponIndex == 0 && fireWeaponInRightHandSlots[0] != null)
+            {
+                fireRightWeapon = fireWeaponInRightHandSlots[currentRightFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[0],false);
+            }
+            else if(currentRightFireWeaponIndex == 0 && fireWeaponInRightHandSlots[0] == null)
+            {
+                currentRightFireWeaponIndex = currentRightFireWeaponIndex + 1;
+                
+            }else if (currentRightFireWeaponIndex == 1 && fireWeaponInRightHandSlots[1] != null)
+            {
+                fireRightWeapon = fireWeaponInRightHandSlots[currentRightFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex], false);
+
+            }
+            else if(currentRightFireWeaponIndex == 1 && fireWeaponInRightHandSlots[1] == null)
+            {
+                currentRightFireWeaponIndex = currentRightFireWeaponIndex + 1;
+            }
+
+            if (currentRightFireWeaponIndex > fireWeaponInRightHandSlots.Length-1 )
+            {
+                currentRightFireWeaponIndex = 0;
+                fireRightWeapon = fireWeaponInRightHandSlots[currentRightFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex], false);
+            }
+            
+        }
+        
         
         public void ChangeLeftWeapon()
         {
@@ -100,12 +141,59 @@ using UnityEngine;
                 currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
             }
 
-            if (currentLeftWeaponIndex > weaponInLeftHandSlots.Length -1)
+            if (currentLeftWeaponIndex > weaponInLeftHandSlots.Length-1 )
             {
-                currentLeftWeaponIndex = -1;
-                leftWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
+                currentLeftWeaponIndex = 0;
+                leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
+                weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex], true);
             }
+        }
+        
+        public void ChangeLeftFireWeapon()
+        {
+            currentLeftFireWeaponIndex = currentLeftFireWeaponIndex + 1;
+            
+            if (currentLeftFireWeaponIndex == 0 && fireWeaponInLeftHandSlots[0] != null)
+            {
+                fireLeftWeapon = fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex],true);
+            }
+            else if(currentLeftFireWeaponIndex == 0 && fireWeaponInLeftHandSlots[0] == null)
+            {
+                currentLeftFireWeaponIndex = currentLeftFireWeaponIndex + 1;
+                
+            }else if (currentLeftFireWeaponIndex == 1 && fireWeaponInLeftHandSlots[1] != null)
+            {
+                fireLeftWeapon = fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex], true);
+
+            }
+            else if(currentLeftFireWeaponIndex == 1 && fireWeaponInLeftHandSlots[1] == null)
+            {
+                currentLeftFireWeaponIndex = currentLeftFireWeaponIndex + 1;
+            }
+           
+            if (currentLeftFireWeaponIndex > fireWeaponInLeftHandSlots.Length-1 )
+            {
+                currentLeftFireWeaponIndex = 0;
+                fireLeftWeapon = fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex];
+                weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex], true);
+            }
+        }
+        
+        public void EquipCurrentWeapon()
+        {
+            isFireWeaponEquiped = false;
+            
+            weaponSlotManager.LoadWeaponOnSlot(weaponInRightHandSlots[currentRightWeaponIndex],false);
+            weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex],true);
+        }
+        
+        public void EquipCurrentFireWeapon()
+        {
+            isFireWeaponEquiped = true;
+            weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex],false);
+            weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex],true);
         }
         
     }

@@ -61,6 +61,39 @@ using UnityEngine;
             currentWeaponModel = model;
 
         }
+        
+        public void LoadFireWeapomodel(FireWeponItem fireWeponItem) //carga el arma en nustras manos
+        {
+            //unload  weapon and destroy
+            UnloadWeaponAndDestroy(); //destruye el arma
+
+            if (fireWeponItem == null) //si el arma nueva es igual a null
+            {
+                //Unload weapon
+                UnloadWeapon(); //desarmar objeto
+                return;
+            }
+
+            GameObject model = Instantiate(fireWeponItem.modelPrefab) as GameObject; //instanciar como gameObject
+            if (model != null)
+            {
+                if (parentOverride != null)
+                {
+                    model.transform.parent = parentOverride;
+                }
+                else
+                {
+                    model.transform.parent = transform;
+                }
+
+                model.transform.localPosition = Vector3.zero;
+                model.transform.localRotation = Quaternion.identity;
+                model.transform.localScale = Vector3.one;
+            }
+
+            currentWeaponModel = model;
+
+        }
 
 
     }

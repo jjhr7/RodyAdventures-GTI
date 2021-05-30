@@ -88,8 +88,8 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
         //inventory / Ui
         inputHandler.inventory_Input = false;
 
-        inputHandler.changeWeapon1_input = false;
-        inputHandler.changeWeapon2_input = false;
+        /*inputHandler.changeWeapon1_input = false;
+        inputHandler.changeWeapon2_input = false;*/
         //player actions -> interactable
         inputHandler.a_Input = false;
 
