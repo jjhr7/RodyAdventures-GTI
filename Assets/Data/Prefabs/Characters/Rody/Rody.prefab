@@ -1086,8 +1086,6 @@ MonoBehaviour:
   a_Input: 0
   rb_Input: 0
   rt_Input: 0
-  changeWeapon1_input: 0
-  changeWeapon2_input: 0
   inventory_Input: 0
   inventoryFlag: 0
   rollflag: 0
@@ -1162,15 +1160,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
   leftWeapon: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
-  unarmedWeapon: {fileID: 11400000, guid: 666193f846831614ea7be160babeb747, type: 2}
+  fireRightWeapon: {fileID: 0}
+  fireLeftWeapon: {fileID: 0}
   weaponInRightHandSlots:
   - {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
   - {fileID: 11400000, guid: 0305d935663f55a43988d906e59efc55, type: 2}
   weaponInLeftHandSlots:
   - {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
   - {fileID: 11400000, guid: 0305d935663f55a43988d906e59efc55, type: 2}
+  fireWeaponInRightHandSlots:
+  - {fileID: 0}
+  fireWeaponInLeftHandSlots:
+  - {fileID: 0}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
+  currentRightFireWeaponIndex: 0
+  currentLeftFireWeaponIndex: 0
+  isFireWeaponEquiped: 0
   weaponsInventory:
   - {fileID: 11400000, guid: 2e34e3064b5f741448af37c49e8e9adc, type: 2}
 --- !u!114 &1299515273838533185
@@ -1216,7 +1222,7 @@ MonoBehaviour:
   BarraMonedas: {fileID: 4317319197611462657}
   tiempoContadorMonedasActivo: 5
   extraHealthSpeed: 1
-  infectionSpeed: 0
+  infectionSpeed: 1
   FLAGGuende: 0
   FLAGFuego: 0
   extraFireDamage: 0
@@ -2081,7 +2087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -83.9}
+  m_AnchoredPosition: {x: 0, y: -83.8999}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2105017900531975054
@@ -5396,7 +5402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.94}
+  m_AnchoredPosition: {x: 0, y: -12.939941}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3562269447273041221
