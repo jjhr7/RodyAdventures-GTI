@@ -341,6 +341,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d552995-d3fa-4543-bcd4-4c438dfdabd6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""87327267-b054-4b2e-926a-90c097c3a795"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -453,6 +469,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""LockOn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""550f50e5-2be2-43d7-a8c4-7776f0e8dcb4"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acb0076c-eb47-456d-82d6-c55b15eb0989"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28ee6309-f92e-4616-9621-2ae6b2182aa4"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""826e9e28-27a5-4044-b654-41fdf62e6f83"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -544,6 +604,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_RT = m_PlayerActions.FindAction("RT", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
+        m_PlayerActions_A = m_PlayerActions.FindAction("A", throwIfNotFound: true);
+        m_PlayerActions_Inventory = m_PlayerActions.FindAction("Inventory", throwIfNotFound: true);
         // Change Weapon
         m_ChangeWeapon = asset.FindActionMap("Change Weapon", throwIfNotFound: true);
         m_ChangeWeapon_ChangeWeapon1 = m_ChangeWeapon.FindAction("ChangeWeapon1", throwIfNotFound: true);
@@ -700,6 +762,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_RT;
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_LockOn;
+    private readonly InputAction m_PlayerActions_A;
+    private readonly InputAction m_PlayerActions_Inventory;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -709,6 +773,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @RT => m_Wrapper.m_PlayerActions_RT;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
+        public InputAction @A => m_Wrapper.m_PlayerActions_A;
+        public InputAction @Inventory => m_Wrapper.m_PlayerActions_Inventory;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -733,6 +799,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LockOn.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
                 @LockOn.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
                 @LockOn.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
+                @A.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnA;
+                @Inventory.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -752,6 +824,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LockOn.started += instance.OnLockOn;
                 @LockOn.performed += instance.OnLockOn;
                 @LockOn.canceled += instance.OnLockOn;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
             }
         }
     }
@@ -816,6 +894,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnRT(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
     }
     public interface IChangeWeaponActions
     {

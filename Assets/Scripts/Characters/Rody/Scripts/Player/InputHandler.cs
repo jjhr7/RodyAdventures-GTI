@@ -19,11 +19,15 @@ public class InputHandler : MonoBehaviour
 
     //botones ataques/defensa...
     public bool b_Input;
+    public bool a_Input;
     public bool rb_Input;
     public bool rt_Input;
     public bool changeWeapon1_input;
     public bool changeWeapon2_input;
+    //Inventario / UI
+    public bool inventory_Input;
 
+    public bool inventoryFlag;
     public bool rollflag;
     public bool sprintflag;
     public bool comboFlag;
@@ -42,6 +46,7 @@ public class InputHandler : MonoBehaviour
     PlayerManager playerManager;
     PlayerStats playerStats;
     CameraHolder cameraHolder;
+    UIManager UIManager;
 
     //para el salto
     PlayerLocomotion playerLocomotion;
@@ -58,6 +63,7 @@ public class InputHandler : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerStats = GetComponent<PlayerStats>();
         cameraHolder = FindObjectOfType<CameraHolder>();
+        UIManager = FindObjectOfType<UIManager>();
 
     }
 
@@ -78,11 +84,21 @@ public class InputHandler : MonoBehaviour
             //roll / sprint
             inputActions.PlayerActions.Roll.performed += i => b_Input = true; //cuando se pulsa ese boton
             inputActions.PlayerActions.Roll.canceled += i => b_Input = false; //cambia el bool
+            //new input system actions
+            inputActions.PlayerActions.RB.performed += i => rb_Input = true; //si se pulsa las teclas asignadas a RB
+            inputActions.PlayerActions.RT.performed += i => rt_Input = true; //si se pulsa las teclas asignadas a RT
+            //quickslotsUi
+            inputActions.ChangeWeapon.ChangeWeapon1.performed += i => changeWeapon1_input = true;
+            inputActions.ChangeWeapon.ChangeWeapon2.performed += i => changeWeapon2_input = true;
             //modo enfoque
             inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             //cambio modo enfoque
             inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_left_Input = true;
             inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
+            //playeractions -> interactable objects
+            inputActions.PlayerActions.A.performed += i => a_Input = true;
+            //inventario / UI
+            inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
         }
 
         inputActions.Enable();
@@ -101,6 +117,8 @@ public class InputHandler : MonoBehaviour
         HandleQuickSlotInput();
         HandleJumpingInput();//salto estatico
         HandleLockOnInput(); //manejador modo enfoque
+        HandleInventoryInput(); //inventory button logic
+       
     }
     private void HandleMoveInput(float delta) //conf de movimiento
     {
@@ -145,9 +163,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleAttackInput(float delta)
     {
-        //new input system actions
-        inputActions.PlayerActions.RB.performed += i => rb_Input = true; //si se pulsa las teclas asignadas a RB
-        inputActions.PlayerActions.RT.performed += i => rt_Input = true; //si se pulsa las teclas asignadas a RT
+        
 
         //Rb input maneja los ataques leves con la mano derecha
         if (rb_Input)
@@ -178,8 +194,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleQuickSlotInput()
     {
-        inputActions.ChangeWeapon.ChangeWeapon1.performed += i => changeWeapon1_input = true;
-        inputActions.ChangeWeapon.ChangeWeapon2.performed += i => changeWeapon2_input = true;
+        
 
         if (changeWeapon1_input)
         {
@@ -244,6 +259,36 @@ public class InputHandler : MonoBehaviour
         }
 
         cameraHolder.SetCameraHeight();
+    }
+
+    private void HandleInventoryInput()
+    {
+        if (inventory_Input) //si se pulsa el boton del inventario / UI
+        {
+            inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
+
+            if (inventoryFlag) //si el flag es true
+            {
+                Time.timeScale = 0; //pausar juego
+                UIManager.OpenSelectedWindow();
+                UIManager.UpdateUI(); //actualizar los slots del inventario
+                //abrimos los windows principales
+                UIManager.OpenAllInventoryWindows();
+                UIManager.hudWindow.SetActive(false); //cuando abrimos el inventario cerramos el HUD
+            }
+            else // si inventoryFlag es false, cerrar windows
+            {
+                Time.timeScale = 1; //renaudar juego
+                UIManager.CloseSelectedWindow(); //cerrar menu de seleccion
+                UIManager.CloseAllInventoryWindows(); //cerrar inventory window
+                UIManager.hudWindow.SetActive(true);//Al cerrar inventario activamos el hud
+            }
+        }
+    }
+
+    public void setFalseInventoryFlag()
+    {
+        inventoryFlag = false;
     }
 }
 

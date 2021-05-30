@@ -19,6 +19,10 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
     Animator anim;
     CameraHolder cameraHolder;
     PlayerLocomotion playerLocomotion;
+    //UI CLASSES
+    InteractableUI interactableUI;
+    public GameObject interactableUIGameObject;
+    public GameObject itemInteractableGameObject;
 
     public bool isInteracting;
     [Header("Player Flags")]
@@ -39,6 +43,7 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
         anim = GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerStats = GetComponent<PlayerStats>();
+        interactableUI = FindObjectOfType<InteractableUI>();
     }
 
 
@@ -54,6 +59,8 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
         playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         playerStats.RegenerateStamina(); // regeneracion de stamina
+        //interactable objects
+        CheckForInteractableObject();
 
     }
 
@@ -69,7 +76,7 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
 
     }
 
-    private void LateUpdate() //IMPORTANTE -> TODO lo relacionado a la camara en el LateUpdate.
+    private void LateUpdate() //IMPORTANTE -> el bool de cada boton a false despues de pulsarlo
     {
         //declaro los botones de movimientos como falso, es decir
         // cuando se punsa el boton es true pero se vuelve falso con esta funcion para solo
@@ -78,9 +85,13 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
         //inputHandler.sprintflag = false;
         inputHandler.rb_Input = false;
         inputHandler.rt_Input = false;
+        //inventory / Ui
+        inputHandler.inventory_Input = false;
 
         inputHandler.changeWeapon1_input = false;
         inputHandler.changeWeapon2_input = false;
+        //player actions -> interactable
+        inputHandler.a_Input = false;
 
         if (isInAir)  //si esta en el aire
         {
@@ -90,6 +101,49 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
         isInteracting = anim.GetBool("isInteracting");
         playerLocomotion.isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", isGrounded);
+    }
+
+    public void CheckForInteractableObject()
+    {
+        RaycastHit hit;
+
+        if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out hit, 0.8f))
+        {
+            if(hit.collider.tag == "Interactable")
+            {
+                Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+
+                if(interactableObject != null)
+                {
+                    if (itemInteractableGameObject.activeSelf.Equals(true)) //si ya hay un pop activo
+                    {
+                        itemInteractableGameObject.SetActive(false); //lo desactivamos para activar otro
+                    }
+                    string interactableText = interactableObject.interactableText;
+                    //set the ui text to the interactable object
+                    interactableUI.interactableText.text = interactableText; //set text
+                    interactableUIGameObject.SetActive(true); //activamos pop up
+
+                    if (inputHandler.a_Input)
+                    {
+                        hit.collider.GetComponent<Interactable>().Interact(this);
+                    }
+
+                }
+            }
+        }
+        else //cuando salimos de la zona
+        {
+            if (interactableUIGameObject != null) // si no da dengue
+            {
+                interactableUIGameObject.SetActive(false); //desactivamos pop up
+            }
+
+            if (itemInteractableGameObject != null && inputHandler.a_Input)
+            {
+                itemInteractableGameObject.SetActive(false);
+            }
+        }
     }
 }
 

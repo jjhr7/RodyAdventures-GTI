@@ -13,7 +13,7 @@ public class CameraHolder : MonoBehaviour
     public Transform cameraPivotTransform; //rotation of the camera
     private Transform myTransform;
     private Vector3 cameraTransformPosition;
-    private LayerMask ignoreLayers;
+    public LayerMask ignoreLayers;
     public LayerMask enviromentLayer;
     private Vector3 cameraFollowVelocity = Vector3.zero;
 

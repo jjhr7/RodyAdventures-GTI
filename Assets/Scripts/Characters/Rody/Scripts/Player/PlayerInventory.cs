@@ -18,8 +18,11 @@ using UnityEngine;
         public WeaponItem[] weaponInRightHandSlots = new WeaponItem[1];
         public WeaponItem[] weaponInLeftHandSlots = new WeaponItem[1];
         
-        public int currentRightWeaponIndex = -1;
-        public int currentLeftWeaponIndex = -1;
+        public int currentRightWeaponIndex = 0;
+        public int currentLeftWeaponIndex = 0;
+
+        // Lista con las armas del inventario
+        public List<WeaponItem> weaponsInventory;
 
         private void Awake() //se llama al cargar la isntancia del script
         {
@@ -29,8 +32,15 @@ using UnityEngine;
         private void Start() //se llama a start antes que a los metodos update...
         {
             //cargamos las armas
-            rightWeapon = unarmedWeapon;
-            leftWeapon = unarmedWeapon;
+            //rightWeapon = unarmedWeapon;
+            //leftWeapon = unarmedWeapon;
+            
+            // ---> Lo he cambiado para que aparezca ya con sus armas <--
+            rightWeapon = weaponInRightHandSlots[0];
+            leftWeapon = weaponInLeftHandSlots[0];
+            //cargamos las armas en los slots de rody
+            weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
+            weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
         }
         
         public void ChangeRightWeapon()

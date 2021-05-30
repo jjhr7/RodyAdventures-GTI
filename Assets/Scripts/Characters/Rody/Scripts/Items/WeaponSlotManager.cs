@@ -5,119 +5,76 @@ using UnityEngine;
 
     public class WeaponSlotManager : MonoBehaviour
     {
+        //WeaponSlotManager -> centro de control de armas, aqui se decide que arma va en que lado y que modelos cargar
 
-    //WeaponSlotManager -> centro de control de armas, aqui se decide que arma va en que lado y que modelos cargar
+        WeaponHolderSlot leftHandSlot;
+        WeaponHolderSlot rightHandSlot;
 
-    WeaponHolderSlot leftHandSlot;
-    WeaponHolderSlot rightHandSlot;
+        DamageCollider leftHandDamageCollider; //colliders para las manos/armas
+        DamageCollider rightHandDamageCollider;
+        
+        Animator animator;
+        
+        QuickSlotsUI quickSlotsUI;
 
-    DamageCollider leftHandDamageCollider; //colliders para las manos/armas
-    DamageCollider rightHandDamageCollider;
-
-    int leftHandDamageColliderDanyo;
-    int rightHandDamageColliderDanyo;
-
-    Animator animator;
-
-    QuickSlotsUI quickSlotsUI;
-
-    PlayerStats playerStats;
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
-        playerStats = GetComponentInParent<PlayerStats>();
-        WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>(); //array for weapon slots
-        foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots) //bucle que determina que arma va en la L o en la R
+        private void Awake()
         {
-            if (weaponSlot.isLeftHandSlot) //si el arma es de L
+            animator = GetComponent<Animator>();
+            quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
+            
+            WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>(); //array for weapon slots
+            foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots) //bucle que determina que arma va en la L o en la R
             {
-                leftHandSlot = weaponSlot; //guardar en la var L
-            }
-            else if (weaponSlot.isRightHandSlot) //si el arma es de R
-            {
-                rightHandSlot = weaponSlot; //guardar en la var R
-            }
+                if (weaponSlot.isLeftHandSlot) //si el arma es de L
+                {
+                    leftHandSlot = weaponSlot; //guardar en la var L
+                }
+                else if(weaponSlot.isRightHandSlot) //si el arma es de R
+                {
+                    rightHandSlot = weaponSlot; //guardar en la var R
+                }
+            } 
+
         }
 
-    }
-
-    private void Update()
-    {
-        if (rightHandDamageCollider != null)
+        public void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft) // cargar armas a las manos
         {
-            if (playerStats != null)
+            if (isLeft) // si es para la izquierda
             {
-                if (playerStats.FLAGFuego)
+                leftHandSlot.LoadWeapomodel(weaponItem); //llamamos a la funcion de la clase WeaponHolderSlot.cs para cargar 
+                LoadLeftWeaponDamageCollider(); //metodo que anyade el collider al left hand
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
+                #region Handle Left  Weapon Idle Animations
+                if (weaponItem != null)
                 {
-                    rightHandDamageCollider.currentWeaponDamage = rightHandDamageColliderDanyo + playerStats.extraFireDamage;
+                    animator.CrossFade(weaponItem.left_hand_idle, 0.2f);
                 }
                 else
                 {
-                    rightHandDamageCollider.currentWeaponDamage = rightHandDamageColliderDanyo;
+                    animator.CrossFade("Left Arm emty", 0.2f);
                 }
+                #endregion
             }
-        }
-
-        if (leftHandDamageCollider != null)
-        {
-            if (playerStats != null)
+            else //si esta en la derecha
             {
-                if (playerStats.FLAGFuego)
+                rightHandSlot.LoadWeapomodel(weaponItem); //cargar modelo arma
+                LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
+                #region Handle Right Weapon Idle Animations
+                if (weaponItem != null)
                 {
-                    leftHandDamageCollider.currentWeaponDamage = leftHandDamageColliderDanyo + playerStats.extraFireDamage;
+                    animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
                 }
                 else
                 {
-                    leftHandDamageCollider.currentWeaponDamage = leftHandDamageColliderDanyo;
+                    animator.CrossFade("Right Arm emty", 0.2f);
                 }
+                #endregion
             }
         }
-    }
 
-    public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft) // cargar armas a las manos
-    {
-        if (isLeft) // si es para la izquierda
-        {
-            leftHandSlot.LoadWeapomodel(weaponItem); //llamamos a la funcion de la clase WeaponHolderSlot.cs para cargar 
-            LoadLeftWeaponDamageCollider(); //metodo que anyade el collider al left hand
-            quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
-            leftHandDamageColliderDanyo = leftHandDamageCollider.currentWeaponDamage;
-
-            #region Handle Left  Weapon Idle Animations
-            if (weaponItem != null)
-            {
-                animator.CrossFade(weaponItem.left_hand_idle, 0.2f);
-            }
-            else
-            {
-                animator.CrossFade("Left Arm emty", 0.2f);
-            }
-            #endregion
-        }
-        else //si esta en la derecha
-        {
-            rightHandSlot.LoadWeapomodel(weaponItem); //cargar modelo arma
-            LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
-            quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
-            rightHandDamageColliderDanyo = rightHandDamageCollider.currentWeaponDamage;
-
-            #region Handle Right Weapon Idle Animations
-            if (weaponItem != null)
-            {
-                animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
-            }
-            else
-            {
-                animator.CrossFade("Right Arm emty", 0.2f);
-            }
-            #endregion
-        }
-    }
-
-    #region Handle Weapons Damage Collider
-    private void LoadLeftWeaponDamageCollider()
+        #region Handle Weapons Damage Collider
+            private void LoadLeftWeaponDamageCollider()
             {
                 //accedemos a la clase weaponHolderSlot y recogemos el valor de la var currentWeaponModel para almacenarlo
                 leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
