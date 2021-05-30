@@ -52,7 +52,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 40
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6801543236400075625
 MonoBehaviour:
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 5568513352574164665}
+  isItem: 0
   salud: 100
   recibiendoDanyo: 0
   pausa: 0
