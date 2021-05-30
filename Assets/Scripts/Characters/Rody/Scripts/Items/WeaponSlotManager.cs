@@ -17,9 +17,16 @@ using UnityEngine;
         
         QuickSlotsUI quickSlotsUI;
 
-        private void Awake()
+        PlayerStats playerStats;
+
+        int leftHandDamageColliderDanyo;
+        int rightHandDamageColliderDanyo;
+
+    private void Awake()
         {
-            animator = GetComponent<Animator>();
+        playerStats = GetComponentInParent<PlayerStats>();
+
+        animator = GetComponent<Animator>();
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
             
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>(); //array for weapon slots
@@ -37,15 +44,54 @@ using UnityEngine;
 
         }
 
-        public void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft) // cargar armas a las manos
+    private void Update()
+    {
+        if (rightHandDamageCollider != null)
+        {
+            if (playerStats != null)
+            {
+                if (playerStats.FLAGFuego)
+                {
+                    rightHandDamageCollider.currentWeaponDamage = rightHandDamageColliderDanyo + playerStats.extraFireDamage;
+                }
+                else
+                {
+                    rightHandDamageCollider.currentWeaponDamage = rightHandDamageColliderDanyo;
+                }
+            }
+        }
+
+        if (leftHandDamageCollider != null)
+        {
+            if (playerStats != null)
+            {
+                if (playerStats.FLAGFuego)
+                {
+                    leftHandDamageCollider.currentWeaponDamage = leftHandDamageColliderDanyo + playerStats.extraFireDamage;
+                }
+                else
+                {
+                    leftHandDamageCollider.currentWeaponDamage = leftHandDamageColliderDanyo;
+                }
+            }
+        }
+    }
+
+
+    public void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft) // cargar armas a las manos
         {
             if (isLeft) // si es para la izquierda
             {
                 leftHandSlot.LoadWeapomodel(weaponItem); //llamamos a la funcion de la clase WeaponHolderSlot.cs para cargar 
                 LoadLeftWeaponDamageCollider(); //metodo que anyade el collider al left hand
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
-                #region Handle Left  Weapon Idle Animations
-                if (weaponItem != null)
+            if (leftHandDamageCollider != null)
+            {
+                leftHandDamageColliderDanyo = leftHandDamageCollider.currentWeaponDamage;
+
+            }
+            #region Handle Left  Weapon Idle Animations
+            if (weaponItem != null)
                 {
                     animator.CrossFade(weaponItem.left_hand_idle, 0.2f);
                 }
@@ -60,8 +106,14 @@ using UnityEngine;
                 rightHandSlot.LoadWeapomodel(weaponItem); //cargar modelo arma
                 LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
-                #region Handle Right Weapon Idle Animations
-                if (weaponItem != null)
+                rightHandDamageColliderDanyo = rightHandDamageCollider.currentWeaponDamage;
+            if (rightHandDamageCollider != null)
+            {
+
+                rightHandDamageColliderDanyo = rightHandDamageCollider.currentWeaponDamage;
+            }
+            #region Handle Right Weapon Idle Animations
+            if (weaponItem != null)
                 {
                     animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
                 }

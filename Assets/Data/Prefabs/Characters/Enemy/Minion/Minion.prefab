@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 2478736098071631954}
+  isItem: 0
   salud: 12
   recibiendoDanyo: 0
   pausa: 0.2
@@ -73,6 +74,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3091681860348367475, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094694748371660717, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: me
+      value: 
+      objectReference: {fileID: 2278545461008397301}
+    - target: {fileID: 6094694748371660717, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: area
+      value: 
+      objectReference: {fileID: 2278545460826707178}
+    - target: {fileID: 6094694748371660717, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+      propertyPath: cuerpo
+      value: 
+      objectReference: {fileID: 947359022126176886}
     - target: {fileID: 6270710146492461412, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -214,5 +231,15 @@ Transform:
 --- !u!135 &2278545461008397302 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 8116180843765013765, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+  m_PrefabInstance: {fileID: 8015688804168527603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &947359022126176886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7068611260377330821, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
+  m_PrefabInstance: {fileID: 8015688804168527603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &2278545460826707178 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 8116180842863000089, guid: a53a15ebb20bfea4ca29142ca0bf297a, type: 3}
   m_PrefabInstance: {fileID: 8015688804168527603}
   m_PrefabAsset: {fileID: 0}
