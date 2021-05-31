@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ff6e3a5bb545434a8f5c6a6fcc76dd9, type: 3}
-  m_Name: PiranyasDuales
+  m_Name: CastigoDeCobardes
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 20e952dce9ddd4d45872b560c358416c, type: 3}
-  itemName: "Pira\xF1as duales"
-  modelPrefab: {fileID: 2074490960655103311, guid: c9b62052764d78c40829f7398a695709, type: 3}
-  right_hand_idle: Right Arm Emty
-  left_hand_idle: Left Arm Emty
+  itemName: Castigo de cobardes
+  modelPrefab: {fileID: 2185631831329602081, guid: 3aae212e7087557429a4202dcdba0ca0, type: 3}
+  right_hand_idle: 
+  left_hand_idle: 
