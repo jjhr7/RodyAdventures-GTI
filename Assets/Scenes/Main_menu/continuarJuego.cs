@@ -8,6 +8,6 @@ public class continuarJuego : MonoBehaviour
 {
     public void botonContinuar()
     {
-        SceneManager.LoadScene("arena_1");
+        SceneManager.LoadScene("nivel1");
     }
 }
