@@ -201,7 +201,7 @@ MonoBehaviour:
   coinsUI: {fileID: 0}
   contadorm: {fileID: 0}
   playerStats: {fileID: 0}
-  shop: {fileID: 0}
+  shop: {fileID: 331425050942195477}
   shopItemSO:
   - {fileID: 11400000, guid: 7abea8c52b7356d4391071be04548707, type: 2}
   - {fileID: 11400000, guid: 953231b2c62700b488d33d4468710b9d, type: 2}

@@ -45,7 +45,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] //make private variables visible
     public float rotationSpeed = 10;
     [SerializeField] //make private variables visible
-    public float fallingSpeed = 45;
+    public float fallingSpeed = 350;
 
     //para el salto estatico
     public bool isJumping;
@@ -74,8 +74,18 @@ public class PlayerLocomotion : MonoBehaviour
 
         playerManager.isGrounded = true; //empieza el jugador en el suelo
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+        if (isJumping == true)
+        {
+            rigidbody.AddForce(0, 0.8f, 0, ForceMode.Impulse);
+        }
     }
-
+    private void Update()
+    {
+        if (isJumping == true)
+        {
+            rigidbody.AddForce(0, 0.8f, 0, ForceMode.Impulse);
+        }
+    }
 
 
     // #region es un organizador de codigo en bloques
