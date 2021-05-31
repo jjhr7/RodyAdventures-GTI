@@ -27,7 +27,10 @@ public class InputHandler : MonoBehaviour
     public bool changeWeapon2_input;*/
     //Inventario / UI
     public bool inventory_Input;
+    // shop / ui
+    public bool shop_Input;
 
+    public bool shopFlag;
     public bool inventoryFlag;
     public bool rollflag;
     public bool sprintflag;
@@ -113,6 +116,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.A.performed += i => a_Input = true;
             //inventario / UI
             inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
+            // shop / UI
+            inputActions.PlayerActions.T.performed += i => shop_Input = true;
         }
 
         inputActions.Enable();
@@ -336,6 +341,12 @@ public class InputHandler : MonoBehaviour
                 UIManager.hudWindow.SetActive(true);//Al cerrar inventario activamos el hud
             }
         }
+    }
+
+    public void setFalseShopInput()
+    {
+        
+        shop_Input = false;
     }
 
     public void setFalseInventoryFlag()

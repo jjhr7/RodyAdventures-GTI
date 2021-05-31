@@ -108,5 +108,7 @@ public class UIManager : MonoBehaviour
         CloseAllInventoryWindows();
         hudWindow.SetActive(true);
     }
-    
+
+   
+
 }

@@ -23,6 +23,7 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
     InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
+    public GameObject shopWindow;
 
     public bool isInteracting;
     [Header("Player Flags")]
@@ -127,6 +128,34 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
                     if (inputHandler.a_Input)
                     {
                         hit.collider.GetComponent<Interactable>().Interact(this);
+                    }
+
+                }
+            }else
+                if (hit.collider.tag == "Shop")
+            {
+                Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+
+                if (interactableObject != null)
+                {
+                    if (itemInteractableGameObject.activeSelf.Equals(true)) //si ya hay un pop activo
+                    {
+                        itemInteractableGameObject.SetActive(false); //lo desactivamos para activar otro
+                    }
+                    string interactableText = interactableObject.interactableText;
+                    //set the ui text to the interactable object
+                    interactableUI.interactableText.text = interactableText; //set text
+                    interactableUIGameObject.SetActive(true); //activamos pop up
+
+                    if (inputHandler.shop_Input)
+                    {
+                        Time.timeScale = 0;
+                        shopWindow.SetActive(true);
+                    }
+                    else
+                    {
+                        Time.timeScale = 1;
+                        
                     }
 
                 }

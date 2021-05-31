@@ -34,7 +34,7 @@ public class ShopManager : MonoBehaviour
         coinsUI.text = coins.ToString();
         LoadPanels();
         CheckPurchaseable();
-        shop.SetActive(false);
+        //shop.SetActive(false);
     }
     
     // Update is called once per frame
