@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,16 @@ public class HandEquipmentSlotUI : MonoBehaviour
     public void AddItem(WeaponItem newWeapon)
     {
         weapon = newWeapon;
-        icon.sprite = weapon.itemIcon;
+        try
+        {
+
+            icon.sprite = weapon.itemIcon;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+
         icon.enabled = true;
         gameObject.SetActive(true);
     }
