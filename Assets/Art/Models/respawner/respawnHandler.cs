@@ -13,7 +13,6 @@ public class respawnHandler : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(player.position.y - transform.position.y);
         if (player.position.y - transform.position.y < 14)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

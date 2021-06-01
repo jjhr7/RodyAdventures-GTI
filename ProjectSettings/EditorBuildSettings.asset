@@ -11,20 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_menu/Controles.unity
     guid: 94766f23605cf5b42bc5523226f6dfa0
-  - enabled: 0
-    path: Assets/Scenes/Main_menu/prueba_main.unity
-    guid: 24796b31c0f97624c92ab6725e3d45cf
   - enabled: 1
-    path: Assets/Scenes/arena_1.unity
-    guid: e6c98e53abc080f4e89d01a80af7e070
+    path: Assets/Scenes/nivel_1/nivel1.unity
+    guid: 57db2e31a0d844d709bf86a7f288a063
   - enabled: 1
-    path: Assets/Scenes/pruebas_preboss/preboss_rd.unity
-    guid: 81a1460ced7914a8097752d560d6fa8f
+    path: Assets/Scenes/arena_nyapos/arena_nyapos.unity
+    guid: 31efa499aa4fa4b95907587da85559fb
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/arena_nyapos.unity
-    guid: 31efa499aa4fa4b95907587da85559fb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a8f2ff5481bdc274e8297b1d621015ac, type: 2}

@@ -8,6 +8,8 @@ TagManager:
   - Puerta
   - Bala
   - coin
+  - Interactable
+  - Shop
   layers:
   - Default
   - TransparentFX
