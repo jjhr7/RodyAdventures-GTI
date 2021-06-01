@@ -113,6 +113,7 @@ using UnityEngine;
                 fireRightWeapon = fireWeaponInRightHandSlots[currentRightFireWeaponIndex];
                 weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex], false);
             }
+            isFireWeaponEquiped = true;
             
         }
         
@@ -179,6 +180,8 @@ using UnityEngine;
                 fireLeftWeapon = fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex];
                 weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex], true);
             }
+            
+            isFireWeaponEquiped = true;
         }
         
         public void EquipCurrentWeapon()
