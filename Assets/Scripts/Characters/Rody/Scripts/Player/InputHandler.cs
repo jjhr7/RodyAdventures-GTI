@@ -61,6 +61,8 @@ public class InputHandler : MonoBehaviour
     //Acciones Disparo
     public static Action onStartFire;
     public static Action onStopFire;
+    
+
 
     private void Awake()
     {
@@ -72,6 +74,7 @@ public class InputHandler : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         cameraHolder = FindObjectOfType<CameraHolder>();
         UIManager = FindObjectOfType<UIManager>();
+
 
     }
 
@@ -238,7 +241,6 @@ public class InputHandler : MonoBehaviour
         onStartFire?.Invoke(); 
         //Debug.Log("Invocando Dsiparo");
         
-
     }
 
     private void OnStopShoot()

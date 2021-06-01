@@ -8,9 +8,11 @@ public class QuickSlotsUI : MonoBehaviour
     
     public Image leftWeaponIcon;
     public Image rightWeaponIcon;
-
+    public GameObject RightQuickSlot;
+    public GameObject LeftQuickSlot;
     public void UpdateWeaponQuickSlotsUI(bool isLeft, WeaponItem weapon)
     {
+        
         if (!isLeft)
         {
             if (weapon.itemIcon != null)
@@ -25,39 +27,11 @@ public class QuickSlotsUI : MonoBehaviour
             }
                 
         }
-        else
-        {
-            if (weapon.itemIcon != null)
-            {
-                leftWeaponIcon.sprite = weapon.itemIcon;
-                leftWeaponIcon.enabled = true;
-            }
-            else
-            {
-                leftWeaponIcon.sprite = null;
-                leftWeaponIcon.enabled = true;
-            }
-                
-        }
     }
     
     public void UpdateFireWeaponQuickSlotsUI(bool isLeft, FireWeponItem fireWeponItem)
     {
         if (!isLeft)
-        {
-            if (fireWeponItem.itemIcon != null)
-            {
-                rightWeaponIcon.sprite = fireWeponItem.itemIcon;
-                rightWeaponIcon.enabled = true;
-            }
-            else
-            {
-                rightWeaponIcon.sprite = null;
-                rightWeaponIcon.enabled = true;
-            }
-                
-        }
-        else
         {
             if (fireWeponItem.itemIcon != null)
             {
@@ -71,5 +45,15 @@ public class QuickSlotsUI : MonoBehaviour
             }
                 
         }
+    }
+
+    public void modifyVisibilityWeponSlot( bool newState)
+    {
+        RightQuickSlot.SetActive(newState);
+    }
+
+    public void modifyVisibilityFireWeapon(bool newState)
+    {
+        LeftQuickSlot.SetActive(newState);
     }
 }

@@ -35,12 +35,19 @@ using UnityEngine;
 
         // Lista con las armas del inventario
         public List<WeaponItem> weaponsInventory;
+        
+        //UI Armas
+        public GunSheet _gunSheet;
+        
 
         private void Awake() //se llama al cargar la isntancia del script
         {
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+
             EquipCurrentFireWeapon();
             EquipCurrentWeapon();
+            
+
         }
 
         private void Start() //se llama a start antes que a los metodos update...
@@ -80,6 +87,7 @@ using UnityEngine;
                 rightWeapon = weaponInRightHandSlots[currentRightWeaponIndex];
                 weaponSlotManager.LoadWeaponOnSlot(weaponInRightHandSlots[currentRightWeaponIndex], false);
             }
+            _gunSheet.DisableGunSheet();
             
         }
         
@@ -113,7 +121,10 @@ using UnityEngine;
                 fireRightWeapon = fireWeaponInRightHandSlots[currentRightFireWeaponIndex];
                 weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex], false);
             }
+            
             isFireWeaponEquiped = true;
+            _gunSheet.EnableGunSheet(fireWeaponInRightHandSlots[currentRightFireWeaponIndex]);
+            
             
         }
         
@@ -187,7 +198,7 @@ using UnityEngine;
         public void EquipCurrentWeapon()
         {
             isFireWeaponEquiped = false;
-            
+            _gunSheet.DisableGunSheet();
             weaponSlotManager.LoadWeaponOnSlot(weaponInRightHandSlots[currentRightWeaponIndex],false);
             weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex],true);
         }
@@ -195,6 +206,8 @@ using UnityEngine;
         public void EquipCurrentFireWeapon()
         {
             isFireWeaponEquiped = true;
+            _gunSheet.EnableGunSheet(fireWeaponInRightHandSlots[currentRightFireWeaponIndex]);
+            
             weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInRightHandSlots[currentRightFireWeaponIndex],false);
             weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex],true);
         }

@@ -12,11 +12,15 @@ public class GSCastigoDeCobardes : MonoBehaviour
     private bool rafaga = false;
     public ParticleSystem muzzleFlash;
     public int bulletsLeft;
+    
+    //UI Armas
+    public GunSheet _gunSheet;
 
     public void Awake()
     {
         bulletsLeft = magazineSize;
-        
+        //_gunSheet = GetComponent<GunSheet>();
+
     }
 
     private void OnEnable()
@@ -63,6 +67,7 @@ public class GSCastigoDeCobardes : MonoBehaviour
             Instantiate(bala, spawner4.position, spawner4.rotation);
             bulletsLeft --;
             Debug.Log(bulletsLeft+" / "+magazineSize);
+            //_gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             
         }

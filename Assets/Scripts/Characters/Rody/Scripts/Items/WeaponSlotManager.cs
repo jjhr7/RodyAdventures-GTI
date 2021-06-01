@@ -28,7 +28,7 @@ using UnityEngine;
 
         animator = GetComponent<Animator>();
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
-            
+
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>(); //array for weapon slots
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots) //bucle que determina que arma va en la L o en la R
             {
@@ -106,6 +106,7 @@ using UnityEngine;
                 rightHandSlot.LoadWeapomodel(weaponItem); //cargar modelo arma
                 LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
+                
                 rightHandDamageColliderDanyo = rightHandDamageCollider.currentWeaponDamage;
             if (rightHandDamageCollider != null)
             {
@@ -123,6 +124,8 @@ using UnityEngine;
                 }
                 #endregion
             }
+            quickSlotsUI.modifyVisibilityWeponSlot(true);
+            
         }
         
         public void LoadFireWeaponOnSlot(FireWeponItem fireWeponItem, bool isLeft)
