@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GunSheet : MonoBehaviour
 {
     public Image weaponIcon;
     public TextMeshPro bulletsInfo;
-    public GameObject gunSheet;
+    [FormerlySerializedAs("gunSheet")] public GameObject UIcomponent;
 
     public void EnableGunSheet(FireWeponItem fireWeponItem)
     {
-        gunSheet.SetActive(true);
+        UIcomponent.SetActive(true);
         
         if (fireWeponItem.itemIcon != null)
         {
-            //weaponIcon.sprite = fireWeponItem.itemIcon;
+            weaponIcon.sprite = fireWeponItem.itemIcon;
             
         }
         else
@@ -33,7 +34,7 @@ public class GunSheet : MonoBehaviour
 
     public void DisableGunSheet()
     {
-        gunSheet.SetActive(false);
+        UIcomponent.SetActive(false);
     }
 
 
