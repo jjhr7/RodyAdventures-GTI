@@ -7775,6 +7775,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 109
       objectReference: {fileID: 0}
+    - target: {fileID: 5223607445839969835, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223607445839969835, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_TagString
+      value: UIArmasMunicion
+      objectReference: {fileID: 0}
     - target: {fileID: 5247331664723322692, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

@@ -14,12 +14,12 @@ public class GSCastigoDeCobardes : MonoBehaviour
     public int bulletsLeft;
     
     //UI Armas
-    public GunSheet _gunSheet;
+    private GunSheet _gunSheet;
 
     public void Awake()
     {
         bulletsLeft = magazineSize;
-        //_gunSheet = GetComponent<GunSheet>();
+        _gunSheet = gameObject.GetComponent<GunSheet>();
 
     }
 
