@@ -229,7 +229,7 @@ public class InputHandler : MonoBehaviour
         }
         
     }
-    private void OnShoot()
+   private void OnShoot()
     {
         if (!playerInventory.isFireWeaponEquiped)
         {
@@ -263,6 +263,7 @@ public class InputHandler : MonoBehaviour
         playerInventory.ChangeLeftFireWeapon();
 
     }
+    
     //salto estatico
     private void HandleJumpingInput()
     {

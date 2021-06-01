@@ -44,28 +44,28 @@ public class WeaponInventorySlot : MonoBehaviour
         //Remove current item
         if (uiManager.rightHandSlot01Selected)
         {
-            //cogemos el item del slotSelected y lo añadimos a nuestro inventario
+            //cogemos el item del slotSelected y lo aÃ±adimos a nuestro inventario
             playerInventory.weaponsInventory.Add(playerInventory.weaponInRightHandSlots[0]);
             playerInventory.weaponInRightHandSlots[0] = item; //remplazamos los items
             playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
         }
         else if (uiManager.rightHandSlot02Selected)
         {
-            //cogemos el item del slotSelected y lo añadimos a nuestro inventario
+            //cogemos el item del slotSelected y lo aÃ±adimos a nuestro inventario
             playerInventory.weaponsInventory.Add(playerInventory.weaponInRightHandSlots[1]);
             playerInventory.weaponInRightHandSlots[1] = item; //remplazamos los items
             playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
         }
         else if (uiManager.leftHandSlot01Selected)
         {
-            //cogemos el item del slotSelected y lo añadimos a nuestro inventario
+            //cogemos el item del slotSelected y lo aÃ±adimos a nuestro inventario
             playerInventory.weaponsInventory.Add(playerInventory.weaponInLeftHandSlots[0]);
             playerInventory.weaponInLeftHandSlots[0] = item; //remplazamos los items
             playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
         }
         else if(uiManager.leftHandSlot02Selected)
         {
-            //cogemos el item del slotSelected y lo añadimos a nuestro inventario
+            //cogemos el item del slotSelected y lo aÃ±adimos a nuestro inventario
             playerInventory.weaponsInventory.Add(playerInventory.weaponInLeftHandSlots[1]);
             playerInventory.weaponInLeftHandSlots[1] = item; //remplazamos los items
             playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
@@ -81,6 +81,8 @@ public class WeaponInventorySlot : MonoBehaviour
         playerInventory.leftWeapon = playerInventory.weaponInLeftHandSlots[playerInventory.currentLeftWeaponIndex];
         
         //cargamos las armas a rody
+        
+        Debug.Log("ASADASDASDADADS:   "+playerInventory.currentRightWeaponIndex+ " "+playerInventory.currentLeftWeaponIndex);
         weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
         weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
         //update ui of the new weapons
