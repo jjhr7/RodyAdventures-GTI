@@ -201,7 +201,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.26
+  m_Radius: 1.47
   m_Center: {x: -0.59, y: 0.44, z: 0}
 --- !u!114 &3505183330475904226
 MonoBehaviour:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebf0ea95d0437d4a96a7e71ae9e5ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
+  radius: 5.45
   interactableText: Pulsa <T> para abrir la tienda
 --- !u!64 &1854815504
 MeshCollider:
