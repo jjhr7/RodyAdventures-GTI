@@ -9635,7 +9635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.6
-  interactableText: Pick Up Item
+  interactableText: Pulsa <Enter> / X (Gamepad)
   weapon: {fileID: 11400000, guid: 2e34e3064b5f741448af37c49e8e9adc, type: 2}
 --- !u!95 &692943546669279104
 Animator:
