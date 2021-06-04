@@ -2048,6 +2048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 1267772806087588349}
+  isItem: 0
   salud: 10
   recibiendoDanyo: 0
   pausa: 0
