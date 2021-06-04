@@ -919,13 +919,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3867514866586134679}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.9764657, z: 0.21567273, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 2645433876527880855}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -24.91, y: 180, z: 0}
 --- !u!33 &6496489262561597806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1981,6 +1981,7 @@ GameObject:
   - component: {fileID: 7938651699824187011}
   - component: {fileID: 7938651699824187008}
   - component: {fileID: 7938651699824187009}
+  - component: {fileID: 5216465808805195732}
   m_Layer: 0
   m_Name: escupe
   m_TagString: Enemy
@@ -2052,6 +2053,25 @@ MonoBehaviour:
   salud: 10
   recibiendoDanyo: 0
   pausa: 0
+--- !u!95 &5216465808805195732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127694596551282177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d45a0bddc0e64f42ae3f6fb63d3433b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7278341671826185650
 GameObject:
   m_ObjectHideFlags: 0
