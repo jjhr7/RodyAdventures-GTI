@@ -111,6 +111,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: camara1
       objectReference: {fileID: 0}
+    - target: {fileID: 4407187375235809858, guid: e42d2e9fbf8403c46b62fdc3419c118f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f265305512856b249800aa758cb90943, type: 2}
+    - target: {fileID: 4431670454091400558, guid: e42d2e9fbf8403c46b62fdc3419c118f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4bf5ed8e0e82ee4295c1ab4d981f5f8, type: 2}
     - target: {fileID: 6721992597810065892, guid: e42d2e9fbf8403c46b62fdc3419c118f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.55752844
@@ -131,6 +139,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -6.18
       objectReference: {fileID: 0}
+    - target: {fileID: 8424073627695423409, guid: e42d2e9fbf8403c46b62fdc3419c118f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cac046cd6769f034c803faa8a8a92306, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e42d2e9fbf8403c46b62fdc3419c118f, type: 3}
 --- !u!4 &2152211896186428473 stripped
