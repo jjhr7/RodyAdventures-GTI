@@ -195,6 +195,7 @@ MonoBehaviour:
   area: {fileID: 8116180842863000089}
   danyo: 10
   cuerpo: {fileID: 7068611260377330821}
+  anim: {fileID: 7068611260384484207}
 --- !u!135 &7387885982082151515
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -244,9 +245,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8116180843765013766}
     m_Modifications:
+    - target: {fileID: 2352740878408839794, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a1702c5489097974d9f893333957a2c5, type: 2}
     - target: {fileID: 2352740878416085432, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
       propertyPath: m_Name
       value: minion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352740878416584086, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352740878416584086, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352740878416584086, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352740878416584086, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352740878416584086, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2352740878416584088, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
       propertyPath: m_RootOrder
@@ -274,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2352740878416584088, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2352740878416584088, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -309,5 +334,10 @@ PrefabInstance:
 --- !u!4 &7068611260377330821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2352740878416584088, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
+  m_PrefabInstance: {fileID: 4809383845920139549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7068611260384484207 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2352740878408839794, guid: 1ccac7dea98485741bd3b4f482a4f6a9, type: 3}
   m_PrefabInstance: {fileID: 4809383845920139549}
   m_PrefabAsset: {fileID: 0}
