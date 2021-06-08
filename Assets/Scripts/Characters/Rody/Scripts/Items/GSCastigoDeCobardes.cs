@@ -12,7 +12,15 @@ public class GSCastigoDeCobardes : MonoBehaviour
     private bool rafaga = false;
     public ParticleSystem muzzleFlash;
     public int bulletsLeft;
-    
+
+
+    public int piranyasDualesDM;
+    public int piranyasDualesDMK;
+
+
+    PlayerStats PlayerStats;
+    GameObject[] player;
+    private GameObject myplayer;
     //UI Armas
     private GunSheet _gunSheet;
 
@@ -21,6 +29,15 @@ public class GSCastigoDeCobardes : MonoBehaviour
         bulletsLeft = magazineSize;
         _gunSheet = gameObject.GetComponent<GunSheet>();
 
+    }
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player");
+        myplayer = player[0];
+        PlayerStats = myplayer.GetComponent<PlayerStats>();
+        piranyasDualesDM = bala.GetComponent<BSPiranyasDuales>().bulletDamage;
+        piranyasDualesDMK = bala.GetComponent<BSPiranyasDuales>().bulletDamageFireKepot;
     }
 
     private void OnEnable()
@@ -72,6 +89,20 @@ public class GSCastigoDeCobardes : MonoBehaviour
             
         }
     }
+
+
+    private void Update()
+    {
+        if (PlayerStats.FLAGFuego)
+        {
+            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDMK;
+        }
+        else
+        {
+            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDM;
+        }
+    }
+
 
     public void ReloadAMMO( int ammo)
     {

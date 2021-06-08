@@ -83,6 +83,7 @@ MonoBehaviour:
   maxTimeJump: 1
   jump: 0
   braking: 0
+  fuego: {fileID: 2875084360728161151}
   time: {fileID: 1394035229760884234}
 --- !u!114 &8322985058345208543
 MonoBehaviour:
@@ -300,6 +301,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1272367909287015933, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272367909287015933, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895892204159298183, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4d80621f17985a47b83bb8b35395eed, type: 2}
     - target: {fileID: 1998425702836705902, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -344,6 +357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2318724849303748456, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a683b955b3d06e6429565831caff80f8, type: 2}
     - target: {fileID: 8584359223791359918, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
       propertyPath: m_Name
       value: PlayerMoto
@@ -358,5 +375,10 @@ GameObject:
 --- !u!4 &9107806944813404239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1998425702836705902, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
+  m_PrefabInstance: {fileID: 7340510874155076129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2875084360728161151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4771812577617142110, guid: d26e3ad35c446594d914578e7a329b36, type: 3}
   m_PrefabInstance: {fileID: 7340510874155076129}
   m_PrefabAsset: {fileID: 0}

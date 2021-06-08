@@ -12,11 +12,26 @@ public class GSPiranyasDuales : MonoBehaviour
     private bool rafaga = false;
     public ParticleSystem muzzleFlash;
     public int bulletsLeft;
+    public int piranyasDualesDM; 
+    public int piranyasDualesDMK;
 
+
+    PlayerStats PlayerStats;
+    GameObject[] player;
+    private GameObject myplayer;
     public void Awake()
     {
         bulletsLeft = magazineSize;
-        
+
+    }
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player");
+        myplayer = player[0];
+        PlayerStats = myplayer.GetComponent<PlayerStats>();
+        piranyasDualesDM = bala.GetComponent<BSPiranyasDuales>().bulletDamage;
+        piranyasDualesDMK = bala.GetComponent<BSPiranyasDuales>().bulletDamageFireKepot;
     }
 
     private void OnEnable()
@@ -68,6 +83,18 @@ public class GSPiranyasDuales : MonoBehaviour
     public void ReloadAMMO( int ammo)
     {
         bulletsLeft = bulletsLeft + ammo;
+    }
+
+    private void Update()
+    {
+        if (PlayerStats.FLAGFuego)
+        {
+            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDMK;
+        }
+        else
+        {
+            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDM;
+        }
     }
 }
 public enum ModoDisparo

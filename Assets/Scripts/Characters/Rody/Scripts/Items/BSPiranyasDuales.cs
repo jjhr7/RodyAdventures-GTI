@@ -6,7 +6,9 @@ public class BSPiranyasDuales : MonoBehaviour
 {
     public float velocidad = 3f;
     public int bulletDamage = 1;
-    
+    public int bulletDamageFireKepot = 2;
+
+
     //LifeLine
     public int maxCollisions;
     public float maxLifeTime;
