@@ -36,6 +36,8 @@ public class MotoMovement : MonoBehaviour
 	public bool jump;
 	public bool braking;
 
+	public GameObject fuego;
+
 	public Text time;
 	float timer;
 	void Start()
@@ -61,11 +63,17 @@ public class MotoMovement : MonoBehaviour
 		float aclAxis = input.thruster;
 		if (aclAxis > m_deadZone)
 		{
+			fuego.SetActive(true);
 			m_currentThrust = aclAxis * m_fordwardAcl;
 		}
 		else if (aclAxis < -m_deadZone)
 		{
+			fuego.SetActive(false);
 			m_currentThrust = aclAxis * m_BackAcl;
+        }
+        else
+        {
+			fuego.SetActive(false);
 		}
 
 		currentTurn = 0.0f;
