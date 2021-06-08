@@ -9,7 +9,6 @@ public class particulasFuego : MonoBehaviour
     PlayerStats PlayerStats;
     GameObject[] player;
     private GameObject myplayer;
-    PlayerStats ps;
     public GameObject particle;
     void Start()
     {

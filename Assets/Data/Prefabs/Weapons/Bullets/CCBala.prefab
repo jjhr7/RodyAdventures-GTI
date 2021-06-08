@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 50
   bulletDamage: 15
+  bulletDamageFireKepot: 25
   maxCollisions: 1
   maxLifeTime: 0.5
 --- !u!1001 &3944865922213352922

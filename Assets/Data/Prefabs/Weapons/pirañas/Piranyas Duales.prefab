@@ -4937,6 +4937,8 @@ MonoBehaviour:
   magazineSize: 100
   muzzleFlash: {fileID: 4420803098182657744}
   bulletsLeft: 0
+  piranyasDualesDM: 5
+  piranyasDualesDMK: 10
 --- !u!114 &7905370946637288179
 MonoBehaviour:
   m_ObjectHideFlags: 0
