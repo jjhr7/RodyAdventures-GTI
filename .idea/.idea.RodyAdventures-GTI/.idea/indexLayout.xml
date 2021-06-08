@@ -39,7 +39,6 @@
       <Path>MonoBleedingEdge</Path>
       <Path>Rody.app</Path>
       <Path>RodyAdventures-GTI_Data</Path>
-      <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>
