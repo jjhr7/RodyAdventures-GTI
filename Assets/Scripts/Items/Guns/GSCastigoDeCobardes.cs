@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(200)]
 public class GSCastigoDeCobardes : MonoBehaviour
 {
     public ModoDisparo modo = ModoDisparo.Unico;
@@ -27,7 +28,7 @@ public class GSCastigoDeCobardes : MonoBehaviour
     public void Awake()
     {
         bulletsLeft = magazineSize;
-        _gunSheet = gameObject.GetComponent<GunSheet>();
+        _gunSheet = FindObjectOfType<GunSheet>();
 
     }
 
@@ -84,7 +85,7 @@ public class GSCastigoDeCobardes : MonoBehaviour
             Instantiate(bala, spawner4.position, spawner4.rotation);
             bulletsLeft --;
             Debug.Log(bulletsLeft+" / "+magazineSize);
-            //_gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
+            _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             
         }

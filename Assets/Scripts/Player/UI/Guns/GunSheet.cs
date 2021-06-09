@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GunSheet : MonoBehaviour
 {
     public Image weaponIcon;
-    public TextMeshPro bulletsInfo;
+    public TextMeshProUGUI bulletsInfo;
     [FormerlySerializedAs("gunSheet")] public GameObject UIcomponent;
 
     public void EnableGunSheet(FireWeponItem fireWeponItem)
