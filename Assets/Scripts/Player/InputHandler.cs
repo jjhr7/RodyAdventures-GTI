@@ -323,27 +323,27 @@ public class InputHandler : MonoBehaviour
 
     private void HandleInventoryInput()
     {
-        if (inventory_Input) //si se pulsa el boton del inventario / UI
-        {
-            inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
+            if (inventory_Input && playerManager.isGrounded) //si se pulsa el boton del inventario / UI
+            {
+                inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
 
-            if (inventoryFlag) //si el flag es true
-            {
-                Time.timeScale = 0; //pausar juego
-                UIManager.OpenSelectedWindow();
-                UIManager.UpdateUI(); //actualizar los slots del inventario
-                //abrimos los windows principales
-                UIManager.OpenAllInventoryWindows();
-                UIManager.hudWindow.SetActive(false); //cuando abrimos el inventario cerramos el HUD
-            }
-            else // si inventoryFlag es false, cerrar windows
-            {
-                Time.timeScale = 1; //renaudar juego
-                UIManager.CloseSelectedWindow(); //cerrar menu de seleccion
-                UIManager.CloseAllInventoryWindows(); //cerrar inventory window
-                UIManager.hudWindow.SetActive(true);//Al cerrar inventario activamos el hud
-            }
-        }
+                if (inventoryFlag) //si el flag es true
+                {
+                    Time.timeScale = 0; //pausar juego
+                    UIManager.OpenSelectedWindow();
+                    UIManager.UpdateUI(); //actualizar los slots del inventario
+                                          //abrimos los windows principales
+                    UIManager.OpenAllInventoryWindows();
+                    UIManager.hudWindow.SetActive(false); //cuando abrimos el inventario cerramos el HUD
+                }
+                else // si inventoryFlag es false, cerrar windows
+                {
+                    Time.timeScale = 1; //renaudar juego
+                    UIManager.CloseSelectedWindow(); //cerrar menu de seleccion
+                    UIManager.CloseAllInventoryWindows(); //cerrar inventory window
+                    UIManager.hudWindow.SetActive(true);//Al cerrar inventario activamos el hud
+                }
+            }       
     }
 
     public void setFalseShopInput()
