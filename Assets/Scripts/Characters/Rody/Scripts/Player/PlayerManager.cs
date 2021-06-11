@@ -31,6 +31,8 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
     public bool isInAir; //bool para saber si esta en el aire
     public bool isGrounded; //bool para saber si esta en el suelo
     public bool canDoCombo;
+    public bool entroEnLaTienda;
+
 
     private void Awake()
     {
@@ -149,6 +151,7 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
 
                     if (inputHandler.shop_Input)
                     {
+                        entroEnLaTienda = true;
                         Time.timeScale = 0;
                         shopWindow.SetActive(true);
                     }
