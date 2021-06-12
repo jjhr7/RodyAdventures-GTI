@@ -323,7 +323,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleInventoryInput()
     {
-        if (inventory_Input) //si se pulsa el boton del inventario / UI
+        if (inventory_Input && playerManager.isGrounded) //si se pulsa el boton del inventario / UI
         {
             inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
 
