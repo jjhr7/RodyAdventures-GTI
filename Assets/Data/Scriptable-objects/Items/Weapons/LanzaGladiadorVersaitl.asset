@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 8ebb98d9bd03a0940b8366a18a5f4056, type: 3}
   itemName: "Lanza del gladiador vers\xE1til"
-  modelPrefab: {fileID: 2946201470162426549, guid: d5ee0c773894c9747a29fab5c4df3e7e, type: 3}
+  modelPrefab: {fileID: 5402882573251574471, guid: fd92e8c2e2e3fee43be12ad87f65a212, type: 3}
   isUnarmed: 0
   right_hand_idle: Right_Arm_Idle_01
   left_hand_idle: Left_Arm_Idle_01
-  OH_Light_Attack_1: OH_Light_Attack_1
-  OH_Light_Attack_2: OH_Light_Attack_2
-  OH_Heavy_Attack_1: OH_Heavy_Attack_1
+  OH_Light_Attack_1: SP-light-attack-1
+  OH_Light_Attack_2: SP-light-attack-1
+  OH_Heavy_Attack_1: SP-heavy-attack

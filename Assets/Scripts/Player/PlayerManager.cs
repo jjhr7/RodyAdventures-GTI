@@ -31,8 +31,6 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
     public bool isInAir; //bool para saber si esta en el aire
     public bool isGrounded; //bool para saber si esta en el suelo
     public bool canDoCombo;
-    public bool entroEnLaTienda;
-
 
     private void Awake()
     {
@@ -112,11 +110,11 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
 
         if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out hit, 0.8f))
         {
-            if (hit.collider.tag == "Interactable")
+            if(hit.collider.tag == "Interactable")
             {
                 Interactable interactableObject = hit.collider.GetComponent<Interactable>();
 
-                if (interactableObject != null)
+                if(interactableObject != null)
                 {
                     if (itemInteractableGameObject.activeSelf.Equals(true)) //si ya hay un pop activo
                     {
@@ -133,8 +131,7 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
                     }
 
                 }
-            }
-            else
+            }else
                 if (hit.collider.tag == "Shop")
             {
                 Interactable interactableObject = hit.collider.GetComponent<Interactable>();
@@ -152,14 +149,13 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
 
                     if (inputHandler.shop_Input)
                     {
-                        entroEnLaTienda = true;
                         Time.timeScale = 0;
                         shopWindow.SetActive(true);
                     }
                     else
                     {
                         Time.timeScale = 1;
-
+                        
                     }
 
                 }

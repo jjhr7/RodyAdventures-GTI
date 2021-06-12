@@ -56,7 +56,6 @@ public class GSCastigoDeCobardes : MonoBehaviour
     
     void StartShooting()
     {
-        
         if ( bulletsLeft > 0)
         {
             if (modo == ModoDisparo.Rafaga)
