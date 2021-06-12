@@ -76,14 +76,23 @@ public class PlayerLocomotion : MonoBehaviour
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
         if (isJumping == true)
         {
-            rigidbody.AddForce(0, 0.8f, 0, ForceMode.Impulse);
+            //rigidbody.AddRelativeForce(0, 0.8f, 0.8f, ForceMode.Impulse);
         }
     }
     private void Update()
     {
+
         if (isJumping == true)
         {
-            rigidbody.AddForce(0, 0.8f, 0, ForceMode.Impulse);
+            /*if (rigidbody.velocity.magnitude<2)
+            {
+                //rigidbody.AddRelativeForce(new Vector3(0, 1, 0) * 1.75f, ForceMode.Impulse);
+                Debug.Log("DENGUE");
+            }
+            else
+            {
+                rigidbody.AddRelativeForce(new Vector3(0, 2, 1) * 2.5f, ForceMode.Impulse);
+            }*/
         }
     }
 
@@ -131,7 +140,7 @@ public class PlayerLocomotion : MonoBehaviour
         }
         else
         {
-            
+
             Vector3 targetDir = Vector3.zero; //variable vector(0,0,0)
             float moveOverride = inputHandler.moveAmount;
 
@@ -199,17 +208,20 @@ public class PlayerLocomotion : MonoBehaviour
         rigidbody.velocity = projectedVelocity;
 
         //animaciones modo enfoque
-        if (inputHandler.lockOnFlag && inputHandler.sprintflag == false) { //SI ESTA EN MODO ENFOQUE y no esta en modo bola
+        if (inputHandler.lockOnFlag && inputHandler.sprintflag == false)
+        { //SI ESTA EN MODO ENFOQUE y no esta en modo bola
 
             animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
-        
-        } else { //sino
-            
+
+        }
+        else
+        { //sino
+
             animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
-        
+
         }
 
-        
+
 
         if (animatorHandler.canRotate)
         {
@@ -332,13 +344,28 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         if (playerManager.isGrounded)
         {
+            Salto(rigidbody.velocity.magnitude);
+
+
             animatorHandler.anim.SetBool("isJumping", true);
+
             animatorHandler.PlayTargetAnimation("Jump", false);
 
-            float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-            Vector3 playerVelocity = moveDirection;
-            playerVelocity.y = jumpingVelocity;
-            rigidbody.velocity = playerVelocity;
+
+        }
+    }
+
+    private void Salto(float velocity)
+    {
+        if (velocity < 2)
+        {
+            transform.Translate(Vector3.up * 2);
+            rigidbody.AddRelativeForce(new Vector3(0, 1, 0) * 80f, ForceMode.Impulse);
+            Debug.Log("DENGUE");
+        }
+        else
+        {
+            rigidbody.AddRelativeForce(new Vector3(0, 4, 3) * 25f, ForceMode.Impulse);
         }
     }
 
