@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(200)]
 public class GSPiranyasDuales : MonoBehaviour
 {
     public ModoDisparo modo = ModoDisparo.Unico;
@@ -20,13 +19,9 @@ public class GSPiranyasDuales : MonoBehaviour
     PlayerStats PlayerStats;
     GameObject[] player;
     private GameObject myplayer;
-    
-    //UI Armas
-    private GunSheet _gunSheet;
     public void Awake()
     {
         bulletsLeft = magazineSize;
-        _gunSheet = FindObjectOfType<GunSheet>();
 
     }
 
@@ -80,7 +75,6 @@ public class GSPiranyasDuales : MonoBehaviour
             Instantiate(bala, spawner.position, spawner.rotation);
             bulletsLeft --;
             Debug.Log(bulletsLeft+" / "+magazineSize);
-            _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             
         }
