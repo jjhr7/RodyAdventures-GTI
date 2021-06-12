@@ -215,7 +215,7 @@ public class PlayerStats : MonoBehaviour
 
         if (FLAGFuego)
         {
-            fireClone.transform.position = transform.position;
+            //fireClone.transform.position = transform.position;
             timerFuego += Time.deltaTime;
             if (timerFuego > 60)
             {

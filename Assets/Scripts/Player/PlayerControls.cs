@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Characters/Rody/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Data/Scriptable-objects/Player/PlayerControls.inputactions'
 
 using System;
 using System.Collections;

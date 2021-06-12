@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 0fc7cd9b8958088478b4fed7d2bbe576
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cubo1: {instanceID: 0}
+  - cubo2: {instanceID: 0}
+  - cubo3: {instanceID: 0}
+  - cuboTienda: {instanceID: 0}
+  - cuboArma: {instanceID: 0}
+  - cuboMover: {instanceID: 0}
+  - cajamonedas: {instanceID: 0}
+  - cajasmonedas: {instanceID: 0}
+  - kepot: {instanceID: 0}
+  - arma: {fileID: 4401909430431079248, guid: 25cdedf673c07b740884fb33213edea8, type: 3}
+  - shopWindow: {instanceID: 0}
+  - bola: {instanceID: 0}
+  - subtitles: {instanceID: 0}
+  - subitlesTX: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
