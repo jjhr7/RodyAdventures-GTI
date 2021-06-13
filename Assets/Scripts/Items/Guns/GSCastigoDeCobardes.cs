@@ -85,6 +85,11 @@ public class GSCastigoDeCobardes : MonoBehaviour
             Instantiate(bala, spawner4.position, spawner4.rotation);
             bulletsLeft --;
             Debug.Log(bulletsLeft+" / "+magazineSize);
+            
+            if (_gunSheet == null)
+            {
+                _gunSheet = FindObjectOfType<GunSheet>();
+            }
             _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             

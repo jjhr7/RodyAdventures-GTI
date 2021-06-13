@@ -38,6 +38,9 @@ using UnityEngine;
         
         //UI Armas
         public GunSheet _gunSheet;
+
+        private int bulletsGun1, bulletsGun2;
+        
         
 
         private void Awake() //se llama al cargar la isntancia del script
@@ -47,6 +50,7 @@ using UnityEngine;
             EquipCurrentFireWeapon();
             EquipCurrentWeapon();
             
+
 
         }
 
@@ -87,6 +91,8 @@ using UnityEngine;
                 rightWeapon = weaponInRightHandSlots[currentRightWeaponIndex];
                 weaponSlotManager.LoadWeaponOnSlot(weaponInRightHandSlots[currentRightWeaponIndex], false);
             }
+            
+            isFireWeaponEquiped = false;
             _gunSheet.DisableGunSheet();
             
         }
@@ -159,6 +165,7 @@ using UnityEngine;
                 leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
                 weaponSlotManager.LoadWeaponOnSlot(weaponInLeftHandSlots[currentLeftWeaponIndex], true);
             }
+            isFireWeaponEquiped = false;
         }
         
         public void ChangeLeftFireWeapon()

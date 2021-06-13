@@ -80,6 +80,10 @@ public class GSPiranyasDuales : MonoBehaviour
             Instantiate(bala, spawner.position, spawner.rotation);
             bulletsLeft --;
             Debug.Log(bulletsLeft+" / "+magazineSize);
+            if (_gunSheet == null)
+            {
+                _gunSheet = FindObjectOfType<GunSheet>();
+            }
             _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             
