@@ -29,7 +29,7 @@ public class aperturaCajaMonedas : MonoBehaviour
         if (stats.recibiendoDanyo)
         {
 
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 20; i++)
             {
 
                 Vector2 r = Random.insideUnitCircle * 3;
