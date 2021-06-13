@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modo: 1
   cadencia: 0.1
-  bala: {fileID: 6548853855740271640, guid: 938710c1e428ad9448edcfba7b4de936, type: 3}
+  bala: {fileID: 6852518878116157028, guid: e0306f48f149de240977cdd72f08183c, type: 3}
   spawner: {fileID: 5987527585926327511}
   magazineSize: 100
   muzzleFlash: {fileID: 7933209381362635336}

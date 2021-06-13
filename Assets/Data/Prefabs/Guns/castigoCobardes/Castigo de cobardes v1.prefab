@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modo: 1
   cadencia: 2
-  bala: {fileID: 6548853855740271640, guid: d0873e6af767bd240ab29b9acd3a91e1, type: 3}
+  bala: {fileID: 6852518878116157028, guid: cc85e6949641b0244bc04d81bf99e052, type: 3}
   spawner1: {fileID: 3041683393181645709}
   spawner2: {fileID: 2672179348901260361}
   spawner3: {fileID: 8915674210858724335}
