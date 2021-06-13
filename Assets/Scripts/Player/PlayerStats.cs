@@ -215,7 +215,14 @@ public class PlayerStats : MonoBehaviour
 
         if (FLAGFuego)
         {
-            //fireClone.transform.position = transform.position;
+            if (fireClone!=null)
+            {
+                fireClone.transform.position = transform.position;
+            }
+            else
+            {
+                fireClone = GameObject.Find("ParticleFire(Clone)");
+            }
             timerFuego += Time.deltaTime;
             if (timerFuego > 60)
             {
@@ -325,7 +332,7 @@ public class PlayerStats : MonoBehaviour
         {
 
             timerFuego = 0;
-            Instantiate(fire, transform);
+            Instantiate<GameObject>(fire, transform);
             fireClone = GameObject.Find("ParticleFire(Clone)");
             extraFireDamage = valor;
             FLAGFuego = true;
