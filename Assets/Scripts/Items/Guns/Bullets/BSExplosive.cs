@@ -7,6 +7,11 @@ public class BSExplosive : MonoBehaviour
     public float velocidad = 3f;
     public int bulletDamage = 1;
     public int bulletDamageFireKepot = 2;
+    public GameObject explosion;
+    
+    //Damage
+    public float explosionRange;
+    public float explosionForce;
 
 
     //LifeLine
@@ -28,6 +33,8 @@ public class BSExplosive : MonoBehaviour
             EnemyStats enemyStats = other.GetComponent<EnemyStats>(); //obtener clase EnemyStats del enemigo
             if (enemyStats != null) //si existe
             {
+                if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+                
                 enemyStats.TakeDamage(bulletDamage); //hacer danyo
                 Destroy(gameObject);
                 //Debug.Log("Bala destruida por colision contra enemigo");
@@ -36,6 +43,8 @@ public class BSExplosive : MonoBehaviour
 
         if (maxCollisions - 1 == 0)
         {
+            if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+            
             Destroy(gameObject);
             //Debug.Log("Bala destruida por colision");
         }
@@ -45,4 +54,5 @@ public class BSExplosive : MonoBehaviour
         }
 
     }
+    
 }

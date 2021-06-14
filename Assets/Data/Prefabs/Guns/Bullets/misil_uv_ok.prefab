@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 893653350505008805}
   - component: {fileID: 3135089959369751151}
   - component: {fileID: 7042935843603676226}
-  - component: {fileID: 4706032687637741282}
+  - component: {fileID: 893961013148230056}
   m_Layer: 0
   m_Name: misil_uv_ok
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.615503, y: 10.887272, z: 31.424055}
   m_Center: {x: 0.02514577, y: 0.024951696, z: 13.619945}
---- !u!114 &4706032687637741282
+--- !u!114 &893961013148230056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,14 +106,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3495619890475113402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1968f3574225574886e1c7ceb5f7fe6, type: 3}
+  m_Script: {fileID: 11500000, guid: b9ce14e945c60e143a840154c07252dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 50
-  bulletDamage: 30
-  bulletDamageFireKepot: 60
+  bulletDamage: 60
+  bulletDamageFireKepot: 80
+  explosion: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  explosionRange: 5
+  explosionForce: 10
   maxCollisions: 1
-  maxLifeTime: 10
+  maxLifeTime: 5
 --- !u!1001 &7273022155685378068
 PrefabInstance:
   m_ObjectHideFlags: 0

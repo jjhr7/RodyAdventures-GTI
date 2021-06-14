@@ -34,8 +34,8 @@ public class GSAbreHorizontes : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
         PlayerStats = myplayer.GetComponent<PlayerStats>();
-        piranyasDualesDM = bala.GetComponent<BSPiranyasDuales>().bulletDamage;
-        piranyasDualesDMK = bala.GetComponent<BSPiranyasDuales>().bulletDamageFireKepot;
+        piranyasDualesDM = bala.GetComponent<BSExplosive>().bulletDamage;
+        piranyasDualesDMK = bala.GetComponent<BSExplosive>().bulletDamageFireKepot;
     }
 
     private void OnEnable()
@@ -98,11 +98,11 @@ public class GSAbreHorizontes : MonoBehaviour
     {
         if (PlayerStats.FLAGFuego)
         {
-            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDMK;
+            bala.GetComponent<BSExplosive>().bulletDamage = piranyasDualesDMK;
         }
         else
         {
-            bala.GetComponent<BSPiranyasDuales>().bulletDamage = piranyasDualesDM;
+            bala.GetComponent<BSExplosive>().bulletDamage = piranyasDualesDM;
         }
     }
 }

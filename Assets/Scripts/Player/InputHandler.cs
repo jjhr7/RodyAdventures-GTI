@@ -248,6 +248,9 @@ public class InputHandler : MonoBehaviour
     }
    private void OnShoot()
     {
+        if(inventoryFlag)
+            return;
+        
         if (!playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentFireWeapon();

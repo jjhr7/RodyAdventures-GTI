@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5499361939395058694}
-  - component: {fileID: 6165482105050187655}
+  - component: {fileID: 5180224186598621266}
   m_Layer: 0
   m_Name: Abre horizontes V1
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6165482105050187655
+--- !u!114 &5180224186598621266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1050036866761243053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e03cfb6e27446499ab412684b74e46, type: 3}
+  m_Script: {fileID: 11500000, guid: d6042c3931d57544596663a7757f3e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   modo: 1
@@ -51,8 +51,8 @@ MonoBehaviour:
   magazineSize: 10
   muzzleFlash: {fileID: 1644034959786811757}
   bulletsLeft: 0
-  piranyasDualesDM: 0
-  piranyasDualesDMK: 0
+  piranyasDualesDM: 60
+  piranyasDualesDMK: 80
 --- !u!1 &1561229740650814052
 GameObject:
   m_ObjectHideFlags: 0
