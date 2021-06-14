@@ -92,8 +92,7 @@ public class UIManager : MonoBehaviour
     //funciones aparte que he hecho
     public void OpenAllInventoryWindows()
     {
-        equipmentScreenWindow.SetActive(true);
-        weaponInventoryWindow.SetActive(true);
+        GameOptionsWindow.SetActive(true);
     }
 
     public void BackToMainMenuScene()

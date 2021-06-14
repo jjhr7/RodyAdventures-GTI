@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 62de6bbab30fd8c47a8a7627f281cec6
+guid: 273cdebf244665547ace6c85da238b3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1578029818466738361
-    second: vida_n_0
+      213: 1008877856383824963
+    second: ajustes_0
+  - first:
+      213: -749382257605706621
+    second: ajustes_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vida_n_0
+      name: ajustes_0
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 3948
-        width: 3258
-        height: 666
+        x: 1630
+        y: 6894
+        width: 3040
+        height: 552
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +123,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74fd059ad36b91ae0800000000000000
-      internalID: -1578029818466738361
+      spriteID: 344f38ba011400e00800000000000000
+      internalID: 1008877856383824963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajustes_1
+      rect:
+        serializedVersion: 2
+        x: 4715
+        y: 7433
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c7e6e9ec8a995f0800000000000000
+      internalID: -749382257605706621
       vertices: []
       indices: 
       edges: []
@@ -129,7 +153,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0f22ae889e6c2446b6d757b1e5c4059
+    spriteID: 37948954c9ecf9b49b3b2075ecb15eb0
     internalID: 0
     vertices: []
     indices: 

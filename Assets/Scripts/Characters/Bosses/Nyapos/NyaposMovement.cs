@@ -76,6 +76,8 @@ public class NyaposMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public GameObject barraGo;
+    public HealthBar health;
 
     void Start()
     {
@@ -106,16 +108,18 @@ public class NyaposMovement : MonoBehaviour
         posicionActual = new PositionData(transform.position, transform.rotation);
         transformacion = false;
         segundaFase = false;
+        health.SetMaxHealth(stats.Salud);
     }
 
     void FixedUpdate()
     {
         if (empiezaLaPelea)
         {
+            barraGo.SetActive(true);
             //Recibir Danyo
             if (stats.recibiendoDanyo)
             {
-                //rend.material.SetColor("_Color", Color.magenta);
+                health.SetCurrentHealth(stats.Salud);
             }
             else
             {

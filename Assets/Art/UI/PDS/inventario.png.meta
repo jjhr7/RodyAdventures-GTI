@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 62de6bbab30fd8c47a8a7627f281cec6
+guid: 2a6e28747f2f6984f95bbf6fb458a18a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1578029818466738361
-    second: vida_n_0
+      213: 9058130474352158333
+    second: inventario_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vida_n_0
+      name: inventario_0
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 3948
-        width: 3258
-        height: 666
+        x: 1630
+        y: 7803
+        width: 3040
+        height: 557
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74fd059ad36b91ae0800000000000000
-      internalID: -1578029818466738361
+      spriteID: d76a6e4aca1f4bd70800000000000000
+      internalID: 9058130474352158333
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0f22ae889e6c2446b6d757b1e5c4059
+    spriteID: 2d15496be5d12a4419424016da9a2de8
     internalID: 0
     vertices: []
     indices: 

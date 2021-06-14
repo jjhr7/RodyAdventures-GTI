@@ -38,13 +38,13 @@ public class CameraHolder : MonoBehaviour
     public float unlockedPivotPosition = 1.65f;
 
     //var modo enfoque
-    public CharacterManager currentLockOnTarget; //var donde guardo lo que estoy enfocando
+    public Transform currentLockOnTarget; //var donde guardo lo que estoy enfocando
 
     public float maximumLockOnDistance = 30; // distancia maxima de enfoque
-    public CharacterManager nearestLookOnTarget;
-    public CharacterManager leftLockTarget;
-    public CharacterManager rightLockTarget;
-    List<CharacterManager> availableTargets = new List<CharacterManager>(); // objetos en los que nos podemos enfocar
+    public Transform nearestLookOnTarget;
+    public Transform leftLockTarget;
+    public Transform rightLockTarget;
+    List<Transform> availableTargets = new List<Transform>(); // objetos en los que nos podemos enfocar
 
     private void Awake() //se llama al awake al cargar la instancia del script
     {
@@ -169,13 +169,13 @@ public class CameraHolder : MonoBehaviour
                             }
                             else
                             {
-                                availableTargets.Add(character); //anyadimos el objeto que nos podemos fijar en la lista
+                                availableTargets.Add(character.lookOnTransform); //anyadimos el objeto que nos podemos fijar en la lista
                             }
                         }
 
                     }
                 }
-                
+
             }
         }
 
@@ -198,7 +198,7 @@ public class CameraHolder : MonoBehaviour
                 var distanceFromLeftTarget = relativeEnemyPosition.x;
                 var distanceFromRightTarget = relativeEnemyPosition.x;
 
-                if (relativeEnemyPosition.x <= 0.00 && distanceFromLeftTarget > shortestDistanceOfLeftTarget 
+                if (relativeEnemyPosition.x <= 0.00 && distanceFromLeftTarget > shortestDistanceOfLeftTarget
                     && availableTargets[k] != currentLockOnTarget) //left target lockOn
                 {
                     shortestDistanceOfLeftTarget = distanceFromLeftTarget;

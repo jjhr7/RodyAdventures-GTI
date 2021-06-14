@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 62de6bbab30fd8c47a8a7627f281cec6
+guid: 21e30cbaa749b4c4fbb94d52fb31fd50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1578029818466738361
-    second: vida_n_0
+      213: 5873272296985669736
+    second: salirJuego_0
+  - first:
+      213: 1304253445525138699
+    second: salirJuego_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vida_n_0
+      name: salirJuego_0
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 3948
-        width: 3258
-        height: 666
+        x: 1629
+        y: 5971
+        width: 3037
+        height: 557
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +123,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74fd059ad36b91ae0800000000000000
-      internalID: -1578029818466738361
+      spriteID: 86039f2490e028150800000000000000
+      internalID: 5873272296985669736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: salirJuego_1
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 6076
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0dea953993a91210800000000000000
+      internalID: 1304253445525138699
       vertices: []
       indices: 
       edges: []
@@ -129,7 +153,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0f22ae889e6c2446b6d757b1e5c4059
+    spriteID: 5fefaf1b7ac475c4291f4e3ebaf35e03
     internalID: 0
     vertices: []
     indices: 
