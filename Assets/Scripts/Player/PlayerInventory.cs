@@ -12,6 +12,8 @@ using UnityEngine;
 
         public WeaponItem rightWeapon; //armas R y L
         public WeaponItem leftWeapon;
+        //consumible item
+        public ConsumableItem currentConsumable;
         
         //public WeaponItem unarmedWeapon;
         

@@ -7,8 +7,8 @@ using UnityEngine;
     {
         //WeaponSlotManager -> centro de control de armas, aqui se decide que arma va en que lado y que modelos cargar
 
-        WeaponHolderSlot leftHandSlot;
-        WeaponHolderSlot rightHandSlot;
+        public WeaponHolderSlot leftHandSlot;
+        public WeaponHolderSlot rightHandSlot;
 
         DamageCollider leftHandDamageCollider; //colliders para las manos/armas
         DamageCollider rightHandDamageCollider;
@@ -18,6 +18,7 @@ using UnityEngine;
         QuickSlotsUI quickSlotsUI;
 
         PlayerStats playerStats;
+        PlayerInventory playerInventory;
 
         int leftHandDamageColliderDanyo;
         int rightHandDamageColliderDanyo;
@@ -25,6 +26,7 @@ using UnityEngine;
     private void Awake()
         {
         playerStats = GetComponentInParent<PlayerStats>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
 
         animator = GetComponent<Animator>();
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
@@ -43,6 +45,22 @@ using UnityEngine;
             } 
 
         }
+
+    public void LoadBothWeaponsOnSlots()
+    {
+        if (playerInventory.isFireWeaponEquiped == true)
+        {
+            LoadFireWeaponOnSlot(playerInventory.fireRightWeapon, false);
+            LoadFireWeaponOnSlot(playerInventory.fireLeftWeapon, true);
+        }
+        else
+        {
+            LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+            LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+        }
+
+
+    }
 
     private void Update()
     {

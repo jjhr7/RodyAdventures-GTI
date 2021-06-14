@@ -21,6 +21,9 @@ public class InputHandler : MonoBehaviour
     //botones ataques/defensa...
     public bool b_Input;
     public bool a_Input;
+    //consumir items
+    public bool x_Input;
+    //cambiar arma
     public bool rb_Input;
     public bool rt_Input;
     /*public bool changeWeapon1_input;
@@ -50,6 +53,9 @@ public class InputHandler : MonoBehaviour
     PlayerManager playerManager;
     PlayerStats playerStats;
     CameraHolder cameraHolder;
+    PlayerEffectsManager playerEffectsManager;
+    AnimatorHandler playerAnimatorManager;
+    WeaponSlotManager weaponSlotManager;
     UIManager UIManager;
 
     //para el salto
@@ -69,6 +75,10 @@ public class InputHandler : MonoBehaviour
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
+
+        playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
+        playerAnimatorManager = GetComponentInChildren<AnimatorHandler>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
 
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerStats = GetComponent<PlayerStats>();
@@ -100,8 +110,10 @@ public class InputHandler : MonoBehaviour
             //Atacar
             inputActions.PlayerActions.RB.performed += i => OnRB();
             inputActions.PlayerActions.RT.performed += i => OnRT();
-            
-            
+
+            //consumir items
+            inputActions.PlayerActions.X.performed += i => x_Input = true;
+
             //Cambio de armas
             inputActions.ChangeWeapon.ChangeWeapon1.performed += i => OnChangeWeapon1();
             inputActions.ChangeWeapon.ChangeWeapon2.performed += i => OnChangeWeapon2();
@@ -138,7 +150,9 @@ public class InputHandler : MonoBehaviour
         HandleJumpingInput();//salto estatico
         HandleLockOnInput(); //manejador modo enfoque
         HandleInventoryInput(); //inventory button logic
-       
+        HandleUseConsumableInput(); //consumable input logic
+
+
     }
     private void HandleMoveInput(float delta) //conf de movimiento
     {
@@ -355,6 +369,24 @@ public class InputHandler : MonoBehaviour
     public void setFalseInventoryFlag()
     {
         inventoryFlag = false;
+    }
+
+    public int cont = 0;
+    private void HandleUseConsumableInput()
+    {
+        if (x_Input)
+        {
+            x_Input = false;
+
+            if (playerManager.isGrounded == false)
+                return;
+            if (playerManager.isInteracting == true)
+                return;
+            if (cont != 0)
+                return;
+            playerInventory.currentConsumable.AttemptToConsumeItem(playerAnimatorManager, weaponSlotManager, playerEffectsManager);
+            cont++;
+        }
     }
 }
 
