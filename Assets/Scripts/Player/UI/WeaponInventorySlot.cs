@@ -14,6 +14,7 @@ public class WeaponInventorySlot : MonoBehaviour
     public Image icon; //icon del slot del inventario
     WeaponItem item; //item del inventario , en este caso weapon
     FireWeponItem fireItem;
+    ConsumableItem consumableItem;
 
     private void Awake()
     {
@@ -39,7 +40,40 @@ public class WeaponInventorySlot : MonoBehaviour
         icon.enabled = false;
         gameObject.SetActive(false);
     }
+    //fire weapons methods
+    public void AddFireWeponItem(FireWeponItem newItem) //add item to weapon inventory slot
+    {
+        //sustituimos los icons del arma nueva
+        fireItem = newItem;
+        icon.sprite = fireItem.itemIcon;
+        icon.enabled = true;
+        gameObject.SetActive(true);
+    }
 
+    public void ClearFireWeponItemInventorySlot() //limpiamos el slot del inventario
+    {
+        fireItem = null;
+        icon.sprite = null;
+        icon.enabled = false;
+        gameObject.SetActive(false);
+    }
+    //consumable weapons methods
+    public void AddConsumableItem(ConsumableItem newItem) //add item to weapon inventory slot
+    {
+        //sustituimos los icons del arma nueva
+        consumableItem = newItem;
+        icon.sprite = consumableItem.itemIcon;
+        icon.enabled = true;
+        gameObject.SetActive(true);
+    }
+
+    public void ClearConsumableItemInventorySlot() //limpiamos el slot del inventario
+    {
+        consumableItem = null;
+        icon.sprite = null;
+        icon.enabled = false;
+        gameObject.SetActive(false);
+    }
     public void EquipThisItem() //sustituimos el arma seleccionada por la que tenemos puesto en el slot de rody
     {
         //Remove current item

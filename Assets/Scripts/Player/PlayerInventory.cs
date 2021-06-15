@@ -27,7 +27,7 @@ using UnityEngine;
         public FireWeponItem[] fireWeaponInRightHandSlots = new FireWeponItem[1];
         public FireWeponItem[] fireWeaponInLeftHandSlots = new FireWeponItem[1];
 
-        public ConsumableItem[] consumableItemHandSlots = new ConsumableItem[1];
+        
         
         public int currentRightWeaponIndex = 0;
         public int currentLeftWeaponIndex = 0;
@@ -40,6 +40,7 @@ using UnityEngine;
         // Lista con las armas del inventario
         public List<WeaponItem> weaponsInventory;
         public List<FireWeponItem> fireWeaponsInventory;
+        public List<ConsumableItem> consumableInventory;
         
         //UI Armas
         public GunSheet _gunSheet;
