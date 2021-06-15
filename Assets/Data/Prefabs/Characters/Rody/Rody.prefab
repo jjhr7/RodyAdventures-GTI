@@ -2369,6 +2369,8 @@ GameObject:
   - component: {fileID: 1299515275352610046}
   - component: {fileID: 1299515275352610033}
   - component: {fileID: 5337203992353021263}
+  - component: {fileID: 2985143096545815076}
+  - component: {fileID: 5867280607750413562}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
