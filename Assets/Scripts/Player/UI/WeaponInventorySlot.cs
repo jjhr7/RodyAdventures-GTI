@@ -13,6 +13,7 @@ public class WeaponInventorySlot : MonoBehaviour
 
     public Image icon; //icon del slot del inventario
     WeaponItem item; //item del inventario , en este caso weapon
+    FireWeponItem fireItem;
 
     private void Awake()
     {
@@ -59,16 +60,16 @@ public class WeaponInventorySlot : MonoBehaviour
         else if (uiManager.leftHandSlot01Selected)
         {
             //cogemos el item del slotSelected y lo añadimos a nuestro inventario
-            playerInventory.weaponsInventory.Add(playerInventory.weaponInLeftHandSlots[0]);
-            playerInventory.weaponInLeftHandSlots[0] = item; //remplazamos los items
-            playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
+            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInLeftHandSlots[0]);
+            playerInventory.fireWeaponInLeftHandSlots[0] = fireItem; //remplazamos los items
+            playerInventory.fireWeaponsInventory.Remove(fireItem); //delete from weaponsInventory
         }
         else if(uiManager.leftHandSlot02Selected)
         {
             //cogemos el item del slotSelected y lo añadimos a nuestro inventario
-            playerInventory.weaponsInventory.Add(playerInventory.weaponInLeftHandSlots[1]);
-            playerInventory.weaponInLeftHandSlots[1] = item; //remplazamos los items
-            playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
+            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInLeftHandSlots[1]);
+            playerInventory.fireWeaponInLeftHandSlots[1] = fireItem; //remplazamos los items
+            playerInventory.fireWeaponsInventory.Remove(fireItem); //delete from weaponsInventory
         }
         else //sino salimos de la funcion
         {

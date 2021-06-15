@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063ff3f183bce104baf9e8cb4d94fe5e, type: 3}
   m_Name: LlaveRody
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 92d9790ed6b92584889f621298a518a5, type: 3}
+  itemIcon: {fileID: 21300000, guid: d279bb6b3b91dcd4b85b956ba7c5c3f3, type: 3}
   itemName: Llave Rody
   modelPrefab: {fileID: 2521392141438399826, guid: 2a1f9c5183612fe488e0691d54f304b6, type: 3}
   isUnarmed: 0

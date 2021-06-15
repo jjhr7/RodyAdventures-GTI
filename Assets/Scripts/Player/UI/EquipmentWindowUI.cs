@@ -39,12 +39,12 @@ public class EquipmentWindowUI : MonoBehaviour
             else if (handEquipmentSlotUI[i].leftHandSLot01) //si son slots de la izquierda
             {
                 //add to slot correspondiente
-                handEquipmentSlotUI[i].AddItem(playerInventory.weaponInLeftHandSlots[0]);
+                handEquipmentSlotUI[i].AddFireItem(playerInventory.fireWeaponInRightHandSlots[0]);
             }
             else //si es el left 2
             {
                 //add to slot num 2
-                handEquipmentSlotUI[i].AddItem(playerInventory.weaponInLeftHandSlots[1]);
+                handEquipmentSlotUI[i].AddFireItem(playerInventory.fireWeaponInRightHandSlots[1]);
             }
         }
     }
