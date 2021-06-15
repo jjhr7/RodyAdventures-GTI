@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 8773406535662576647}
 --- !u!1 &723677618243220374
 GameObject:
@@ -2813,18 +2814,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8842316083805971517}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &1991176551803398422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,6 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 6912953143305969380}
 --- !u!1 &2082787866049092141
 GameObject:
@@ -3483,6 +3473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 2426227671833043611}
 --- !u!1 &2403256280461181042
 GameObject:
@@ -3533,6 +3524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 2144307466384519109}
 --- !u!1 &2474990607324099396
 GameObject:
@@ -5907,30 +5899,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 542025848675443697}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 764701542029833891}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 3236498734474104758}
         m_TargetAssemblyTypeName: HandEquipmentSlotUI, Assembly-CSharp
         m_MethodName: SelectThisSlot
@@ -6374,6 +6342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 491516356079859664}
 --- !u!1 &4194238436284036702
 GameObject:
@@ -7670,6 +7639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 5794228661242316116}
 --- !u!1 &5106545146406084494
 GameObject:
@@ -8033,6 +8003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 8386343243125855394}
 --- !u!1 &5438073486305859010
 GameObject:
@@ -9907,6 +9878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 0}
   icon: {fileID: 7945018613043582292}
 --- !u!1 &6499016178320544990
 GameObject:
@@ -12159,6 +12131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b170e205d8def42b9348eab53e7fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlotManager: {fileID: 8757957713831304767}
   icon: {fileID: 7568863321421930634}
 --- !u!1 &8461492840633714685
 GameObject:

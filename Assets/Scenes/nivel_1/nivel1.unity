@@ -10245,6 +10245,14 @@ PrefabInstance:
       propertyPath: fireWeaponsInventory.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1357964767001006517, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: rody
+      value: 
+      objectReference: {fileID: 1636149755}
+    - target: {fileID: 1357964767001006517, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: weaponSlotManager
+      value: 
+      objectReference: {fileID: 1636149755}
     - target: {fileID: 1515592227093586280, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -14967,6 +14975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b8e6dac4c1813e4790ad3dfbe2ef2f9, type: 3}
+--- !u!1 &1636149755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 341050797733799938, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+  m_PrefabInstance: {fileID: 1258361707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642887911
 GameObject:
   m_ObjectHideFlags: 0
