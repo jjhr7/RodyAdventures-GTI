@@ -171,7 +171,7 @@ using UnityEngine;
                 LoadRightWeaponDamageCollider();//metodo que anyade el collider al right hand
                 quickSlotsUI.UpdateFireWeaponQuickSlotsUI(false, fireWeponItem);
                 #region Handle Right Weapon Idle Animations
-                if (fireWeponItem != null)
+                if (animator != null)
                 {
                 Debug.Log(animator.ToString());
                 animator.CrossFade(fireWeponItem.right_hand_idle, 0.2f);
