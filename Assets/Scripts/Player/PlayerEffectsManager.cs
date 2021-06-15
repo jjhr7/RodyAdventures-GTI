@@ -17,7 +17,7 @@ public class PlayerEffectsManager : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponentInParent<PlayerStats>();
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        weaponSlotManager = GetComponentInParent<WeaponSlotManager>();
         inputHandler = GetComponentInParent<InputHandler>();
     }
     public void HealPlayerFromEffect() //sanar al player
