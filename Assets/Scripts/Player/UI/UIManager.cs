@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public bool rightHandSlot02Selected;
     public bool leftHandSlot01Selected;
     public bool leftHandSlot02Selected;
+    public bool consumableHandSlotSelected;
 
     [Header("Weapon Inventory")]
     public GameObject weaponInventorySlotPrefab; //slot prefab que vamos a duplicar
@@ -87,6 +88,7 @@ public class UIManager : MonoBehaviour
         rightHandSlot02Selected = false;
         leftHandSlot01Selected = false;
         leftHandSlot02Selected = false;
+        consumableHandSlotSelected = false;
     }
 
     //funciones aparte que he hecho

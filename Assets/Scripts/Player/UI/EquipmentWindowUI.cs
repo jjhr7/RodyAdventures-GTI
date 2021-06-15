@@ -11,6 +11,7 @@ public class EquipmentWindowUI : MonoBehaviour
     public bool rightHandSlot02Selected;
     public bool leftHandSlot01Selected;
     public bool leftHandSlot02Selected;
+    public bool consumableItemSlot;
 
     //array of the equipament slots
     public HandEquipmentSlotUI[] handEquipmentSlotUI;
@@ -41,10 +42,15 @@ public class EquipmentWindowUI : MonoBehaviour
                 //add to slot correspondiente
                 handEquipmentSlotUI[i].AddFireItem(playerInventory.fireWeaponInRightHandSlots[0]);
             }
-            else //si es el left 2
+            else if (handEquipmentSlotUI[i].leftHandSlot02) //si es el left 2
             {
                 //add to slot num 2
                 handEquipmentSlotUI[i].AddFireItem(playerInventory.fireWeaponInRightHandSlots[1]);
+            }
+            else
+            {
+                //add to slot num 2
+                handEquipmentSlotUI[i].AddConsumableItem(playerInventory.currentConsumable);
             }
         }
     }
@@ -67,5 +73,9 @@ public class EquipmentWindowUI : MonoBehaviour
     public void SelectedLeftHandSlot02()
     {
         leftHandSlot02Selected = true;
+    }
+    public void SelectedConsumableItemSlot()
+    {
+        consumableItemSlot = true;
     }
 }

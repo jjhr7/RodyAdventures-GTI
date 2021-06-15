@@ -12,11 +12,13 @@ public class HandEquipmentSlotUI : MonoBehaviour
     public Image icon;
     WeaponItem weapon;
     FireWeponItem fireWeapon;
+    ConsumableItem consumableItem;
 
     public bool rightHandSlot01;
     public bool rightHandSlot02;
     public bool leftHandSLot01;
     public bool leftHandSlot02;
+    public bool consumableItemSlot;
 
     private void Awake()
     {
@@ -72,6 +74,30 @@ public class HandEquipmentSlotUI : MonoBehaviour
         icon.enabled = false;
         gameObject.SetActive(false);
     }
+    //consumable item methods
+    public void AddConsumableItem(ConsumableItem newWeapon)
+    {
+        consumableItem = newWeapon;
+        try
+        {
+
+            icon.sprite = consumableItem.itemIcon;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+
+        icon.enabled = true;
+        gameObject.SetActive(true);
+    }
+    public void ClearConsumableItem()
+    {
+        consumableItem = null;
+        icon.sprite = null;
+        icon.enabled = false;
+        gameObject.SetActive(false);
+    }
 
     //metodo que pone a true los bool del uiManager si se selecciona un slot de equipment window
     public void SelectThisSlot()
@@ -88,9 +114,13 @@ public class HandEquipmentSlotUI : MonoBehaviour
         {
             uIManager.leftHandSlot01Selected = true;
         }
-        else 
+        else if (leftHandSlot02)
         {
             uIManager.leftHandSlot02Selected = true;
+        }
+        else
+        {
+            uIManager.consumableHandSlotSelected = true;
         }
     }
 }
