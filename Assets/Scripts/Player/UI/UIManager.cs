@@ -21,11 +21,21 @@ public class UIManager : MonoBehaviour
     public bool rightHandSlot02Selected;
     public bool leftHandSlot01Selected;
     public bool leftHandSlot02Selected;
+    public bool consumableHandSlotSelected;
 
     [Header("Weapon Inventory")]
     public GameObject weaponInventorySlotPrefab; //slot prefab que vamos a duplicar
     public Transform weaponInventorySlotsParent; //contenedor UI donde estan todos los slots del inventario
+    [Header("Fire Weapon Inventory")]
+    public GameObject fireWeaponInventorySlotPrefab; //slot prefab que vamos a duplicar
+    public Transform fireWeaponInventorySlotsParent; //contenedor UI donde estan todos los slots del inventario
+    [Header("Consumable Inventory")]
+    public GameObject consumableInventorySlotPrefab; //slot prefab que vamos a duplicar
+    public Transform consumableInventorySlotsParent; //contenedor UI donde estan todos los slots del inventario
+
     WeaponInventorySlot[] weaponInventorySlots; //lista de los slots del inventario
+    WeaponInventorySlot[] fireWeaponInventorySlots;
+    WeaponInventorySlot[] ConsumableInventorySlots;
 
     private void Awake()
     {
@@ -34,11 +44,14 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+        fireWeaponInventorySlots = fireWeaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+        ConsumableInventorySlots = consumableInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
         equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory); //le pasamos EquipmentWindowUi el invenario
     }
     public void UpdateUI()
     {
         #region Weapon Inventory Slots
+        //mele weapon inventory
         for (int i = 0; i < weaponInventorySlots.Length; i++) //for que recorre el array
         {
             if (i < playerInventory.weaponsInventory.Count) //recorro todos los items del array de playerInventory
@@ -57,6 +70,48 @@ public class UIManager : MonoBehaviour
             else //si el item no esta / esta vacio limpio ese Slot para que no haya slots vacioss
             {
                 weaponInventorySlots[i].ClearInventorySlot();
+            }
+        }
+        //fire weapon inventory
+        for (int i = 0; i < fireWeaponInventorySlots.Length; i++) //for que recorre el array
+        {
+            if (i < playerInventory.fireWeaponsInventory.Count) //recorro todos los items del array de playerInventory
+            {
+                //si hay que añadir mas slots al inventarios
+                if (fireWeaponInventorySlots.Length < playerInventory.fireWeaponsInventory.Count)
+                {
+                    //instanciamos el slot 
+                    Instantiate(fireWeaponInventorySlotPrefab, fireWeaponInventorySlotsParent);
+                    //get los el array de slots completo
+                    fireWeaponInventorySlots = fireWeaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+                }
+                //add los items a los slots del inventario
+                fireWeaponInventorySlots[i].AddFireWeponItem(playerInventory.fireWeaponsInventory[i]);
+            }
+            else //si el item no esta / esta vacio limpio ese Slot para que no haya slots vacioss
+            {
+                fireWeaponInventorySlots[i].ClearFireWeponItemInventorySlot();
+            }
+        }
+        //consumable inventory
+        for (int i = 0; i < ConsumableInventorySlots.Length; i++) //for que recorre el array
+        {
+            if (i < playerInventory.consumableInventory.Count) //recorro todos los items del array de playerInventory
+            {
+                //si hay que añadir mas slots al inventarios
+                if (ConsumableInventorySlots.Length < playerInventory.consumableInventory.Count)
+                {
+                    //instanciamos el slot 
+                    Instantiate(consumableInventorySlotPrefab, consumableInventorySlotsParent);
+                    //get los el array de slots completo
+                    ConsumableInventorySlots = consumableInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+                }
+                //add los items a los slots del inventario
+                ConsumableInventorySlots[i].AddConsumableItem(playerInventory.consumableInventory[i]);
+            }
+            else //si el item no esta / esta vacio limpio ese Slot para que no haya slots vacioss
+            {
+                ConsumableInventorySlots[i].ClearConsumableItemInventorySlot();
             }
         }
         #endregion
@@ -87,6 +142,7 @@ public class UIManager : MonoBehaviour
         rightHandSlot02Selected = false;
         leftHandSlot01Selected = false;
         leftHandSlot02Selected = false;
+        consumableHandSlotSelected = false;
     }
 
     //funciones aparte que he hecho
