@@ -6,7 +6,10 @@ using UnityEngine;
 public class FireWeponItem : Item
 {
     public GameObject modelPrefab;
-    
+
+    [Header("Tipo de arma")]
+    public bool isDual;
+
     [Header("Idle Animations")] 
     public string right_hand_idle;
     public string left_hand_idle;

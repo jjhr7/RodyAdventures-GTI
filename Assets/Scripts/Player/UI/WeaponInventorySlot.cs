@@ -15,6 +15,8 @@ public class WeaponInventorySlot : MonoBehaviour
     WeaponItem item; //item del inventario , en este caso weapon
     FireWeponItem fireItem;
     ConsumableItem consumableItem;
+    //unarmed models
+    public FireWeponItem fireWeaponUnarmed;
    
     private void Awake()
     {
@@ -97,15 +99,35 @@ public class WeaponInventorySlot : MonoBehaviour
         else if (uiManager.leftHandSlot01Selected)
         {
             //cogemos el item del slotSelected y lo añadimos a nuestro inventario
-            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInLeftHandSlots[0]);
-            playerInventory.fireWeaponInLeftHandSlots[0] = fireItem; //remplazamos los items
+            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInRightHandSlots[0]);
+            //si es dual equiparlo en los 2 slots
+            if (fireItem.isDual)
+            {
+                playerInventory.fireWeaponInRightHandSlots[0] = fireItem; //remplazamos los items
+                playerInventory.fireWeaponInLeftHandSlots[0] = fireItem; //remplazamos los items
+            }
+            else
+            {
+                playerInventory.fireWeaponInRightHandSlots[0] = fireItem; //remplazamos los items
+                playerInventory.fireWeaponInLeftHandSlots[0] = fireWeaponUnarmed; //remplazamos los items
+            }
+            
             playerInventory.fireWeaponsInventory.Remove(fireItem); //delete from weaponsInventory
         }
         else if(uiManager.leftHandSlot02Selected)
         {
             //cogemos el item del slotSelected y lo añadimos a nuestro inventario
-            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInLeftHandSlots[1]);
-            playerInventory.fireWeaponInLeftHandSlots[1] = fireItem; //remplazamos los items
+            playerInventory.fireWeaponsInventory.Add(playerInventory.fireWeaponInRightHandSlots[1]);
+            if (fireItem.isDual)
+            {
+                playerInventory.fireWeaponInRightHandSlots[1] = fireItem; //remplazamos los items
+                playerInventory.fireWeaponInLeftHandSlots[1] = fireItem; //remplazamos los items
+            }
+            else
+            {
+                playerInventory.fireWeaponInRightHandSlots[1] = fireItem; //remplazamos los items
+                playerInventory.fireWeaponInLeftHandSlots[1] = fireWeaponUnarmed; //remplazamos los items
+            }
             playerInventory.fireWeaponsInventory.Remove(fireItem); //delete from weaponsInventory
         }
         else //sino salimos de la funcion
@@ -117,6 +139,8 @@ public class WeaponInventorySlot : MonoBehaviour
         //add el nuevo arma en la variable rigthweapon
         playerInventory.rightWeapon = playerInventory.weaponInRightHandSlots[playerInventory.currentRightWeaponIndex];
         playerInventory.leftWeapon = playerInventory.weaponInLeftHandSlots[playerInventory.currentLeftWeaponIndex];
+        playerInventory.fireRightWeapon = playerInventory.fireWeaponInRightHandSlots[playerInventory.currentRightFireWeaponIndex];
+        playerInventory.fireLeftWeapon = playerInventory.fireWeaponInLeftHandSlots[playerInventory.currentLeftFireWeaponIndex];
 
         //cargamos las armas a rody
         rody.GetComponentInChildren<WeaponSlotManager>().LoadBothWeaponsOnSlots();
@@ -127,4 +151,5 @@ public class WeaponInventorySlot : MonoBehaviour
 
 
     }
+    
 }
