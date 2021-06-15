@@ -8,20 +8,21 @@ public class WeaponInventorySlot : MonoBehaviour
     //a esta clase le pasaremos un item que representa los slots del inventario
 
     PlayerInventory playerInventory; //para add//remove items al inventario
-    WeaponSlotManager weaponSlotManager;
+    public GameObject rody;
     UIManager uiManager; //control del ui
 
     public Image icon; //icon del slot del inventario
     WeaponItem item; //item del inventario , en este caso weapon
     FireWeponItem fireItem;
     ConsumableItem consumableItem;
-
+   
     private void Awake()
     {
         //otra manera es hacer publico playerInventory y arrastrarlo desde el instector
         playerInventory = FindObjectOfType<PlayerInventory>();
         uiManager = FindObjectOfType<UIManager>();
-        weaponSlotManager = FindObjectOfType<WeaponSlotManager>();
+        
+
     }
     //upload weapon icons method
     public void AddItem(WeaponItem newItem) //add item to weapon inventory slot
@@ -86,10 +87,12 @@ public class WeaponInventorySlot : MonoBehaviour
         }
         else if (uiManager.rightHandSlot02Selected)
         {
+            
             //cogemos el item del slotSelected y lo añadimos a nuestro inventario
             playerInventory.weaponsInventory.Add(playerInventory.weaponInRightHandSlots[1]);
             playerInventory.weaponInRightHandSlots[1] = item; //remplazamos los items
             playerInventory.weaponsInventory.Remove(item); //delete from weaponsInventory
+            
         }
         else if (uiManager.leftHandSlot01Selected)
         {
@@ -114,12 +117,9 @@ public class WeaponInventorySlot : MonoBehaviour
         //add el nuevo arma en la variable rigthweapon
         playerInventory.rightWeapon = playerInventory.weaponInRightHandSlots[playerInventory.currentRightWeaponIndex];
         playerInventory.leftWeapon = playerInventory.weaponInLeftHandSlots[playerInventory.currentLeftWeaponIndex];
-        
+
         //cargamos las armas a rody
-        
-        Debug.Log("ASADASDASDADADS:   "+playerInventory.currentRightWeaponIndex+ " "+playerInventory.currentLeftWeaponIndex);
-        weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
-        weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+        rody.GetComponentInChildren<WeaponSlotManager>().LoadBothWeaponsOnSlots();
         //update ui of the new weapons
         uiManager.equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
         uiManager.ResetAllSelectedSlots();
