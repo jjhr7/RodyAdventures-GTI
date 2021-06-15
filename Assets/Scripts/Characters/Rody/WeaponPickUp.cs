@@ -36,4 +36,15 @@ public class WeaponPickUp : Interactable //complemetario de la clase Interactabl
         playerManager.itemInteractableGameObject.SetActive(true);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerManager pm=other.GetComponent<PlayerManager>();
+        if (pm != null)
+        {
+            base.Interact(pm);
+
+            PickUpItem(pm); //le paso la clase a PickUpItem
+        }
+    }
 }

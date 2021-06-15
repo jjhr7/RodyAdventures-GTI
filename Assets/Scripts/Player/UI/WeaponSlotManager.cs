@@ -15,7 +15,7 @@ using UnityEngine;
         
         Animator animator;
         
-        QuickSlotsUI quickSlotsUI;
+        public QuickSlotsUI quickSlotsUI;
 
         PlayerStats playerStats;
         PlayerInventory playerInventory;
@@ -25,6 +25,7 @@ using UnityEngine;
 
     private void Awake()
         {
+        Debug.Log("Recargando escena");
         playerStats = GetComponentInParent<PlayerStats>();
         playerInventory = GetComponentInParent<PlayerInventory>();
 
@@ -172,7 +173,8 @@ using UnityEngine;
                 #region Handle Right Weapon Idle Animations
                 if (fireWeponItem != null)
                 {
-                    animator.CrossFade(fireWeponItem.right_hand_idle, 0.2f);
+                Debug.Log(animator.ToString());
+                animator.CrossFade(fireWeponItem.right_hand_idle, 0.2f);
                 }
                 else
                 {
