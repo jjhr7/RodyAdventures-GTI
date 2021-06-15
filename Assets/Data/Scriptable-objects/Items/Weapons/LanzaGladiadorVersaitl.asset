@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063ff3f183bce104baf9e8cb4d94fe5e, type: 3}
   m_Name: LanzaGladiadorVersaitl
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 8ebb98d9bd03a0940b8366a18a5f4056, type: 3}
+  itemIcon: {fileID: 21300000, guid: 757cffb2542d4d64d95af949097ece4c, type: 3}
   itemName: "Lanza del gladiador vers\xE1til"
   modelPrefab: {fileID: 5402882573251574471, guid: fd92e8c2e2e3fee43be12ad87f65a212, type: 3}
   isUnarmed: 0

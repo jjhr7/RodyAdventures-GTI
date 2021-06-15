@@ -37,6 +37,7 @@ using UnityEngine;
 
         // Lista con las armas del inventario
         public List<WeaponItem> weaponsInventory;
+        public List<FireWeponItem> fireWeaponsInventory;
         
         //UI Armas
         public GunSheet _gunSheet;

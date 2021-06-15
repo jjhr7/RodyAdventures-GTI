@@ -2679,7 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1299515273838533184}
-  equipmentWindowUI: {fileID: 6081142962005217861}
+  equipmentWindowUI: {fileID: 2401092067964136759}
   hudWindow: {fileID: 5988875553152297232}
   selectWindow: {fileID: 2148763509931729396}
   equipmentScreenWindow: {fileID: 738854788107181379}
