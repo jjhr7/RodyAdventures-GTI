@@ -250,7 +250,9 @@ public class InputHandler : MonoBehaviour
     {
         if(inventoryFlag)
             return;
-        
+        if (playerManager.isInteracting)
+            return;
+
         if (!playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentFireWeapon();
@@ -262,7 +264,6 @@ public class InputHandler : MonoBehaviour
 
     private void OnStopShoot()
     {
-        //Debug.Log("Dejando de disparar");
         onStopFire?.Invoke();
     }
     
@@ -377,19 +378,23 @@ public class InputHandler : MonoBehaviour
     public int cont = 0;
     private void HandleUseConsumableInput()
     {
-        if (x_Input)
+        if (x_Input) //cada vez que se pulse el boton de consumir mini kepot
         {
             x_Input = false;
-
             if (playerManager.isGrounded == false)
                 return;
             if (playerManager.isInteracting == true)
                 return;
             if (cont != 0)
                 return;
+            if (playerInventory.currentConsumable.currentItemAmount <= 0)
+                return;
             playerInventory.currentConsumable.AttemptToConsumeItem(playerAnimatorManager, weaponSlotManager, playerEffectsManager);
             cont++;
+            
+            playerInventory.setConsumableItemValues(playerInventory.currentConsumable);
         }
+        
     }
 }
 

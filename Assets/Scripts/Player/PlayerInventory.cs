@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-
-
-    public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
     {
         //PlayerInventory -> inventario para los item/weapons ...
 
@@ -14,6 +13,8 @@ using UnityEngine;
         public WeaponItem leftWeapon;
         //consumible item
         public ConsumableItem currentConsumable;
+        public Image consumableSlot;
+        public Text consumableText;
         
         //public WeaponItem unarmedWeapon;
         
@@ -65,6 +66,8 @@ using UnityEngine;
             //cargamos las armas
             rightWeapon = weaponInRightHandSlots[currentRightWeaponIndex];
             leftWeapon = weaponInLeftHandSlots[currentLeftWeaponIndex];
+
+            initConsumableItemValues(currentConsumable); //iniciamos los valores del item comestible
         }
         
         public void ChangeRightWeapon()
@@ -225,6 +228,18 @@ using UnityEngine;
             weaponSlotManager.LoadFireWeaponOnSlot(fireWeaponInLeftHandSlots[currentLeftFireWeaponIndex],true);
         }
         
-    }
+        //funcion para cambiar los valores del item consumible
+        public void setConsumableItemValues(ConsumableItem consumableItem)
+        {
+            consumableSlot.sprite = consumableItem.itemIcon;
+            consumableText.text = consumableItem.currentItemAmount.ToString();
+        }
+        public void initConsumableItemValues(ConsumableItem consumableItem)
+        {
+            consumableItem.currentItemAmount = consumableItem.maxItemAmount;
+            setConsumableItemValues(currentConsumable);
+        }
+
+}
 
 
