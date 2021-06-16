@@ -32,8 +32,14 @@ using UnityEngine;
         EnemyStats stats;
         public Transform cuerpo;
 
-        // Start is called before the first frame update
-        void Start()
+
+
+    //Sonidos
+    public AudioSource audioSource;
+    public AudioClip[] audios;
+
+    // Start is called before the first frame update
+    void Start()
         {
             //Inicializamos variables y Gameobjects
             balas = cargador;
@@ -45,10 +51,12 @@ using UnityEngine;
         {
             if (stats.recibiendoDanyo)
             {
-                //Animación y sonido de recibir danyo
-                //FindObjectOfType<AudioManager>().Play("deathTorreta");
+            //Animación y sonido de recibir danyo
+            audioSource.volume = 1f;
+            audioSource.clip = audios[1];
+            audioSource.Play();
 
-            }
+        }
             else
             {
             }
@@ -86,8 +94,10 @@ using UnityEngine;
                                 Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                                 balas--;
                                 timer = 0.0;
-                                //FindObjectOfType<AudioManager>().Play("shootTorreta");
-                            }
+                                audioSource.volume = 0.3f;
+                                audioSource.clip = audios[0];
+                                audioSource.Play();
+                        }
                         }
                     }
                 }
