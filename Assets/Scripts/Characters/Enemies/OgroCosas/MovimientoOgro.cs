@@ -24,6 +24,10 @@ public class MovimientoOgro : MonoBehaviour
     public int damage;
     public Collider colliderEspada;
 
+
+    //Sonidos
+    public AudioSource audioSource;
+    public AudioClip[] audios;
     void Start()
     {
         correEnemigo = false;
@@ -53,7 +57,7 @@ public class MovimientoOgro : MonoBehaviour
                     nav.speed = vel;
                     anim.SetBool("corriendo", correEnemigo);
                     anim.SetBool("pegando", false);
-
+                    
                 }
                 else
                 {
@@ -78,7 +82,6 @@ public class MovimientoOgro : MonoBehaviour
             nav.SetDestination(transform.position);
             anim.SetBool("golpeado", true);
             anim.SetBool("pegando", false);
-            FindObjectOfType<AudioManager>().Play("deathOgro");
         }
 
 
@@ -94,5 +97,33 @@ public class MovimientoOgro : MonoBehaviour
     public void DisableDamageCollider() //desactivar damage collider
     {
         colliderEspada.enabled = false;
+    }
+
+
+    public void playMuerte()
+    {
+
+    }
+    public void playDanyo()
+    {
+
+        //Sonido recibir danyo
+        audioSource.clip = audios[1];
+        audioSource.Play();
+    }
+
+    public void playAtaque()
+    {
+
+        //sonido atacar
+
+        audioSource.clip = audios[0];
+        audioSource.Play();
+    }
+
+    public void PauseSound() 
+    {
+        audioSource.Stop();
+
     }
 }

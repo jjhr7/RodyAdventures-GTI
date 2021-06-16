@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2134485094}
   - component: {fileID: 2134485087}
   - component: {fileID: 4417681989986965452}
+  - component: {fileID: 4626428989182471963}
   m_Layer: 0
   m_Name: Nyapos
   m_TagString: Enemy
@@ -182,6 +183,16 @@ MonoBehaviour:
   cuerpoGO: {fileID: 3729757849507258890}
   maxbalas: 4
   anim: {fileID: 124152986154195759}
+  barraGo: {fileID: 0}
+  health: {fileID: 0}
+  audioSource: {fileID: 4626428989182471963}
+  audios:
+  - {fileID: 8300000, guid: ace115e286f699641805c8c5aba9e4b9, type: 3}
+  - {fileID: 8300000, guid: cd96e9b7aaf7db746a44e8d664745a12, type: 3}
+  - {fileID: 8300000, guid: 43f491b8e9fe8b148bbecff4fd9507f1, type: 3}
+  - {fileID: 8300000, guid: a0c444c82586a5b429ed28ff0756544f, type: 3}
+  - {fileID: 8300000, guid: 4090e6a62683dd546b8224b50faafdea, type: 3}
+  - {fileID: 8300000, guid: 1a19f4e029b8d3e409eb9ae89e1ac5bf, type: 3}
 --- !u!114 &2442503056053020760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,9 +206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 1308916182641043295}
+  isItem: 0
   salud: 350
   recibiendoDanyo: 0
   pausa: 0.2
+  audioSource: {fileID: 0}
 --- !u!135 &8901469881307033043
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -252,7 +265,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &4417681989986965452
 BoxCollider:
@@ -267,6 +280,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 8, z: 4}
   m_Center: {x: -0.63, y: 3.9, z: 0}
+--- !u!82 &4626428989182471963
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188154597352316877}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -710298588406489919, guid: 1c38759389380a448b413d9103935d17, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.0001
+  MaxDistance: 100
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &1884709002
 BoxCollider:
   m_ObjectHideFlags: 0

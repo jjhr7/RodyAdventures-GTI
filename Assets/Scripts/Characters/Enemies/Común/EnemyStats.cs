@@ -11,6 +11,8 @@ public class EnemyStats : CharacterManager
     private int salud = 20;
     public bool recibiendoDanyo;
     double timer = 0.0;
+    double timerMuerte = 0.0;
+
     public float pausa;
     PlayerStats PlayerStats;
     GameObject[] player;
@@ -18,7 +20,7 @@ public class EnemyStats : CharacterManager
     InputHandler inputHandler;
     CameraHolder cameraHolder;
 
-
+    public AudioSource audioSource;
 
 
     Animator animator;
@@ -36,7 +38,12 @@ public class EnemyStats : CharacterManager
             salud = value;
             if (salud <= 0) //cuando muera
             {
-                //animator.Play("Dead_01");
+                timerMuerte += Time.deltaTime;
+                if (audioSource != null)
+                {
+
+                    audioSource.Play();
+                }
                 inputHandler.lockOnFlag = false; //quito el modo enfoque
                 cameraHolder.ClearLockOnTarget(); //limpio la lista de enemigos cerca que puede enfocar
                 Destroy(gameObject); //destruir objeto

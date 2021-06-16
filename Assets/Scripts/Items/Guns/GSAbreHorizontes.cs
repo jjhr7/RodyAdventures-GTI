@@ -14,7 +14,7 @@ public class GSAbreHorizontes : MonoBehaviour
     public int bulletsLeft;
     public int piranyasDualesDM; 
     public int piranyasDualesDMK;
-
+    public AudioSource sonidoDisparo;
 
     PlayerStats PlayerStats;
     GameObject[] player;
@@ -74,11 +74,12 @@ public class GSAbreHorizontes : MonoBehaviour
     {
         while (rafaga && bulletsLeft>0)
         {
+            sonidoDisparo.Play();
             //Debug.Log("Pum!!");
             muzzleFlash.Emit(1);
             Instantiate(bala, spawner.position, spawner.rotation);
             bulletsLeft --;
-            Debug.Log(bulletsLeft+" / "+magazineSize);
+            //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)
             {
                 _gunSheet = FindObjectOfType<GunSheet>();

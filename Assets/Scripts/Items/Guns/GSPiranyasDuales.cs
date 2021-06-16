@@ -23,6 +23,7 @@ public class GSPiranyasDuales : MonoBehaviour
     
     //UI Armas
     private GunSheet _gunSheet;
+    public AudioSource sonidoDisparo;
     public void Awake()
     {
         bulletsLeft = magazineSize;
@@ -75,11 +76,11 @@ public class GSPiranyasDuales : MonoBehaviour
     {
         while (rafaga && bulletsLeft>0)
         {
-            //Debug.Log("Pum!!");
+            sonidoDisparo.Play();
             muzzleFlash.Emit(1);
             Instantiate(bala, spawner.position, spawner.rotation);
             bulletsLeft --;
-            Debug.Log(bulletsLeft+" / "+magazineSize);
+            //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)
             {
                 _gunSheet = FindObjectOfType<GunSheet>();
