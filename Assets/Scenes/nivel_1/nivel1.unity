@@ -11876,7 +11876,19 @@ PrefabInstance:
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: fireWeaponInRightHandSlots.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 38a27d75ce1f05b4e9932ce86d721797, type: 2}
+      objectReference: {fileID: 11400000, guid: e28be8558beee2c4d9b946eb98a65b55, type: 2}
+    - target: {fileID: 1299515273838533190, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -47.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299515273838533190, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299515273838533190, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -770.73
+      objectReference: {fileID: 0}
     - target: {fileID: 1608692068159940248, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_Sprite
       value: 
