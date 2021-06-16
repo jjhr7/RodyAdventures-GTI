@@ -14,7 +14,7 @@ public class GSAbreHorizontes : MonoBehaviour
     public int bulletsLeft;
     public int piranyasDualesDM; 
     public int piranyasDualesDMK;
-
+     
 
     PlayerStats PlayerStats;
     GameObject[] player;
