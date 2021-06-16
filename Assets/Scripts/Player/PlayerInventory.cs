@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,8 +55,14 @@ public class PlayerInventory : MonoBehaviour
         {
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
 
-            EquipCurrentFireWeapon();
-            EquipCurrentWeapon();
+            try{
+
+                EquipCurrentFireWeapon();
+                EquipCurrentWeapon();
+            }catch (Exception ex)
+            {
+
+            }
             
 
 
