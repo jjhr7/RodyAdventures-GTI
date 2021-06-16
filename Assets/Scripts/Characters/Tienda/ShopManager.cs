@@ -20,6 +20,9 @@ public class ShopManager : MonoBehaviour
     public ShopItemSO[] shopItemSO;
     public ShopTemplate[] shopPanels;
     public Button[] myPurchaseBtns;
+    //
+    public Text monedero;
+    
 
 
     // Start is called before the first frame update
@@ -32,6 +35,9 @@ public class ShopManager : MonoBehaviour
         playerInventory = myplayer.GetComponent<PlayerInventory>();
         coins = playerStats.contadorMonedas;
 
+        string cant =playerStats.contadorMonedas.ToString();
+        monedero.text=cant;
+
         contadorm.SetActive(true);
         coinsUI.text = coins.ToString();
         LoadPanels();
@@ -42,7 +48,8 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        string cant = playerStats.contadorMonedas.ToString();
+        monedero.text = cant;
         coins = playerStats.contadorMonedas;
         LoadPanels();
         CheckPurchaseable();
@@ -83,6 +90,8 @@ public class ShopManager : MonoBehaviour
             if (shopItemSO[btnNo].isKepotVd)
             {
                 playerInventory.addConsumableItemValue();
+                string cant = playerStats.contadorMonedas.ToString();
+                monedero.text = cant;
             }
             else if (shopItemSO[btnNo].isWeapon)
             {
