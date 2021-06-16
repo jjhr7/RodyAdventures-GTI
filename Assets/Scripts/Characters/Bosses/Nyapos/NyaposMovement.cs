@@ -79,6 +79,10 @@ public class NyaposMovement : MonoBehaviour
     public GameObject barraGo;
     public HealthBar health;
 
+
+    public AudioSource audioSource;
+    public AudioClip[] audios;
+
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
@@ -120,6 +124,8 @@ public class NyaposMovement : MonoBehaviour
             if (stats.recibiendoDanyo)
             {
                 health.SetCurrentHealth(stats.Salud);
+                audioSource.clip = audios[0];
+                audioSource.Play();
             }
             else
             {
@@ -177,6 +183,8 @@ public class NyaposMovement : MonoBehaviour
                     case 1:
                         //Fase 1 - Rafaga de disparos
 
+                        audioSource.clip = audios[1];
+                        audioSource.Play();
                         Debug.Log("case 1");
                         nav.SetDestination(transform.position);
                         colliderBrazo.enabled = false;
@@ -187,7 +195,6 @@ public class NyaposMovement : MonoBehaviour
                             anim.SetBool("Disparando", true);
                             Instantiate(bulletMini, bulletSpawn.position, bulletSpawn.rotation);
                             timerBalas = 0.0;
-                            FindObjectOfType<AudioManager>().Play("shootTorreta");
                         }
                         if (timer < 3.5)
                         {
@@ -244,6 +251,7 @@ public class NyaposMovement : MonoBehaviour
                         dist = Vector3.Distance(target.position, this.transform.position);
                         if (timer < 3)
                         {
+
                             if (dist > 3)
                             {
                                 nav.SetDestination(target.position);
@@ -288,11 +296,13 @@ public class NyaposMovement : MonoBehaviour
 
                                 if (timer > (cadencia * 2) + 0.1)
                                 {
+
+                                    audioSource.clip = audios[3];
+                                    audioSource.Play();
                                     //Restamos una bala al cargador, disparamos y reproducimos el sonido
                                     Instantiate(bulletBig, escupeSpawn.position, escupeSpawn.rotation);
                                     currentBalas--;
                                     timer = 0.0;
-                                    FindObjectOfType<AudioManager>().Play("shootTorreta");
                                 }
                             }
                             else
@@ -321,6 +331,9 @@ public class NyaposMovement : MonoBehaviour
                         }
                         if (timer > 1)
                         {
+
+                            audioSource.clip = audios[1];
+                            audioSource.Play();
                             anim.SetBool("Pegando", false);
                             colliderBrazo.enabled = false;
                             caseSwitch = CambiarDeFase(caseSwitch);
@@ -350,7 +363,7 @@ public class NyaposMovement : MonoBehaviour
         anim.SetBool("Disparando", false);
         anim.SetBool("Pegando", false);
         anim.SetBool("Embistiendo", false);
-
+        audioSource.Pause();
         if (faseActual == 2)
         {
             if (Random.Range(0, 5) > 0)
@@ -359,6 +372,7 @@ public class NyaposMovement : MonoBehaviour
             }
             else
             {
+                PlayAudioById(2);
                 return 3;
             }
         }
@@ -388,6 +402,7 @@ public class NyaposMovement : MonoBehaviour
             else
             {
                 transform.rotation = Quaternion.identity;
+                PlayAudioById(1);
                 return 1;
             }
         }
@@ -410,11 +425,13 @@ public class NyaposMovement : MonoBehaviour
             int caso = Random.Range(0, 6);
             if (caso == 4)
             {
+                PlayAudioById(2);
                 return 3;
             }
             if (caso == 0)
             {
                 transform.rotation = Quaternion.identity;
+                PlayAudioById(1);
                 return 1;
             }
             return caso;
@@ -437,6 +454,9 @@ public class NyaposMovement : MonoBehaviour
 
     private void SegundaFase()
     {
+
+        audioSource.clip = audios[5];
+        audioSource.Play();
         transformacion = true;
 
         timer += Time.deltaTime;
@@ -474,6 +494,12 @@ public class NyaposMovement : MonoBehaviour
                 damage += 10;
             }
         }
+    }
+    public void PlayAudioById(int id)
+    {
+
+        audioSource.clip = audios[id];
+        audioSource.Play();
     }
 
     //Simple clase personalizada usada para serializar la posicion y rotacion iniciales del murciélago
