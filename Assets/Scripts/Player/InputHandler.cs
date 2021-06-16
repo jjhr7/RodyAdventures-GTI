@@ -252,6 +252,8 @@ public class InputHandler : MonoBehaviour
             return;
         if (playerManager.isInteracting)
             return;
+        if (shop_Input)
+            return;
 
         if (!playerInventory.isFireWeaponEquiped)
         {

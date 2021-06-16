@@ -234,6 +234,14 @@ public class PlayerInventory : MonoBehaviour
             consumableSlot.sprite = consumableItem.itemIcon;
             consumableText.text = consumableItem.currentItemAmount.ToString();
         }
+        public void addConsumableItemValue()
+        {
+            if (currentConsumable.currentItemAmount < currentConsumable.maxItemAmount)
+            {
+                currentConsumable.currentItemAmount++;
+                setConsumableItemValues(currentConsumable);
+            }
+        }
         public void initConsumableItemValues(ConsumableItem consumableItem)
         {
             consumableItem.currentItemAmount = consumableItem.maxItemAmount;

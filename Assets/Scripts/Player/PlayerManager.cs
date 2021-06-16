@@ -139,6 +139,9 @@ public class PlayerManager : CharacterManager //hijo que adquiere los atributos 
 
                 if (interactableObject != null)
                 {
+                    if (isInteracting)
+                        return;
+
                     if (itemInteractableGameObject.activeSelf.Equals(true)) //si ya hay un pop activo
                     {
                         itemInteractableGameObject.SetActive(false); //lo desactivamos para activar otro

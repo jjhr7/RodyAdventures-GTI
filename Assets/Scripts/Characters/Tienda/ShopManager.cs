@@ -12,6 +12,7 @@ public class ShopManager : MonoBehaviour
     public GameObject contadorm;
     //para sincronizar las monedas con las de rody
     public PlayerStats playerStats;
+    private PlayerInventory playerInventory;
     GameObject[] player;
     private GameObject myplayer;
     //
@@ -28,6 +29,7 @@ public class ShopManager : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
         playerStats = myplayer.GetComponent<PlayerStats>();
+        playerInventory = myplayer.GetComponent<PlayerInventory>();
         coins = playerStats.contadorMonedas;
 
         contadorm.SetActive(true);
@@ -77,7 +79,18 @@ public class ShopManager : MonoBehaviour
            
             coins = coins - shopItemSO[btnNo].basecost;
             coinsUI.text = coins.ToString();
+            playerStats.contadorMonedas = coins;
+            if (shopItemSO[btnNo].isKepotVd)
+            {
+                playerInventory.addConsumableItemValue();
+            }
+            else if (shopItemSO[btnNo].isWeapon)
+            {
+                playerInventory.weaponsInventory.Add(shopItemSO[btnNo].weaponItem);
+            }
             CheckPurchaseable();
+
+            
         }
     }
 }
