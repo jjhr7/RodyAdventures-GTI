@@ -39,6 +39,9 @@ namespace SG
 
 
 
+        //Sonidos
+        public AudioSource audioSource;
+        public AudioClip[] audios;
         void Start()
         {
 
@@ -75,7 +78,6 @@ namespace SG
                         {
                             anim.SetBool("andando", false);
                             anim.SetBool("pegando", true);
-
                         }
                         nav.SetDestination(transform.position);
                         timer += Time.deltaTime;
@@ -106,6 +108,8 @@ namespace SG
             else
             {
 
+                audioSource.clip = audios[0];
+                audioSource.Play();
 
             }
         }
@@ -128,5 +132,6 @@ namespace SG
 
             }
         }
+
     }
 }
