@@ -13,6 +13,7 @@ public class GSCastigoDeCobardes : MonoBehaviour
     private bool rafaga = false;
     public ParticleSystem muzzleFlash;
     public int bulletsLeft;
+    public AudioSource sonidoDisparo;
 
 
     public int piranyasDualesDM;
@@ -77,14 +78,14 @@ public class GSCastigoDeCobardes : MonoBehaviour
     {
         while (rafaga && bulletsLeft>0)
         {
-            //Debug.Log("Pum!!");
+            sonidoDisparo.Play();
             muzzleFlash.Emit(1);
             Instantiate(bala, spawner1.position, spawner1.rotation);
             Instantiate(bala, spawner2.position, spawner2.rotation);
             Instantiate(bala, spawner3.position, spawner3.rotation);
             Instantiate(bala, spawner4.position, spawner4.rotation);
             bulletsLeft --;
-            Debug.Log(bulletsLeft+" / "+magazineSize);
+            //Debug.Log(bulletsLeft+" / "+magazineSize);
             
             if (_gunSheet == null)
             {

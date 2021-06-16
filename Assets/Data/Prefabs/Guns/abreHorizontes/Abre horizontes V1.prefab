@@ -54,6 +54,7 @@ MonoBehaviour:
   bulletsLeft: 0
   piranyasDualesDM: 60
   piranyasDualesDMK: 80
+  sonidoDisparo: {fileID: 7676217221471747276}
 --- !u!82 &7676217221471747276
 AudioSource:
   m_ObjectHideFlags: 0
