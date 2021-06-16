@@ -20,6 +20,7 @@ public class mapScript : MonoBehaviour
             if (mapIsOut)
             {
                 minimap.SetActive(false);
+                mapIsOut = false;
             }
             else
             {
