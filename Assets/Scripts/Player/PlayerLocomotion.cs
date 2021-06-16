@@ -361,7 +361,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             transform.Translate(Vector3.up * 2);
             rigidbody.AddRelativeForce(new Vector3(0, 1, 0) * 80f, ForceMode.Impulse);
-            Debug.Log("DENGUE");
+           
         }
         else
         {

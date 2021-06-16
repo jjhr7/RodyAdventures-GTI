@@ -67,8 +67,8 @@ public class InputHandler : MonoBehaviour
     //Acciones Disparo
     public static Action onStartFire;
     public static Action onStopFire;
-    
 
+    public RodySoundsManager rodySoundsManager;
 
     private void Awake()
     {
@@ -206,6 +206,7 @@ public class InputHandler : MonoBehaviour
         if (playerManager.canDoCombo)
         {
             comboFlag = true;
+            rodySoundsManager.prepararSonido(3);
             playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
             comboFlag = false;
         }
@@ -216,7 +217,7 @@ public class InputHandler : MonoBehaviour
 
             if (playerManager.canDoCombo)
                 return;
-
+            rodySoundsManager.prepararSonido(3);
             playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
         }
         
@@ -232,6 +233,7 @@ public class InputHandler : MonoBehaviour
         if (playerManager.canDoCombo)
         {
             comboFlag = true;
+            rodySoundsManager.prepararSonido(3);
             playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             comboFlag = false;
         }
@@ -242,6 +244,7 @@ public class InputHandler : MonoBehaviour
 
             if (playerManager.canDoCombo)
                 return;
+            rodySoundsManager.prepararSonido(3);
             playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
         }
         
@@ -293,6 +296,7 @@ public class InputHandler : MonoBehaviour
         {
             jump_Input = false;
             //playerLocomotion.HandleJump();
+            rodySoundsManager.prepararSonido(2);
             playerLocomotion.HandleJumping();
         }
     }

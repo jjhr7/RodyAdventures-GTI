@@ -4975,6 +4975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 1
+  monedaSound: {fileID: 0}
   MoveSpeed: 7
   monedas: {fileID: 0}
 --- !u!95 &1489002165788191485

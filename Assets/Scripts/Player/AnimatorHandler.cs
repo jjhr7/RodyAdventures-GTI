@@ -23,7 +23,7 @@ public class AnimatorHandler : MonoBehaviour
     public GameObject bola;
     public GameObject rody;
     bool sprintt;// variable para guardar la velocidad de sprint de modo normal
-
+    
     public void Initialize()
     {
         playerManager = GetComponentInParent<PlayerManager>();
@@ -118,6 +118,8 @@ public class AnimatorHandler : MonoBehaviour
     {
         anim.SetBool("canDoCombo", false);
     }
+
+    
 
     private void OnAnimatorMove()
     {

@@ -2866,6 +2866,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637439efcbff44632be50471c9210e08, type: 3}
+--- !u!114 &210546124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1647371854206393393, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+  m_PrefabInstance: {fileID: 1258361707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069a90b275fabcc45be3aafe70b0ca50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &211768919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 995976788365990379, guid: 637439efcbff44632be50471c9210e08, type: 3}
@@ -11085,6 +11096,10 @@ PrefabInstance:
       propertyPath: fireWeaponInRightHandSlots.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 38a27d75ce1f05b4e9932ce86d721797, type: 2}
+    - target: {fileID: 1299515273838533188, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: rodySoundsManager
+      value: 
+      objectReference: {fileID: 210546124}
     - target: {fileID: 1299515273838533190, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.25
@@ -11097,6 +11112,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -770.73
       objectReference: {fileID: 0}
+    - target: {fileID: 1299515273838533198, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: rodySoundsManager
+      value: 
+      objectReference: {fileID: 210546124}
     - target: {fileID: 1608692068159940248, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11133,6 +11152,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1647371854206393393, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: listaSonidosRoyd.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a55abf47dcbaba64ebc6b777443d2d45, type: 3}
     - target: {fileID: 1949054341112760451, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -14,7 +14,7 @@ public class CoinAuto : MonoBehaviour
     private GameObject myplayer;
 
     public int MoveSpeed;
-
+    //public AudioSource sonidoMoneda;
     public GameObject monedas;
 
     void Start()
@@ -40,9 +40,10 @@ public class CoinAuto : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Destruímos si toca al jugador
+        //DestruÃ­mos si toca al jugador
         if (collision.collider.tag.Equals("Player"))
         {
+            //sonidoMoneda.Play();
             playerStats.TakeMoney(valor);
             Destroy(gameObject);
         }
