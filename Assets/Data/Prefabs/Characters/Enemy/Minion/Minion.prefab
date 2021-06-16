@@ -191,6 +191,7 @@ MonoBehaviour:
   salud: 30
   recibiendoDanyo: 0
   pausa: 0.2
+  audioSource: {fileID: 0}
 --- !u!114 &6094694748371660717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ AudioSource:
   m_GameObject: {fileID: 8116180843765013785}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -710298588406489919, guid: 1c38759389380a448b413d9103935d17, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
