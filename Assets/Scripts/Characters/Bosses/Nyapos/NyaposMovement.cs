@@ -81,6 +81,8 @@ public class NyaposMovement : MonoBehaviour
 
 
     public AudioSource audioSource;
+    public AudioSource audioSourceDanyo;
+
     public AudioClip[] audios;
 
     void Start()
@@ -124,8 +126,7 @@ public class NyaposMovement : MonoBehaviour
             if (stats.recibiendoDanyo)
             {
                 health.SetCurrentHealth(stats.Salud);
-                audioSource.clip = audios[0];
-                audioSource.Play();
+                audioSourceDanyo.Play();
             }
             else
             {
@@ -425,13 +426,11 @@ public class NyaposMovement : MonoBehaviour
             int caso = Random.Range(0, 6);
             if (caso == 4)
             {
-                PlayAudioById(2);
                 return 3;
             }
             if (caso == 0)
             {
                 transform.rotation = Quaternion.identity;
-                PlayAudioById(1);
                 return 1;
             }
             return caso;
@@ -454,10 +453,8 @@ public class NyaposMovement : MonoBehaviour
 
     private void SegundaFase()
     {
-
-        audioSource.clip = audios[5];
-        audioSource.Play();
         transformacion = true;
+
 
         timer += Time.deltaTime;
         anim.SetBool("Corriendo", true);
