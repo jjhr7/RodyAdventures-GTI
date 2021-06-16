@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rody2_01___Default
+    second: {fileID: 2100000, guid: 43c635ac5368e8a4685d93709b446adf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rody2_01___Drtrefault
+    second: {fileID: 2100000, guid: 19de84920b3cab74382d8fd2d9f17c4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rody2_04___Default
+    second: {fileID: 2100000, guid: 7207ec81d38fdba4e952097b3e7c2ebc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

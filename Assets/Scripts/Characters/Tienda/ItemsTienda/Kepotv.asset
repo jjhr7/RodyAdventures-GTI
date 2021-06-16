@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Bajo de salud? Compra el Kepot verde para llenarte de salud y bien
     estar.
   item: {fileID: 21300000, guid: dcd80189dbf09f54c9a213653555e916, type: 3}
-  basecost: 100
+  basecost: 20
   weaponItem: {fileID: 0}
   isWeapon: 0
   isKepotVd: 1
