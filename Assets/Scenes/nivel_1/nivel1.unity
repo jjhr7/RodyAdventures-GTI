@@ -11873,6 +11873,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -98.173
       objectReference: {fileID: 0}
+    - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: fireWeaponInRightHandSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38a27d75ce1f05b4e9932ce86d721797, type: 2}
     - target: {fileID: 1608692068159940248, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_Sprite
       value: 
