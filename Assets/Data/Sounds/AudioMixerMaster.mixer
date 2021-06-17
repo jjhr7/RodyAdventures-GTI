@@ -101,6 +101,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-5169689210179423743
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dialogos
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c78f2b4ab9b093b4ab2aa2962a7ee6f4
+  m_Children: []
+  m_Volume: e89169098868f8f4589ffc702b7607cb
+  m_Pitch: 8c1053b6c5d8b3946adb56ac905fadc0
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -2618497531126181327}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-4640581489200193268
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -111,6 +130,20 @@ AudioMixerEffectController:
   m_EffectID: a8de4a68283a3b34a8206fe429d685b1
   m_EffectName: Attenuation
   m_MixLevel: 1b85bcab184ad0e46a17bd1b6fa60a82
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-2618497531126181327
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 30c45cdf34912d1459af09b464a666db
+  m_EffectName: Attenuation
+  m_MixLevel: 494d39d666850564aa9eaa5383a01e32
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -219,6 +252,7 @@ AudioMixerController:
     - dac24936a4b178c4fbcb7948b07e1e30
     - ba4bc9c4227b3544c981ffa0f73d4c63
     - 65050f3efe3e0f94083d32e3498e86ae
+    - c78f2b4ab9b093b4ab2aa2962a7ee6f4
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -273,6 +307,7 @@ AudioMixerSnapshotController:
     29c7c9b5837dc6a4d87139ee9a799f28: -0.10231405
     e158ada6e26bf6c4b835c236fbd4339f: 0.10800299
     6e4fa0e7742f94b48886815668b47a10: 0.13552584
+    e89169098868f8f4589ffc702b7607cb: 9.260412
     aa00d7ba2982f3747a80dd944d5b7d0e: -11.400904
     d83bc9acd5305664a955055e9b3a14d8: 0.025578512
     2662fd1e8ca3a50428b2b7b45d2cc4d9: -0.002441872
@@ -356,6 +391,7 @@ AudioMixerGroupController:
   - {fileID: -2462767605971814329}
   - {fileID: -6742898151245399395}
   - {fileID: 2906494293275006478}
+  - {fileID: -5169689210179423743}
   m_Volume: e09ccd93e179b654c8be1f2f5dca358e
   m_Pitch: a0989c4a668920a4ca8bcf8e88dded14
   m_Send: 00000000000000000000000000000000
