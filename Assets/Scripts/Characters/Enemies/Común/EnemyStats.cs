@@ -81,7 +81,7 @@ public class EnemyStats : CharacterManager
                 {
                     //coins 
                     Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(coin, tras, this.transform.rotation);
                 }
             }
@@ -94,7 +94,7 @@ public class EnemyStats : CharacterManager
                 {
 
                     Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionEscopeta, tras, this.transform.rotation);
                 }
             }
@@ -107,7 +107,7 @@ public class EnemyStats : CharacterManager
                 {
 
                     Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionEspecial, tras, this.transform.rotation);
                 }
             }
@@ -120,7 +120,7 @@ public class EnemyStats : CharacterManager
                 {
 
                     Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionPistola, tras, this.transform.rotation);
                 }
             }
