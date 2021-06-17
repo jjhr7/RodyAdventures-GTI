@@ -12,6 +12,11 @@ public class aperturaCajaMonedas : MonoBehaviour
     private GameObject myplayer;
 
 
+    public AudioSource audioSource;
+    public AudioClip[] audios;
+    double timer = 0;
+    bool tamuerto;
+    public GameObject modelo3d;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +25,7 @@ public class aperturaCajaMonedas : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
         playerStats = myplayer.GetComponent<PlayerStats>();
-
+        tamuerto = false;
     }
 
     // Update is called once per frame
@@ -28,17 +33,32 @@ public class aperturaCajaMonedas : MonoBehaviour
     {
         if (stats.recibiendoDanyo)
         {
-
-            for (int i = 0; i < 20; i++)
+            if (!tamuerto)
             {
 
-                Vector2 r = Random.insideUnitCircle * 3;
-                Vector3 tras = transform.position + new Vector3(r.x, Random.Range(0, 3), r.y);
-                Instantiate(coin, tras, this.transform.rotation);
+                for (int i = 0; i < 20; i++)
+                {
+
+                    Vector2 r = Random.insideUnitCircle * 3;
+                    Vector3 tras = transform.position + new Vector3(r.x, Random.Range(0, 3), r.y);
+                    Instantiate(coin, tras, this.transform.rotation);
+
+                }
+                modelo3d.SetActive(false);
+                audioSource.Play();
 
             }
-            //playerStats.TakeMoney(valor);
-            Destroy(gameObject);
+            tamuerto = true;
+        }
+
+        if (tamuerto)
+        {
+            timer += Time.deltaTime;
+            if (timer > 1)
+            {
+                Destroy(gameObject);
+
+            }
         }
     }
 }
