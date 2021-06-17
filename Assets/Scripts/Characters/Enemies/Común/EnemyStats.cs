@@ -37,12 +37,15 @@ public class EnemyStats : CharacterManager
     public Transform moto;
 
     public AudioSource audioSource;
-
+    public GameObject modelo3d;
+    bool tamuerto;
 
     Animator animator;
 
     private void Awake()
     {
+        tamuerto = false;
+
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -54,88 +57,111 @@ public class EnemyStats : CharacterManager
             salud = value;
             if (salud <= 0) //cuando muera
             {
-                timerMuerte += Time.deltaTime;
                 if (audioSource != null)
                 {
-
                     audioSource.Play();
                 }
                 inputHandler.lockOnFlag = false; //quito el modo enfoque
                 cameraHolder.ClearLockOnTarget(); //limpio la lista de enemigos cerca que puede enfocar
-                Destroy(gameObject); //destruir objeto
+                if (modelo3d!=null)
+                {
+                    modelo3d.SetActive(false);//destruir objeto
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
                 if (!isItem)
                 {
                     enemyLoot();
                 }
+                tamuerto = true;
+
             }
         }
     }
 
     private void enemyLoot()
     {
-        if (coin != null)
+        if (!tamuerto)
         {
-            if (numCoinsLoot > 0) //si el enmigo puede tener coin como loot 
+            if (coin != null)
             {
-                for (int i = 0; i < numCoinsLoot; i++)
+                if (numCoinsLoot > 0) //si el enmigo puede tener coin como loot 
                 {
                     //coins 
                     Vector2 r = Random.insideUnitCircle * 1;
                     Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(coin, tras, this.transform.rotation);
+                    for (int i = 0; i < numCoinsLoot; i++)
+                    {
+                        //coins 
+                        Vector2 r = Random.insideUnitCircle * 1;
+                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Instantiate(coin, tras, this.transform.rotation);
+                    }
                 }
             }
-        }
-        if (municionEscopeta != null)
-        {
-            if (numMunicionEscopetaLoot > 0)
+            if (municionEscopeta != null)
             {
-                for (int i = 0; i < numMunicionEscopetaLoot; i++)
+                if (numMunicionEscopetaLoot > 0)
                 {
+                    for (int i = 0; i < numMunicionEscopetaLoot; i++)
+                    {
 
                     Vector2 r = Random.insideUnitCircle * 1;
                     Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionEscopeta, tras, this.transform.rotation);
+                        Vector2 r = Random.insideUnitCircle * 1;
+                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Instantiate(municionEscopeta, tras, this.transform.rotation);
+                    }
                 }
             }
-        }
-        if (municionEspecial != null)
-        {
-            if (numMunicionEspecialLoot > 0)
+            if (municionEspecial != null)
             {
-                for (int i = 0; i < numMunicionEspecialLoot; i++)
+                if (numMunicionEspecialLoot > 0)
                 {
+                    for (int i = 0; i < numMunicionEspecialLoot; i++)
+                    {
 
                     Vector2 r = Random.insideUnitCircle * 1;
                     Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionEspecial, tras, this.transform.rotation);
+                        Vector2 r = Random.insideUnitCircle * 1;
+                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Instantiate(municionEspecial, tras, this.transform.rotation);
+                    }
                 }
             }
-        }
-        if (municionPistola != null)
-        {
-            if (numMunicionPistolaLoot > 0)
+            if (municionPistola != null)
             {
-                for (int i = 0; i < numMunicionPistolaLoot; i++)
+                if (numMunicionPistolaLoot > 0)
                 {
+                    for (int i = 0; i < numMunicionPistolaLoot; i++)
+                    {
 
                     Vector2 r = Random.insideUnitCircle * 1;
                     Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                     Instantiate(municionPistola, tras, this.transform.rotation);
+                        Vector2 r = Random.insideUnitCircle * 1;
+                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Instantiate(municionPistola, tras, this.transform.rotation);
+                    }
                 }
             }
-        }
-        //moto 
-        if (moto != null)
-        {
-            if (numMoto > 0)
+            //moto 
+            if (moto != null)
             {
-                for (int i = 0; i < numMoto; i++)
+                if (numMoto > 0)
                 {
+                    for (int i = 0; i < numMoto; i++)
+                    {
 
-                    Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
-                    Instantiate(moto, tras, this.transform.rotation);
+                        Vector2 r = Random.insideUnitCircle * 1;
+                        Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
+                        Instantiate(moto, tras, this.transform.rotation);
+                    }
                 }
             }
         }
@@ -189,6 +215,15 @@ public class EnemyStats : CharacterManager
             }
         }
 
+
+        if (tamuerto)
+        {
+            timerMuerte += Time.deltaTime;
+            if (timerMuerte > 1)
+            {
+                Destroy(gameObject);
+            }
+        }
 
     }
 
