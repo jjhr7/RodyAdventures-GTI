@@ -31,6 +31,8 @@ public class tutorialHandler : MonoBehaviour
     double timerV = 0;//Segundo timer
     double Timert = 0;//Primer timer
 
+    //bools
+    public bool isJumping ;
 
 
     // ATRIBUTOS
@@ -74,13 +76,14 @@ public class tutorialHandler : MonoBehaviour
         fase = -1;
         faseAnterior = -1;
         hapasao = false;
+        isJumping = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         Timert += Time.deltaTime;
-
+        isJumping = false;
         if (Timert > 2)
         {
             fase = 0;
@@ -89,14 +92,17 @@ public class tutorialHandler : MonoBehaviour
 
         if (Timert > 34)
         {
+            
             audios[0] = null;
             fase = 1;
         }
         if (Timert > 56)
         {
+            
             fase = 2;
             playerLocomotion.movementSpeed = ms;
             playerLocomotion.sprintSpeed = Rs;
+            isJumping = true;
 
             subitlesTX.text = " Utiliza el Joystick o WASD para MOVERTE";
         }

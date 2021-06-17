@@ -57,6 +57,7 @@ public class InputHandler : MonoBehaviour
     AnimatorHandler playerAnimatorManager;
     WeaponSlotManager weaponSlotManager;
     UIManager UIManager;
+    tutorialHandler tutorial;
 
     //para el salto
     PlayerLocomotion playerLocomotion;
@@ -75,6 +76,7 @@ public class InputHandler : MonoBehaviour
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
+        tutorial = FindObjectOfType<tutorialHandler>();
 
         playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
         playerAnimatorManager = GetComponentInChildren<AnimatorHandler>();
@@ -294,6 +296,9 @@ public class InputHandler : MonoBehaviour
     //salto estatico
     private void HandleJumpingInput()
     {
+        if (tutorial.isJumping == false)
+            return;
+
         if (jump_Input)
         {
             jump_Input = false;
