@@ -22,7 +22,7 @@ public class NyaposMovement : MonoBehaviour
     public Transform escupeSpawn;
 
 
-    //Cadencia de disparo y contador para llegar a ésta
+    //Cadencia de disparo y contador para llegar a ï¿½sta
     double timer = 0.0;
     double timerBalas = 0.0;
 
@@ -85,11 +85,13 @@ public class NyaposMovement : MonoBehaviour
 
     public AudioClip[] audios;
 
+    public cambioMusicaNivel cambioMusicaNivel;
+
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
         empiezaLaPelea = false;
-        //Creamos un objeto PositionData para guardar la pos inicial del Nyapos y que no varíe
+        //Creamos un objeto PositionData para guardar la pos inicial del Nyapos y que no varï¿½e
         posicionInicial = new PositionData(transform.position, transform.rotation);
 
         rb = GetComponent<Rigidbody>();
@@ -158,7 +160,7 @@ public class NyaposMovement : MonoBehaviour
             }
             if (!transformacion)
             {
-                //Cambio entre los diferentes ataques de Ñapos
+                //Cambio entre los diferentes ataques de ï¿½apos
                 switch (caseSwitch)
                 {
                     case 0:
@@ -211,7 +213,7 @@ public class NyaposMovement : MonoBehaviour
                         }
                         break;
                     case 2:
-                        //Fase 2 - Acercarse para Puñetazo basico
+                        //Fase 2 - Acercarse para Puï¿½etazo basico
 
                         timer = 0;
                         Debug.Log("case 2");
@@ -319,7 +321,7 @@ public class NyaposMovement : MonoBehaviour
 
                         break;
                     case 7:
-                        //Fase 7 - Puñetazo basico
+                        //Fase 7 - Puï¿½etazo basico
 
                         timer += Time.deltaTime;
                         anim.SetBool("Corriendo", false);
@@ -446,8 +448,10 @@ public class NyaposMovement : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
+            cambioMusicaNivel.cambiarPista();
+            
             empiezaLaPelea = true;
-            Col.radius = 1;
+            Col.enabled = false;
         }
     }
 
@@ -499,20 +503,20 @@ public class NyaposMovement : MonoBehaviour
         audioSource.Play();
     }
 
-    //Simple clase personalizada usada para serializar la posicion y rotacion iniciales del murciélago
+    //Simple clase personalizada usada para serializar la posicion y rotacion iniciales del murciï¿½lago
     [System.Serializable]
     public class PositionData
     {
-        //Posición a serializar
+        //Posiciï¿½n a serializar
         public Vector3 Position;
 
-        //Rotación a serializar
+        //Rotaciï¿½n a serializar
         public Quaternion Rotation;
 
-        //Dejamos un constructor vacío
+        //Dejamos un constructor vacï¿½o
         public PositionData() { }
 
-        //Creamos un constructor con parámetros
+        //Creamos un constructor con parï¿½metros
         public PositionData(Vector3 pos, Quaternion rot)
         {
             Position = pos;
