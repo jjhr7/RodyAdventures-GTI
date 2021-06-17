@@ -18,5 +18,7 @@ MonoBehaviour:
   item: {fileID: 21300000, guid: 4bd9db3845760004faa64bf780ef2cda, type: 3}
   basecost: 100
   weaponItem: {fileID: 0}
-  isWeapon: 1
+  fireWeponItem: {fileID: 11400000, guid: e28be8558beee2c4d9b946eb98a65b55, type: 2}
+  isWeapon: 0
   isKepotVd: 0
+  isFireWeapon: 1

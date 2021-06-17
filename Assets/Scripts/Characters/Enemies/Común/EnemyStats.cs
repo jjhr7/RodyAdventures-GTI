@@ -19,6 +19,22 @@ public class EnemyStats : CharacterManager
     private GameObject myplayer;
     InputHandler inputHandler;
     CameraHolder cameraHolder;
+    //loot -> si es 0 entonces el enmigo no va a soltar items de ese tipo 
+    public int numCoinsLoot = 15;
+    public int numMunicionEscopetaLoot = 1;
+    public int numMunicionPistolaLoot = 1;
+    public int numMunicionEspecialLoot = 1;
+    public int numMoto = 1;
+    //monedas 
+    public Transform coin;
+    //municion escopeta 
+    public Transform municionEscopeta;
+    //municion pistola 
+    public Transform municionPistola;
+    //municion especial 
+    public Transform municionEspecial;
+    // recompensa al derrotar al nyapos 
+    public Transform moto;
 
     public AudioSource audioSource;
 
@@ -47,6 +63,80 @@ public class EnemyStats : CharacterManager
                 inputHandler.lockOnFlag = false; //quito el modo enfoque
                 cameraHolder.ClearLockOnTarget(); //limpio la lista de enemigos cerca que puede enfocar
                 Destroy(gameObject); //destruir objeto
+                if (!isItem)
+                {
+                    enemyLoot();
+                }
+            }
+        }
+    }
+
+    private void enemyLoot()
+    {
+        if (coin != null)
+        {
+            if (numCoinsLoot > 0) //si el enmigo puede tener coin como loot 
+            {
+                for (int i = 0; i < numCoinsLoot; i++)
+                {
+                    //coins 
+                    Vector2 r = Random.insideUnitCircle * 1;
+                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Instantiate(coin, tras, this.transform.rotation);
+                }
+            }
+        }
+        if (municionEscopeta != null)
+        {
+            if (numMunicionEscopetaLoot > 0)
+            {
+                for (int i = 0; i < numMunicionEscopetaLoot; i++)
+                {
+
+                    Vector2 r = Random.insideUnitCircle * 1;
+                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Instantiate(municionEscopeta, tras, this.transform.rotation);
+                }
+            }
+        }
+        if (municionEspecial != null)
+        {
+            if (numMunicionEspecialLoot > 0)
+            {
+                for (int i = 0; i < numMunicionEspecialLoot; i++)
+                {
+
+                    Vector2 r = Random.insideUnitCircle * 1;
+                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Instantiate(municionEspecial, tras, this.transform.rotation);
+                }
+            }
+        }
+        if (municionPistola != null)
+        {
+            if (numMunicionPistolaLoot > 0)
+            {
+                for (int i = 0; i < numMunicionPistolaLoot; i++)
+                {
+
+                    Vector2 r = Random.insideUnitCircle * 1;
+                    Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                    Instantiate(municionPistola, tras, this.transform.rotation);
+                }
+            }
+        }
+        //moto 
+        if (moto != null)
+        {
+            if (numMoto > 0)
+            {
+                for (int i = 0; i < numMoto; i++)
+                {
+
+                    Vector2 r = Random.insideUnitCircle * 1;
+                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
+                    Instantiate(moto, tras, this.transform.rotation);
+                }
             }
         }
     }

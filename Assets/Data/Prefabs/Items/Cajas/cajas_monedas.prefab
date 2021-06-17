@@ -150,6 +150,17 @@ MonoBehaviour:
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!65 &5886457690402475656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -310,6 +321,17 @@ MonoBehaviour:
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!65 &5667416909189358605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -470,6 +492,17 @@ MonoBehaviour:
   salud: 500
   recibiendoDanyo: 0
   pausa: 0.2
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!65 &4263801722877862962
 BoxCollider:
   m_ObjectHideFlags: 0

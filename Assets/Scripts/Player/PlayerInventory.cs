@@ -251,7 +251,7 @@ public class PlayerInventory : MonoBehaviour
         }
         public void initConsumableItemValues(ConsumableItem consumableItem)
         {
-            consumableItem.currentItemAmount = consumableItem.maxItemAmount;
+            consumableItem.currentItemAmount = consumableItem.maxItemAmount/2;
             setConsumableItemValues(currentConsumable);
         }
 

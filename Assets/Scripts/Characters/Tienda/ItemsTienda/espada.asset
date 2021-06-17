@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3075e992b5680644a20c36272398e00, type: 3}
   m_Name: espada
   m_EditorClassIdentifier: 
-  title: Acha
+  title: Hacha
   description: " Qui\xE9n ser\xE1 capaz de empu\xF1arla y seguir su legado?"
   item: {fileID: 21300000, guid: d279bb6b3b91dcd4b85b956ba7c5c3f3, type: 3}
   basecost: 100
-  weaponItem: {fileID: 11400000, guid: 2e34e3064b5f741448af37c49e8e9adc, type: 2}
+  weaponItem: {fileID: 11400000, guid: c9a982c1562f628419a5bb196f2c7484, type: 2}
+  fireWeponItem: {fileID: 0}
   isWeapon: 1
   isKepotVd: 0
+  isFireWeapon: 0

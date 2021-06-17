@@ -2060,6 +2060,16 @@ MonoBehaviour:
   salud: 10
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 20
+  numMunicionEscopetaLoot: 1
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 2418608061875225782, guid: ea6d924ff86b34448a0a5e255eb3578d, type: 3}
+  municionEscopeta: {fileID: 7759750195922709564, guid: 3d109604333536a4684d2924f63deb51, type: 3}
+  municionPistola: {fileID: 2533129704308645359, guid: ed41d62dd2c6a97459a9e98c86b81a3d, type: 3}
+  municionEspecial: {fileID: 3946939225799843892, guid: c40ff0dccf9faa443b87c66a6b48989f, type: 3}
+  moto: {fileID: 7441487889600376985, guid: cbe720e54fdb2ee479e629c4d086a15b, type: 3}
   audioSource: {fileID: 1839687793233439838}
 --- !u!95 &5216465808805195732
 Animator:

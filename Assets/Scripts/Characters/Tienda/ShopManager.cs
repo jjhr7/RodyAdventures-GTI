@@ -97,6 +97,10 @@ public class ShopManager : MonoBehaviour
             {
                 playerInventory.weaponsInventory.Add(shopItemSO[btnNo].weaponItem);
             }
+            else if (shopItemSO[btnNo].isFireWeapon)
+            {
+                playerInventory.fireWeaponsInventory.Add(shopItemSO[btnNo].fireWeponItem);
+            }
             CheckPurchaseable();
 
             

@@ -25,10 +25,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &1597781138575607715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +53,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &3954991626396271671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,10 +160,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &612352153840866421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,10 +188,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &9182885981864119410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,10 +228,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &6311330446768883130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,10 +296,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &1797460392174592291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,10 +324,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &5015710249986013816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +380,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &6269269536514837218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,10 +448,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnTransform: {fileID: 0}
-  isItem: 0
+  isItem: 1
   salud: 2
   recibiendoDanyo: 0
   pausa: 0
+  numCoinsLoot: 15
+  numMunicionEscopetaLoot: 0
+  numMunicionPistolaLoot: 0
+  numMunicionEspecialLoot: 0
+  numMoto: 0
+  coin: {fileID: 0}
+  municionEscopeta: {fileID: 0}
+  municionPistola: {fileID: 0}
+  municionEspecial: {fileID: 0}
+  moto: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1001 &168499735392971950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -374,7 +473,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (7)
@@ -449,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (9)
@@ -524,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (3)
@@ -599,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (6)
@@ -674,7 +773,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (2)
@@ -749,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (1)
@@ -824,7 +923,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (8)
@@ -899,7 +998,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (4)
@@ -974,7 +1073,7 @@ PrefabInstance:
     - target: {fileID: 8758150876802320752, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e02a498ff896cd1409c5707399879001, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8758150876802320754, guid: b35513d2818314855a2659b5e5096d06, type: 3}
       propertyPath: m_Name
       value: caja_1 (5)
