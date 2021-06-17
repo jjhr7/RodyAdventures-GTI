@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerStats : MonoBehaviour
@@ -202,6 +203,7 @@ public class PlayerStats : MonoBehaviour
                     {
                         rodySoundsManager.prepararSonido(0);
                         animatorHandler.PlayTargetAnimation("Dead_01", true);
+                        SceneManager.LoadScene("GameOver");
                         
                     }
                     timerInf = 0;
@@ -278,7 +280,8 @@ public class PlayerStats : MonoBehaviour
         {
             rodySoundsManager.prepararSonido(0);
             animatorHandler.PlayTargetAnimation("Dead_01", true);
-            
+            SceneManager.LoadScene("GameOver");
+
         }
 
     }
@@ -286,6 +289,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeMoney(int money)
     {
         contadorMonedas += money;
+        rodySoundsManager.prepararSonido(4);
         if (moneyBar != null)
         {
             BarraMonedas.SetActive(true);

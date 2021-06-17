@@ -11482,6 +11482,10 @@ PrefabInstance:
       value: -1.1100006
       objectReference: {fileID: 0}
     - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: weaponInLeftHandSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 666193f846831614ea7be160babeb747, type: 2}
+    - target: {fileID: 1299515273838533184, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: fireWeaponInRightHandSlots.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 38a27d75ce1f05b4e9932ce86d721797, type: 2}
@@ -11548,7 +11552,7 @@ PrefabInstance:
     - target: {fileID: 1647371854206393393, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: listaSonidosRoyd.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: a55abf47dcbaba64ebc6b777443d2d45, type: 3}
+      objectReference: {fileID: 8300000, guid: 299586325efdaa5478c3fd86e13f2ab8, type: 3}
     - target: {fileID: 1955413326372544754, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -66.9541
