@@ -25,8 +25,7 @@ using UnityEngine;
 
     private void Awake()
         {
-        Debug.Log("Recargando escena");
-        playerStats = GetComponentInParent<PlayerStats>();
+            playerStats = GetComponentInParent<PlayerStats>();
         playerInventory = GetComponentInParent<PlayerInventory>();
 
         animator = GetComponent<Animator>();

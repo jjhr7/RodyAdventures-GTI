@@ -61,6 +61,8 @@ public class PlayerStats : MonoBehaviour
     int vidaGuende;
 
     public GameObject fire;
+    public RodySoundsManager rodySoundsManager;
+    
     GameObject fireClone;
     PlayerLocomotion playerLocomotion;
     float normalSpeed;
@@ -198,7 +200,9 @@ public class PlayerStats : MonoBehaviour
 
                     if (currentHealth <= 0)
                     {
+                        rodySoundsManager.prepararSonido(0);
                         animatorHandler.PlayTargetAnimation("Dead_01", true);
+                        
                     }
                     timerInf = 0;
                 }
@@ -268,10 +272,13 @@ public class PlayerStats : MonoBehaviour
             healthBar.SetCurrentHealth(currentHealth);
             extraHealthBar.setCurrentHealth(extraHealth);
         }
+        rodySoundsManager.prepararSonido(1);
         animatorHandler.PlayTargetAnimation("Damage_01", true); //activar animacion de danyo
         if (currentHealth <= 0)
         {
+            rodySoundsManager.prepararSonido(0);
             animatorHandler.PlayTargetAnimation("Dead_01", true);
+            
         }
 
     }
