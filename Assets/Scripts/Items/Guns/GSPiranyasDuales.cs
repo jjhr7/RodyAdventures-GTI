@@ -24,8 +24,17 @@ public class GSPiranyasDuales : MonoBehaviour
     //UI Armas
     private GunSheet _gunSheet;
     public AudioSource sonidoDisparo;
+    
+    
+    //Reference
+    private Camera fpsCam;
+    public Transform attackPoint;
+
+    public InputHandler inputHandler;
     public void Awake()
     {
+        fpsCam = FindObjectOfType<Camera>();
+        inputHandler = FindObjectOfType<InputHandler>();
         bulletsLeft = magazineSize;
         _gunSheet = FindObjectOfType<GunSheet>();
 
@@ -74,11 +83,39 @@ public class GSPiranyasDuales : MonoBehaviour
     
     IEnumerator Disparar()
     {
+        Vector3 direccionBala = new Vector3();
+        
+        if (fpsCam != null && inputHandler != null && inputHandler.lockOnFlag)
+        {
+            Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //Just a ray through the middle of your current view
+            RaycastHit hit;
+            //check if ray hits something
+            Vector3 targetPoint;
+            if (Physics.Raycast(ray, out hit))
+                targetPoint = hit.point;
+            else
+                targetPoint = ray.GetPoint(75); //Just a point far away from the player
+        
+            //Calculate direction from attackPoint to targetPoint
+            direccionBala = targetPoint - attackPoint.position;
+        }
+
+        
+        
         while (rafaga && bulletsLeft>0)
         {
             sonidoDisparo.Play();
             muzzleFlash.Emit(1);
-            Instantiate(bala, spawner.position, spawner.rotation);
+            if (fpsCam != null && inputHandler != null && inputHandler.lockOnFlag)
+            {
+                GameObject currentBullet = Instantiate(bala, spawner.position, spawner.rotation);
+                currentBullet.transform.forward = direccionBala.normalized; 
+            }
+            else
+            {
+                Instantiate(bala, spawner.position, spawner.rotation);
+            }
+            
             bulletsLeft --;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)

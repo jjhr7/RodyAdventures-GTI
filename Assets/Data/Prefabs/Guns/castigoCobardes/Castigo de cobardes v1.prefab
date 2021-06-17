@@ -179,6 +179,11 @@ MonoBehaviour:
   sonidoDisparo: {fileID: 797954196574002020}
   piranyasDualesDM: 25
   piranyasDualesDMK: 50
+  attackPoint1: {fileID: 3041683393181645709}
+  attackPoint2: {fileID: 2672179348901260361}
+  attackPoint3: {fileID: 8915674210858724335}
+  attackPoint4: {fileID: 2927627372229952637}
+  inputHandler: {fileID: 0}
 --- !u!82 &797954196574002020
 AudioSource:
   m_ObjectHideFlags: 0

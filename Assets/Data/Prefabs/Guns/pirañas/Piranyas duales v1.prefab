@@ -85,6 +85,8 @@ MonoBehaviour:
   piranyasDualesDM: 5
   piranyasDualesDMK: 10
   sonidoDisparo: {fileID: 2893880932891927300}
+  fpsCam: {fileID: 0}
+  attackPoint: {fileID: 5987527585926327511}
 --- !u!82 &2893880932891927300
 AudioSource:
   m_ObjectHideFlags: 0

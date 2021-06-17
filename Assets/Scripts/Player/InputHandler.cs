@@ -253,8 +253,10 @@ public class InputHandler : MonoBehaviour
     {
         if(inventoryFlag)
             return;
+        
         if (playerManager.isInteracting)
             return;
+        
         if (shop_Input)
             return;
 

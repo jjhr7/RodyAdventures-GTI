@@ -55,6 +55,8 @@ MonoBehaviour:
   piranyasDualesDM: 60
   piranyasDualesDMK: 80
   sonidoDisparo: {fileID: 7676217221471747276}
+  attackPoint: {fileID: 1662322406874083736}
+  inputHandler: {fileID: 0}
 --- !u!82 &7676217221471747276
 AudioSource:
   m_ObjectHideFlags: 0
