@@ -89,15 +89,11 @@ public class EnemyStats : CharacterManager
             {
                 if (numCoinsLoot > 0) //si el enmigo puede tener coin como loot 
                 {
-                    //coins 
-                    Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
-                    Instantiate(coin, tras, this.transform.rotation);
                     for (int i = 0; i < numCoinsLoot; i++)
                     {
                         //coins 
                         Vector2 r = Random.insideUnitCircle * 1;
-                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                         Instantiate(coin, tras, this.transform.rotation);
                     }
                 }
@@ -108,12 +104,8 @@ public class EnemyStats : CharacterManager
                 {
                     for (int i = 0; i < numMunicionEscopetaLoot; i++)
                     {
-
-                    Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
-                    Instantiate(municionEscopeta, tras, this.transform.rotation);
                         Vector2 r = Random.insideUnitCircle * 1;
-                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                         Instantiate(municionEscopeta, tras, this.transform.rotation);
                     }
                 }
@@ -125,11 +117,8 @@ public class EnemyStats : CharacterManager
                     for (int i = 0; i < numMunicionEspecialLoot; i++)
                     {
 
-                    Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
-                    Instantiate(municionEspecial, tras, this.transform.rotation);
                         Vector2 r = Random.insideUnitCircle * 1;
-                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                         Instantiate(municionEspecial, tras, this.transform.rotation);
                     }
                 }
@@ -141,11 +130,8 @@ public class EnemyStats : CharacterManager
                     for (int i = 0; i < numMunicionPistolaLoot; i++)
                     {
 
-                    Vector2 r = Random.insideUnitCircle * 1;
-                    Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
-                    Instantiate(municionPistola, tras, this.transform.rotation);
                         Vector2 r = Random.insideUnitCircle * 1;
-                        Vector3 tras = transform.position + new Vector3(r.x, 1, r.y);
+                        Vector3 tras = transform.position + new Vector3(r.x, 0, r.y);
                         Instantiate(municionPistola, tras, this.transform.rotation);
                     }
                 }

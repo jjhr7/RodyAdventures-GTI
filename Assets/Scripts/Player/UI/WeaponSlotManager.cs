@@ -172,7 +172,6 @@ using UnityEngine;
                 #region Handle Right Weapon Idle Animations
                 if (animator != null)
                 {
-                Debug.Log(animator.ToString());
                 animator.CrossFade(fireWeponItem.right_hand_idle, 0.2f);
                 }
                 else
