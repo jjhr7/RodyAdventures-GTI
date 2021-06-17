@@ -38,10 +38,11 @@ public class CoinAuto : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+
         //Destruímos si toca al jugador
-        if (collision.collider.tag.Equals("Player"))
+        if (other.tag.Equals("Player"))
         {
             //sonidoMoneda.Play();
             playerStats.TakeMoney(valor);
