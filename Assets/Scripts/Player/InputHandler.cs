@@ -296,8 +296,12 @@ public class InputHandler : MonoBehaviour
     //salto estatico
     private void HandleJumpingInput()
     {
-        if (tutorial.isJumping == false)
-            return;
+        if (tutorial != null)
+        {
+            if (tutorial.isJumping == false)
+                return; 
+        }
+        
 
         if (jump_Input)
         {

@@ -2398,7 +2398,7 @@ MonoBehaviour:
   weaponsInventory:
   - {fileID: 11400000, guid: bcada2e2801e40c428a21f7045070fcb, type: 2}
   fireWeaponsInventory:
-  - {fileID: 11400000, guid: 38a27d75ce1f05b4e9932ce86d721797, type: 2}
+  - {fileID: 11400000, guid: 4607b13411301d84e929bc56b4d3bbf6, type: 2}
   consumableInventory:
   - {fileID: 11400000, guid: 905d257196294ea4985406284249106f, type: 2}
   _gunSheet: {fileID: 1185310814413894656}
