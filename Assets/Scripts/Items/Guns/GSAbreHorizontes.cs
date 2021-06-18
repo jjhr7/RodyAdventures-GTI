@@ -45,6 +45,12 @@ public class GSAbreHorizontes : MonoBehaviour
         PlayerStats = myplayer.GetComponent<PlayerStats>();
         piranyasDualesDM = bala.GetComponent<BSExplosive>().bulletDamage;
         piranyasDualesDMK = bala.GetComponent<BSExplosive>().bulletDamageFireKepot;
+        
+        if (_gunSheet == null)
+        {
+            _gunSheet = FindObjectOfType<GunSheet>();
+        }
+        _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
     }
 
     private void OnEnable()
@@ -113,7 +119,7 @@ public class GSAbreHorizontes : MonoBehaviour
                 Instantiate(bala, spawner.position, spawner.rotation);
             }
             
-            bulletsLeft --;
+            //bulletsLeft --;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)
             {

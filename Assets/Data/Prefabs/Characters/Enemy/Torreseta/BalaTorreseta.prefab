@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba55e94c5621a214fae9c1333b80a702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danyo: 10
+  danyo: 2
   fuerza: 100

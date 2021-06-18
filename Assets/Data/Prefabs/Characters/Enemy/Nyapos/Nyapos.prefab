@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   pegando: 0
-  damage: 10
+  damage: 3
   haspegado: 0
   col: {fileID: 4542535303539908729}
 --- !u!1 &6188154597352316877
@@ -177,7 +177,7 @@ MonoBehaviour:
   cuerpoYbrazos: {fileID: 3941830649829535613}
   direccion: {x: 0, y: -2, z: 0}
   MoveSpeed: 20
-  damage: 20
+  damage: 10
   colliderBrazo: {fileID: 6914591030383826248}
   colliderCuerpo: {fileID: 4542535303539908729}
   brazoFuerte: {fileID: 8465677217868860351}
@@ -195,6 +195,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a685d56d7ada57e4fa5e33633e4040d7, type: 3}
   - {fileID: 8300000, guid: 4090e6a62683dd546b8224b50faafdea, type: 3}
   - {fileID: 8300000, guid: 1a19f4e029b8d3e409eb9ae89e1ac5bf, type: 3}
+  cambioMusicaNivel: {fileID: 0}
 --- !u!114 &2442503056053020760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,7 @@ MonoBehaviour:
   municionEspecial: {fileID: 3946939225799843892, guid: c40ff0dccf9faa443b87c66a6b48989f, type: 3}
   moto: {fileID: 7441487889600376985, guid: cbe720e54fdb2ee479e629c4d086a15b, type: 3}
   audioSource: {fileID: 0}
+  modelo3d: {fileID: 0}
 --- !u!135 &8901469881307033043
 SphereCollider:
   m_ObjectHideFlags: 0

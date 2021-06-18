@@ -52,6 +52,12 @@ public class GSCastigoDeCobardes : MonoBehaviour
         PlayerStats = myplayer.GetComponent<PlayerStats>();
         piranyasDualesDM = bala.GetComponent<BSPiranyasDuales>().bulletDamage;
         piranyasDualesDMK = bala.GetComponent<BSPiranyasDuales>().bulletDamageFireKepot;
+        
+        if (_gunSheet == null)
+        {
+            _gunSheet = FindObjectOfType<GunSheet>();
+        }
+        _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
     }
 
     private void OnEnable()
@@ -137,7 +143,7 @@ public class GSCastigoDeCobardes : MonoBehaviour
             }
             
             
-            bulletsLeft --;
+            //bulletsLeft --;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             
             if (_gunSheet == null)
