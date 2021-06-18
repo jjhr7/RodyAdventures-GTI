@@ -175,7 +175,7 @@ public class tutorialHandler : MonoBehaviour
         if (playerManager.entroEnLaTienda)
         {
             fase = 10;
-            subitlesTX.text = "Utiliza Shift o LB para activar el MODO BOLA, así podrás rodar para ir mas rápido";
+            subitlesTX.text = "Utiliza Alt o LB para activar el MODO BOLA, así podrás rodar para ir mas rápido";
             Destroy(cubo2);
             if (bola.activeSelf)
             {
