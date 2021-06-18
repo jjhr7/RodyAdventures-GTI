@@ -153,7 +153,7 @@ public class UIManager : MonoBehaviour
 
     public void BackToMainMenuScene()
     {
-        SceneManager.LoadScene("Main_menu");
+        SceneManager.LoadScene("_MenuRodyAdventures");
     }
 
     public void ContinueGameButton()
