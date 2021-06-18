@@ -14,7 +14,7 @@ using UnityEngine;
         PlayerStats playerStats;
         GameObject[] player;
         private GameObject myplayer;
-
+        //public AudioSource monedaSound;
         public int MoveSpeed;
 
         public GameObject monedas;
@@ -45,7 +45,7 @@ using UnityEngine;
 
         private void OnTriggerEnter(Collider other)
         {
-            //Targeteado es true si el jugador entra en el área
+            //Targeteado es true si el jugador entra en el Ã¡rea
             if (other.tag.Equals("Player"))
             {
                 targeteado = true;
@@ -54,9 +54,10 @@ using UnityEngine;
 
         private void OnCollisionEnter(Collision collision)
         {
-            //Destruímos si toca al jugador
+            //DestruÃ­mos si toca al jugador
             if (collision.collider.tag.Equals("Player"))
             {
+                //monedaSound.Play();
                 playerStats.TakeMoney(valor);
                 Destroy(gameObject);
             }

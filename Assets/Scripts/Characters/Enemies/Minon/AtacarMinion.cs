@@ -35,8 +35,13 @@ namespace SG
 
         public Transform cuerpo;
 
+        public Animator anim;
 
 
+
+        //Sonidos
+        public AudioSource audioSource;
+        public AudioClip[] audios;
         void Start()
         {
 
@@ -55,7 +60,11 @@ namespace SG
                 //Si el enemigo ve al jugador
                 if (targeteado)
                 {
-
+                    if (anim != null)
+                    {
+                        anim.SetBool("pegando", false);
+                        anim.SetBool("andando", true);
+                    }
                     dist = Vector3.Distance(player.position, this.transform.position);
                     if (dist > area.radius)
                     {
@@ -65,15 +74,26 @@ namespace SG
                     }
                     else
                     {
-
+                        if (anim != null)
+                        {
+                            anim.SetBool("andando", false);
+                            anim.SetBool("pegando", true);
+                        }
                         nav.SetDestination(transform.position);
                         timer += Time.deltaTime;
                         if (timer > velocidadAtaque)
                         {
+                            if (anim != null)
+                            {
+                                anim.SetBool("pegando", false);
+                                anim.SetBool("andando", true);
+
+                            }
                             dist = Vector3.Distance(player.position, transform.position);
                             if (dist <= area.radius)
                             {
                                 ps.TakeDamage(danyo);
+                               
                             }
                             timer = 0;
                         }
@@ -88,6 +108,8 @@ namespace SG
             else
             {
 
+                audioSource.clip = audios[0];
+                audioSource.Play();
 
             }
         }
@@ -110,5 +132,6 @@ namespace SG
 
             }
         }
+
     }
 }

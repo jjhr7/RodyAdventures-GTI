@@ -10,6 +10,7 @@ TagManager:
   - coin
   - Interactable
   - Shop
+  - UIArmasMunicion
   layers:
   - Default
   - TransparentFX

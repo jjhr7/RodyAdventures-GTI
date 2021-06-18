@@ -36,6 +36,9 @@ using UnityEngine;
         public Transform cuerpo;
 
 
+        public AudioSource audioSource;
+        public AudioClip[] audios;
+
         void Start()
         {
 
@@ -55,8 +58,8 @@ using UnityEngine;
             //Ponemos roja la esfera si recibe danyo y activamos el audio
             if (stats.recibiendoDanyo)
             {
-
-                FindObjectOfType<AudioManager>().Play("deathEscupe");
+                audioSource.clip = audios[0];
+                audioSource.Play();
             }
             else
             {
@@ -92,8 +95,10 @@ using UnityEngine;
                         {
                             Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                             timer = 0.0;
-                            FindObjectOfType<AudioManager>().Play("shootEscupe");
-                        }
+
+                            audioSource.clip = audios[1];
+                            audioSource.Play();
+                    }
                     }
                 }
             }

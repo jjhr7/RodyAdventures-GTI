@@ -12,6 +12,7 @@ public class ShopManager : MonoBehaviour
     public GameObject contadorm;
     //para sincronizar las monedas con las de rody
     public PlayerStats playerStats;
+    private PlayerInventory playerInventory;
     GameObject[] player;
     private GameObject myplayer;
     //
@@ -19,6 +20,9 @@ public class ShopManager : MonoBehaviour
     public ShopItemSO[] shopItemSO;
     public ShopTemplate[] shopPanels;
     public Button[] myPurchaseBtns;
+    //
+    public Text monedero;
+    
 
 
     // Start is called before the first frame update
@@ -28,7 +32,11 @@ public class ShopManager : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
         playerStats = myplayer.GetComponent<PlayerStats>();
+        playerInventory = myplayer.GetComponent<PlayerInventory>();
         coins = playerStats.contadorMonedas;
+
+        string cant =playerStats.contadorMonedas.ToString();
+        monedero.text=cant;
 
         contadorm.SetActive(true);
         coinsUI.text = coins.ToString();
@@ -40,7 +48,8 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        string cant = playerStats.contadorMonedas.ToString();
+        monedero.text = cant;
         coins = playerStats.contadorMonedas;
         LoadPanels();
         CheckPurchaseable();
@@ -77,7 +86,24 @@ public class ShopManager : MonoBehaviour
            
             coins = coins - shopItemSO[btnNo].basecost;
             coinsUI.text = coins.ToString();
+            playerStats.contadorMonedas = coins;
+            if (shopItemSO[btnNo].isKepotVd)
+            {
+                playerInventory.addConsumableItemValue();
+                string cant = playerStats.contadorMonedas.ToString();
+                monedero.text = cant;
+            }
+            else if (shopItemSO[btnNo].isWeapon)
+            {
+                playerInventory.weaponsInventory.Add(shopItemSO[btnNo].weaponItem);
+            }
+            else if (shopItemSO[btnNo].isFireWeapon)
+            {
+                playerInventory.fireWeaponsInventory.Add(shopItemSO[btnNo].fireWeponItem);
+            }
             CheckPurchaseable();
+
+            
         }
     }
 }
