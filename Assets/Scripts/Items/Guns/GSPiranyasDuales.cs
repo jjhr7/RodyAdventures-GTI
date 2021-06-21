@@ -37,6 +37,7 @@ public class GSPiranyasDuales : MonoBehaviour
         inputHandler = FindObjectOfType<InputHandler>();
         bulletsLeft = magazineSize;
         _gunSheet = FindObjectOfType<GunSheet>();
+        
 
     }
 
@@ -128,6 +129,7 @@ public class GSPiranyasDuales : MonoBehaviour
             {
                 _gunSheet = FindObjectOfType<GunSheet>();
             }
+            
             _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
             yield return new WaitForSeconds(cadencia);
             

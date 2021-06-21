@@ -37,6 +37,7 @@ public class MotoMovement : MonoBehaviour
 	public bool braking;
 
 	public GameObject fuego;
+	public motilloAudioManager motilloAudioManager;
 
 	public Text time;
 	float timer;
@@ -65,15 +66,18 @@ public class MotoMovement : MonoBehaviour
 		{
 			fuego.SetActive(true);
 			m_currentThrust = aclAxis * m_fordwardAcl;
+			motilloAudioManager.AcelerarMoto();
 		}
 		else if (aclAxis < -m_deadZone)
 		{
 			fuego.SetActive(false);
 			m_currentThrust = aclAxis * m_BackAcl;
+			
         }
         else
         {
 			fuego.SetActive(false);
+			motilloAudioManager.DejarAcelerar();
 		}
 
 		currentTurn = 0.0f;
