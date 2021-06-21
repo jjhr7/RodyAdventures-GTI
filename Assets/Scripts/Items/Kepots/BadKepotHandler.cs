@@ -54,6 +54,15 @@ public class BadKepotHandler : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerExit(Collider other)
+    {
+        //Targeteado es true si el jugador entra en el área
+        if (other.tag.Equals("Player"))
+        {
+            targeteado = false;
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         //Destruímos si toca al jugador

@@ -38,6 +38,7 @@ public class SaltarTutorial : MonoBehaviour
             {
                 playerLocomotion.movementSpeed = tutHandler.ms;
                 playerLocomotion.sprintSpeed = tutHandler.Rs;
+                tutHandler.isJumping = true;
                 tutHandler.cajasmonedas.SetActive(true);
                 tutHandler.subtitles.SetActive(false);
                 tutHandler.audioSource.Stop();
@@ -45,7 +46,8 @@ public class SaltarTutorial : MonoBehaviour
                 gameObject.SetActive(false);
             }
             else if (fase < 3)
-            { 
+            {
+                tutHandler.isJumping = true;
                 tutHandler.cajasmonedas.SetActive(true);
                 tutHandler.subtitles.SetActive(false);
                 tutHandler.audioSource.Stop();

@@ -70,7 +70,7 @@ MonoBehaviour:
   turret: {fileID: 153363378629082202}
   bullet: {fileID: 8299626551665287001, guid: b623b5ca4cdc19f48bf8c71818c6f6e7, type: 3}
   bulletSpawn: {fileID: 4361122366347563085}
-  cadencia: 0.2
+  cadencia: 0.5
   tiempoRecarga: 3
   cargador: 10
   cuerpo: {fileID: 8595142484198913995}

@@ -253,11 +253,11 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage) //funcion que te reduce la vida respecto al danyo que recibes
     {
-        if (extraHealth == 0)
+        Debug.Log(currentHealth);
+        Debug.Log(damage + "   " + Time.deltaTime);
+        if (extraHealth <= 0)
         {
             currentHealth = currentHealth - damage;  // vida actual - el danyo que te hacen
-
-            healthBar.SetCurrentHealth(currentHealth); // actualizar la salud
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -271,9 +271,12 @@ public class PlayerStats : MonoBehaviour
                 currentHealth += extraHealth;
                 extraHealth = 0;
             }
-            healthBar.SetCurrentHealth(currentHealth);
-            extraHealthBar.setCurrentHealth(extraHealth);
         }
+        Debug.Log(currentHealth);
+
+        healthBar.SetCurrentHealth(currentHealth);
+        extraHealthBar.setCurrentHealth(extraHealth);
+
         rodySoundsManager.prepararSonido(1);
         animatorHandler.PlayTargetAnimation("Damage_01", true); //activar animacion de danyo
         if (currentHealth <= 0)
@@ -308,14 +311,14 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             extraHealthActive = true;
-            extraHealth += currentHealth - maxHealth;
+            extraHealth = extraMaxHealth;
             currentHealth = maxHealth;
             healthBar.SetCurrentHealth(currentHealth);
             extraHealthBar.setCurrentHealth(extraHealth);
-            if (extraHealth > extraMaxHealth)
+            /*if (extraHealth > extraMaxHealth)
             {
                 extraHealth = extraMaxHealth;
-            }
+            }*/
         }
         else
         {
