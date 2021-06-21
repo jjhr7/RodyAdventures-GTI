@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-	InputHandlerMoto input;   //The name of the brake button
+	InputHandlerMoto input; //The name of the brake button
+	
 
 	//We hide these in the inspector because we want 
 	//them public but we don't want people trying to change them
