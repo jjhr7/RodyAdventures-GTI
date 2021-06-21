@@ -6761,6 +6761,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 642679479}
     - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
+      propertyPath: saltarTutorial
+      value: 
+      objectReference: {fileID: 1197312011}
+    - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
       propertyPath: audios.Array.size
       value: 11
       objectReference: {fileID: 0}
@@ -14793,6 +14797,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2829436527484317089, guid: c021d493bf12c6d4f8849f49aedd9fd5, type: 3}
   m_PrefabInstance: {fileID: 1654793342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1197312011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5620092779847645862, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+  m_PrefabInstance: {fileID: 1258361707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f409a2cc61b3684dac5b284317eef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1198341675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15749,6 +15764,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5620092779847645862, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: tutorial
+      value: 
+      objectReference: {fileID: 353974482}
     - target: {fileID: 5751821333845220642, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

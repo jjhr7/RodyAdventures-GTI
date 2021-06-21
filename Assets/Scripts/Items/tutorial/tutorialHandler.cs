@@ -44,9 +44,9 @@ public class tutorialHandler : MonoBehaviour
     private GameObject myplayer;
     public GameObject subtitles;
     public Text subitlesTX;
-    private float ms;
-    private float Rs;
-
+    public float ms;
+    public float Rs;
+    public SaltarTutorial saltarTutorial;
 
     //Audios
 
@@ -192,6 +192,7 @@ public class tutorialHandler : MonoBehaviour
     {
         if (fase != faseAnterior)
         {
+            saltarTutorial.fase = fase;
             audioSource.clip = audios[fase];
             audioSource.Play();
             faseAnterior = fase;
