@@ -142,6 +142,11 @@ public class PlayerStats : MonoBehaviour
                 extraHealthBar.setCurrentHealth(extraHealth);
                 timer = 0;
             }
+            if (extraHealth <= 0)
+            {
+                extraHealth = 0;
+                extraHealthActive = false;
+            }
         }
 
         if (contadorMonedasActive)
@@ -177,9 +182,9 @@ public class PlayerStats : MonoBehaviour
                 timerInf += Time.deltaTime;
                 if (timerInf >= infectionSpeed)
                 {
-                    if (extraHealth == 0)
+                    if (extraHealth <= 0)
                     {
-                        currentHealth = currentHealth - vidaGuende;  // vida actual - el danyo que te hacen
+                        currentHealth -= vidaGuende;  // vida actual - el danyo que te hacen
 
                         healthBar.SetCurrentHealth(currentHealth); // actualizar la salud
                         if (currentHealth <= 0)
@@ -192,7 +197,6 @@ public class PlayerStats : MonoBehaviour
                         extraHealth -= vidaGuende;
                         if (extraHealth < 0)
                         {
-                            currentHealth += extraHealth;
                             extraHealth = 0;
                         }
                         healthBar.SetCurrentHealth(currentHealth);
