@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour
     -------------------------------
     */
 
+
     public float horizontal;
     public float vertical;
     public float moveAmount;
@@ -46,6 +47,7 @@ public class InputHandler : MonoBehaviour
     //bools for cambio de enfoque
     public bool right_Stick_Right_Input;
     public bool right_Stick_left_Input;
+    public bool help_input;
 
     PlayerControls inputActions; //para configurar los botones en que var tienen que guardarse
     PlayerAttacker playerAttacker; //para hacer ataques
@@ -71,6 +73,8 @@ public class InputHandler : MonoBehaviour
 
     public RodySoundsManager rodySoundsManager;
 
+    public GameObject ayudaHUD;
+    public GameObject BotonayudaHUD;
     private void Awake()
     {
         playerAttacker = GetComponent<PlayerAttacker>();
@@ -86,7 +90,7 @@ public class InputHandler : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         cameraHolder = FindObjectOfType<CameraHolder>();
         UIManager = FindObjectOfType<UIManager>();
-
+        help_input = false;
 
     }
 
@@ -135,6 +139,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
             // shop / UI
             inputActions.PlayerActions.T.performed += i => shop_Input = true;
+
+            inputActions.PlayerActions.Help.performed += i => OnHelp();
         }
 
         inputActions.Enable();
@@ -412,6 +418,22 @@ public class InputHandler : MonoBehaviour
             playerInventory.setConsumableItemValues(playerInventory.currentConsumable);
         }
         
+    }
+
+    public void OnHelp()
+    {
+        if (help_input)
+        {
+            ayudaHUD.SetActive(false);
+            BotonayudaHUD.SetActive(true);
+            help_input = false;
+        }
+        else
+        {
+            ayudaHUD.SetActive(true);
+            BotonayudaHUD.SetActive(false);
+            help_input = true;
+        }
     }
 }
 

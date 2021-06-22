@@ -381,6 +381,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Help"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e4ef984-a746-47b1-a77a-68c4760e2ab3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -603,6 +611,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""X"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2239f41-9f81-4702-84fe-ff1691a781d8"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Help"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -699,6 +718,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Shoot = m_PlayerActions.FindAction("Shoot", throwIfNotFound: true);
         m_PlayerActions_T = m_PlayerActions.FindAction("T", throwIfNotFound: true);
         m_PlayerActions_X = m_PlayerActions.FindAction("X", throwIfNotFound: true);
+        m_PlayerActions_Help = m_PlayerActions.FindAction("Help", throwIfNotFound: true);
         // Change Weapon
         m_ChangeWeapon = asset.FindActionMap("Change Weapon", throwIfNotFound: true);
         m_ChangeWeapon_ChangeWeapon1 = m_ChangeWeapon.FindAction("ChangeWeapon1", throwIfNotFound: true);
@@ -860,6 +880,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Shoot;
     private readonly InputAction m_PlayerActions_T;
     private readonly InputAction m_PlayerActions_X;
+    private readonly InputAction m_PlayerActions_Help;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -874,6 +895,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Shoot => m_Wrapper.m_PlayerActions_Shoot;
         public InputAction @T => m_Wrapper.m_PlayerActions_T;
         public InputAction @X => m_Wrapper.m_PlayerActions_X;
+        public InputAction @Help => m_Wrapper.m_PlayerActions_Help;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -913,6 +935,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @X.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
                 @X.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
                 @X.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
+                @Help.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnHelp;
+                @Help.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnHelp;
+                @Help.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnHelp;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -947,6 +972,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @X.started += instance.OnX;
                 @X.performed += instance.OnX;
                 @X.canceled += instance.OnX;
+                @Help.started += instance.OnHelp;
+                @Help.performed += instance.OnHelp;
+                @Help.canceled += instance.OnHelp;
             }
         }
     }
@@ -1016,6 +1044,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnT(InputAction.CallbackContext context);
         void OnX(InputAction.CallbackContext context);
+        void OnHelp(InputAction.CallbackContext context);
     }
     public interface IChangeWeaponActions
     {
