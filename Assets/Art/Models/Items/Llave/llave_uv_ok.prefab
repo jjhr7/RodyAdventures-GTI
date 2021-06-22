@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 8683337027243340546}
   - component: {fileID: 2892862003530547640}
   - component: {fileID: 8882343027077422532}
+  - component: {fileID: 6304324832171265401}
   m_Layer: 0
   m_Name: llave_uv_ok
   m_TagString: Untagged
@@ -529,6 +530,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 4, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6304324832171265401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674503247816878889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd45d403cd3bbc4f891a2b9b94f2ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7852909862146576019
 GameObject:
   m_ObjectHideFlags: 0
