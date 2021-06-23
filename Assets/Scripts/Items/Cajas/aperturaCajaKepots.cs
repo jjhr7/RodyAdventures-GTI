@@ -37,16 +37,16 @@ public class aperturaCajaKepots : MonoBehaviour
             switch (caso)
             {
                 case 0:
-                    Instantiate(coinV, tras, this.transformMe.rotation);
+                    Instantiate(coinV, transform.position + new Vector3(0, 0.3f, 0), transformMe.rotation);
                     break;
                 case 1:
-                    Instantiate(coinF, tras, this.transformMe.rotation);
+                    Instantiate(coinF, transform.position + new Vector3(0, 0.3f, 0), transformMe.rotation);
                     break;
                 case 2:
-                    Instantiate(coinD, tras, this.transformMe.rotation);
+                    Instantiate(coinD, transform.position + new Vector3(0, 0.3f, 0), transformMe.rotation);
                     break;
                 case 3:
-                    Instantiate(coinV, tras, this.transformMe.rotation);
+                    Instantiate(coinV, transform.position + new Vector3(0, 0.3f, 0), transformMe.rotation);
                     break;
 
             }

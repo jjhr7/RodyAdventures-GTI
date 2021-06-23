@@ -257,8 +257,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage) //funcion que te reduce la vida respecto al danyo que recibes
     {
-        Debug.Log(currentHealth);
-        Debug.Log(damage + "   " + Time.deltaTime);
+
         if (extraHealth <= 0)
         {
             currentHealth = currentHealth - damage;  // vida actual - el danyo que te hacen
@@ -276,7 +275,6 @@ public class PlayerStats : MonoBehaviour
                 extraHealth = 0;
             }
         }
-        Debug.Log(currentHealth);
 
         healthBar.SetCurrentHealth(currentHealth);
         extraHealthBar.setCurrentHealth(extraHealth);

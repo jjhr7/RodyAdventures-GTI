@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576657831356690941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -49.8, z: 445.5}
+  m_LocalPosition: {x: 0, y: -49.8, z: 443.7}
   m_LocalScale: {x: 144.6894, y: 102.16, z: 3.5836}
   m_Children: []
   m_Father: {fileID: 3659770253676587225}
@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576657832120672417}
   m_LocalRotation: {x: -0, y: 0.7065902, z: -0, w: 0.707623}
-  m_LocalPosition: {x: -12.8097, y: -66.1, z: 467.4957}
+  m_LocalPosition: {x: -21.51, y: -66.1, z: 467.4957}
   m_LocalScale: {x: 46.917347, y: 102.16, z: 1.953461}
   m_Children: []
   m_Father: {fileID: 3659770253676587225}
@@ -692,7 +692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576657833128349260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -49.4, z: 456.3}
+  m_LocalPosition: {x: 0, y: -49.4, z: 461.2}
   m_LocalScale: {x: 144.6894, y: 102.16, z: 3.5836}
   m_Children: []
   m_Father: {fileID: 3659770253676587225}
@@ -825,5 +825,11 @@ MonoBehaviour:
   arma: {fileID: 0}
   shopWindow: {fileID: 0}
   bola: {fileID: 0}
+  isJumping: 0
   subtitles: {fileID: 0}
   subitlesTX: {fileID: 0}
+  ms: 0
+  Rs: 0
+  saltarTutorial: {fileID: 0}
+  audioSource: {fileID: 0}
+  audios: []

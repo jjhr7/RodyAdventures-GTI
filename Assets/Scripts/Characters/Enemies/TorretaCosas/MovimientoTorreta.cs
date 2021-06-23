@@ -75,7 +75,7 @@ using UnityEngine;
                 if (!stats.recibiendoDanyo)
                 {
                     //Miramos al jugador si entra en el trigger
-                    turret.transform.LookAt(target.position + new Vector3(0, 1, 0));
+                    turret.transform.LookAt(target.position + new Vector3(0, 0.3f, 0));
 
                     //La torreta recarga si se le acaban las balas
                     if (balas == 0)
