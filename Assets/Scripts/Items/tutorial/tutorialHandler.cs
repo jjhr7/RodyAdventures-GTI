@@ -112,7 +112,7 @@ public class tutorialHandler : MonoBehaviour
                 hapasao = true;
                 audios[2] = null;
                 fase = 3;
-                subitlesTX.text = "Pulsa E o el botón B en gamepad para ATACAR, también puedes DISPARAR con click derecho o R1, prueba a romper esas cajas";
+                subitlesTX.text = "Pulsa E o R para ATACAR, también puedes DISPARAR con click derecho o R1, prueba a romper esas cajas";
                 Destroy(cuboMover);
                 cajasmonedas.SetActive(true);
 
@@ -121,7 +121,7 @@ public class tutorialHandler : MonoBehaviour
         {
             audios[2] = null;
             fase = 3;
-            subitlesTX.text = "Pulsa E o el botón B en gamepad para ATACAR, también puedes DISPARAR con click derecho o R1, prueba a romper esas cajas";
+            subitlesTX.text = "Pulsa E o R para ATACAR, también puedes DISPARAR con click derecho o R1, prueba a romper esas cajas";
             Destroy(cuboMover);
             cajasmonedas.SetActive(true);
 
@@ -163,7 +163,7 @@ public class tutorialHandler : MonoBehaviour
 
             audios[7] = null;
             Destroy(cuboArma);
-            subitlesTX.text = "Si cojes un ARMA podrás cambiar de arma a melé con z y las armas de fuego con x, en gamepad puedes usar la cruzeta";
+            subitlesTX.text = "Si cojes un ARMA podrás cambiar de arma a melé con 1 y las armas de fuego con 2, en gamepad puedes usar la cruzeta";
         }
         if (arma == null)
         {
@@ -175,7 +175,7 @@ public class tutorialHandler : MonoBehaviour
         if (playerManager.entroEnLaTienda)
         {
             fase = 10;
-            subitlesTX.text = "Utiliza Alt o LB para activar el MODO BOLA, así podrás rodar para ir mas rápido";
+            subitlesTX.text = "Utiliza Shift o LB para activar el MODO BOLA, así podrás rodar para ir mas rápido";
             Destroy(cubo2);
             if (bola.activeSelf)
             {

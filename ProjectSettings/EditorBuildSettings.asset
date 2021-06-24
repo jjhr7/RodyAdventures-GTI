@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_menu/Manu RodyAdventures/_MenuRodyAdventures.unity
     guid: 009acbe5352ff0f4b9c2698d7d68973d
+  - enabled: 1
+    path: Assets/Scenes/final/final.unity
+    guid: 9667f6b098c62944eae685295aab8589
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

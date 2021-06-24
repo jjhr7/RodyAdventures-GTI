@@ -627,7 +627,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 41c35802ff6f47644a0776d1d2d26110, type: 3}
   - {fileID: 8300000, guid: a55abf47dcbaba64ebc6b777443d2d45, type: 3}
   - {fileID: 8300000, guid: 299586325efdaa5478c3fd86e13f2ab8, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 6ec6f0b5a65d0ca4f8af206e70cdaa14, type: 3}
   - {fileID: 0}
 --- !u!114 &2235782610562685471
 MonoBehaviour:
@@ -2405,6 +2405,12 @@ MonoBehaviour:
   consumableInventory:
   - {fileID: 11400000, guid: 905d257196294ea4985406284249106f, type: 2}
   _gunSheet: {fileID: 1185310814413894656}
+  primeraCargaAB: 1
+  primeraCargaPD: 1
+  primeraCargaCC: 1
+  CCBleft: 0
+  PDBleft: 0
+  ABBleft: 0
 --- !u!114 &1299515273838533185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16322,7 +16328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2742268391138085939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16933,8 +16939,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61e192b3dcd7fc14595c6aea54997662, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 1776028374401045431, guid: 24566f86839912349876ce1ee9895a97, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -19001,6 +19007,14 @@ PrefabInstance:
     - target: {fileID: 5027450333868283438, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117373246656154853, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
+      propertyPath: m_Text
+      value: MODO BOLA <SHIFT>
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735162849963007981, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
+      propertyPath: m_Text
+      value: APUNTAR <F>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}

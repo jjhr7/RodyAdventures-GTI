@@ -16,6 +16,8 @@ public class GSAbreHorizontes : MonoBehaviour
     public int piranyasDualesDMK;
     public AudioSource sonidoDisparo;
 
+    
+
     PlayerStats PlayerStats;
     GameObject[] player;
     private GameObject myplayer;
@@ -28,12 +30,25 @@ public class GSAbreHorizontes : MonoBehaviour
     public Transform attackPoint;
 
     public InputHandler inputHandler;
+
+    public PlayerInventory playerInventory;
     public void Awake()
     {
         fpsCam = FindObjectOfType<Camera>();
         inputHandler = FindObjectOfType<InputHandler>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
         
-        bulletsLeft = magazineSize;
+        if (playerInventory.primeraCargaAB)
+        {
+            bulletsLeft = magazineSize;
+            playerInventory.ABBleft = magazineSize;
+            playerInventory.primeraCargaAB = false;
+        }
+        else
+        {
+            bulletsLeft = playerInventory.ABBleft;
+        }
+        
         _gunSheet = FindObjectOfType<GunSheet>();
 
     }
@@ -118,8 +133,9 @@ public class GSAbreHorizontes : MonoBehaviour
             {
                 Instantiate(bala, spawner.position, spawner.rotation);
             }
-            
-            //bulletsLeft --;
+
+            bulletsLeft--;
+            playerInventory.ABBleft = bulletsLeft;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)
             {

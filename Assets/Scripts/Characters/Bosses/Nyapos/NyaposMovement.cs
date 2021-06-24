@@ -349,9 +349,13 @@ public class NyaposMovement : MonoBehaviour
                         break;
                 }
             }
-            
 
 
+
+        }
+        else
+        {
+            stats.Salud = 500;
         }
         
 
