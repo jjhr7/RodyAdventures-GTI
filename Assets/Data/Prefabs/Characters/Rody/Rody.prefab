@@ -19002,6 +19002,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6117373246656154853, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
+      propertyPath: m_Text
+      value: MODO BOLA <SHIFT>
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735162849963007981, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
+      propertyPath: m_Text
+      value: APUNTAR <F>
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c1236d020a3b44aa454ae4f42da8c3, type: 3}
 --- !u!1 &7881205636341063321 stripped
