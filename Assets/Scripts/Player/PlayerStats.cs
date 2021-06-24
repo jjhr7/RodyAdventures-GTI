@@ -207,6 +207,15 @@ public class PlayerStats : MonoBehaviour
                     {
                         rodySoundsManager.prepararSonido(0);
                         animatorHandler.PlayTargetAnimation("Dead_01", true);
+                        if (SceneManager.GetActiveScene().name.Equals("nivel1"))
+                        {
+                            ScenesStaticClass.deadInNivel1();
+
+                        }
+                        else if (SceneManager.GetActiveScene().name.Equals("arena_nyapos"))
+                        {
+                            ScenesStaticClass.deadInArenaNyapos();
+                        }
                         SceneManager.LoadScene("GameOver");
                         
                     }
@@ -285,6 +294,15 @@ public class PlayerStats : MonoBehaviour
         {
             rodySoundsManager.prepararSonido(0);
             animatorHandler.PlayTargetAnimation("Dead_01", true);
+            if (SceneManager.GetActiveScene().name.Equals("nivel1"))
+            {
+                ScenesStaticClass.deadInNivel1();
+
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("arena_nyapos"))
+            {
+                ScenesStaticClass.deadInArenaNyapos();
+            }
             SceneManager.LoadScene("GameOver");
 
         }

@@ -15149,6 +15149,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -776.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1299515273838533191, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
+      propertyPath: fallingSpeed
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 1299515273838533198, guid: bdd2e320a3d18324eaf21612c10b5539, type: 3}
       propertyPath: rodySoundsManager
       value: 
