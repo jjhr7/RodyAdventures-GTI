@@ -206,6 +206,9 @@ public class InputHandler : MonoBehaviour
  
     private void OnRB()
     {
+        if (inventoryFlag)
+            return;
+
         if (playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentWeapon();
@@ -233,6 +236,9 @@ public class InputHandler : MonoBehaviour
     
     private void OnRT()
     {
+        if (inventoryFlag)
+            return;
+
         if (playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentWeapon();
@@ -287,6 +293,9 @@ public class InputHandler : MonoBehaviour
     {
         if(playerManager.isInteracting)
             return;
+
+        if (inventoryFlag)
+            return;
         
         playerInventory.ChangeRightWeapon();
         playerInventory.ChangeLeftWeapon();
@@ -297,6 +306,8 @@ public class InputHandler : MonoBehaviour
     private void OnChangeWeapon2()
     {
         if(playerManager.isInteracting)
+            return;
+        if (inventoryFlag)
             return;
         playerInventory.ChangeRightFireWeapon();
         playerInventory.ChangeLeftFireWeapon();
@@ -370,6 +381,9 @@ public class InputHandler : MonoBehaviour
     {
         if (inventory_Input && playerManager.isGrounded) //si se pulsa el boton del inventario / UI
         {
+            if (playerManager.isInteracting)
+                return;
+
             inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
 
             if (inventoryFlag) //si el flag es true
@@ -407,6 +421,9 @@ public class InputHandler : MonoBehaviour
     {
         if (x_Input) //cada vez que se pulse el boton de consumir mini kepot
         {
+            if (inventoryFlag)
+                return;
+
             x_Input = false;
             if (playerManager.isGrounded == false)
                 return;
