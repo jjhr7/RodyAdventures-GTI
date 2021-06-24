@@ -31,11 +31,25 @@ public class GSPiranyasDuales : MonoBehaviour
     public Transform attackPoint;
 
     public InputHandler inputHandler;
+    public PlayerInventory playerInventory;
     public void Awake()
     {
         fpsCam = FindObjectOfType<Camera>();
         inputHandler = FindObjectOfType<InputHandler>();
-        bulletsLeft = magazineSize;
+        playerInventory = FindObjectOfType<PlayerInventory>();
+        
+        if (playerInventory.primeraCargaPD)
+        {
+            bulletsLeft = magazineSize;
+            playerInventory.PDBleft = magazineSize;
+            playerInventory.primeraCargaPD = false;
+        }
+        else
+        {
+            bulletsLeft = playerInventory.PDBleft;
+        }
+        
+        
         _gunSheet = FindObjectOfType<GunSheet>();
         
 
@@ -123,7 +137,8 @@ public class GSPiranyasDuales : MonoBehaviour
                 Instantiate(bala, spawner.position, spawner.rotation);
             }
             
-            //bulletsLeft --;
+            bulletsLeft --;
+            playerInventory.PDBleft = bulletsLeft;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             if (_gunSheet == null)
             {

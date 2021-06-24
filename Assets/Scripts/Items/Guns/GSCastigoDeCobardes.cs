@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(200)]
+
 public class GSCastigoDeCobardes : MonoBehaviour
 {
     public ModoDisparo modo = ModoDisparo.Unico;
@@ -34,13 +34,24 @@ public class GSCastigoDeCobardes : MonoBehaviour
     public Transform attackPoint4;
 
     public InputHandler inputHandler;
-    
+    public PlayerInventory playerInventory;
     public void Awake()
     {
         fpsCam = FindObjectOfType<Camera>();
         inputHandler = FindObjectOfType<InputHandler>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
         
-        bulletsLeft = magazineSize;
+        if (playerInventory.primeraCargaCC)
+        {
+            bulletsLeft = magazineSize;
+            playerInventory.CCBleft = magazineSize;
+            playerInventory.primeraCargaCC = false;
+        }
+        else
+        {
+            bulletsLeft = playerInventory.CCBleft;
+        }
+        
         _gunSheet = FindObjectOfType<GunSheet>();
 
     }
@@ -143,7 +154,8 @@ public class GSCastigoDeCobardes : MonoBehaviour
             }
             
             
-            //bulletsLeft --;
+            bulletsLeft --;
+            playerInventory.CCBleft = bulletsLeft;
             //Debug.Log(bulletsLeft+" / "+magazineSize);
             
             if (_gunSheet == null)
