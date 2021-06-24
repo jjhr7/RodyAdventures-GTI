@@ -23,6 +23,6 @@ public class PlayAgain : MonoBehaviour
 
    public void FunctionPlayAgain()
    {
-      SceneManager.LoadScene("nivel1");
+      SceneManager.LoadScene(ScenesStaticClass.getSceneName().ToString());
    }
 }
