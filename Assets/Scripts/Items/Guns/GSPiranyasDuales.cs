@@ -67,7 +67,7 @@ public class GSPiranyasDuales : MonoBehaviour
         {
             _gunSheet = FindObjectOfType<GunSheet>();
         }
-        _gunSheet.updateBulletsInfo(bulletsLeft+" / "+magazineSize);
+        _gunSheet.updateBulletsInfo(playerInventory.PDBleft+" / "+magazineSize);
     }
 
     private void OnEnable()

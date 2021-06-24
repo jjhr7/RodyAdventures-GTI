@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c00bdb1e7f9247895ea8957368bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 10
+  valor: 25
   tipoArma: 1
   MoveSpeed: 7
   municion: {fileID: 0}

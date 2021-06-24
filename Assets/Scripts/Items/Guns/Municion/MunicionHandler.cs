@@ -70,35 +70,48 @@ public class MunicionHandler : MonoBehaviour
         switch (tipoArma)
         {
             case 1:
-                if (playerInventory.PDBleft+valor<100)
+                if (playerInventory.PDBleft<100)
                 {
+                    
                     playerInventory.PDBleft = playerInventory.PDBleft + valor;
-                   _playerStats.rodySoundsManager.prepararSonido(4);
-                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.PDBleft+"/"+100);  
+                    if (playerInventory.PDBleft > 100)
+                    {
+                        playerInventory.PDBleft = 100; 
+                    }
+                    
+                    _playerStats.rodySoundsManager.prepararSonido(4);
+                   playerInventory._gunSheet.updateBulletsInfo(playerInventory.PDBleft+" / "+100);  
                 }
-                
                 break;
             
             case 2:
                 
-                if (playerInventory.CCBleft + valor < 30)
+                if (playerInventory.CCBleft< 30)
                 {
+                    if (playerInventory.CCBleft > 30)
+                    {
+                        playerInventory.CCBleft = 30; 
+                    }
                     playerInventory.CCBleft = playerInventory.CCBleft + valor;
                     _playerStats.rodySoundsManager.prepararSonido(4);
-                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.CCBleft + "/" + 30);
+                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.CCBleft + " / " + 30);
                 }
-
                 break;
             
             case 3:
                 if (playerInventory.ABBleft + valor < 10)
                 {
+                    if (playerInventory.ABBleft > 10)
+                    {
+                        playerInventory.ABBleft = 10; 
+                    }
+                    
                     playerInventory.ABBleft = playerInventory.ABBleft + valor;
                     _playerStats.rodySoundsManager.prepararSonido(4);
-                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.ABBleft + "/" + 10);
+                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.ABBleft + " / " + 10);
                 }
-
                 break;
+            
             default:
                 Debug.Log("Caja de munición desconocida");
                 break;
