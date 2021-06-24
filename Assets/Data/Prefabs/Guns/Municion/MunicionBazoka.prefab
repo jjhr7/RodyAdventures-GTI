@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 1
+  tipoArma: 3
   MoveSpeed: 7
   municion: {fileID: 0}
 --- !u!1001 &2562351187149117353

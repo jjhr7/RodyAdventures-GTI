@@ -285,7 +285,9 @@ public class InputHandler : MonoBehaviour
 
     private void OnChangeWeapon1()
     {
-      
+        if(playerManager.isInteracting)
+            return;
+        
         playerInventory.ChangeRightWeapon();
         playerInventory.ChangeLeftWeapon();
         
@@ -294,6 +296,8 @@ public class InputHandler : MonoBehaviour
 
     private void OnChangeWeapon2()
     {
+        if(playerManager.isInteracting)
+            return;
         playerInventory.ChangeRightFireWeapon();
         playerInventory.ChangeLeftFireWeapon();
 

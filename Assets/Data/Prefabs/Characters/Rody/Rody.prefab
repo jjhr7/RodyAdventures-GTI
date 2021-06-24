@@ -627,7 +627,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 41c35802ff6f47644a0776d1d2d26110, type: 3}
   - {fileID: 8300000, guid: a55abf47dcbaba64ebc6b777443d2d45, type: 3}
   - {fileID: 8300000, guid: 299586325efdaa5478c3fd86e13f2ab8, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 6ec6f0b5a65d0ca4f8af206e70cdaa14, type: 3}
   - {fileID: 0}
 --- !u!114 &2235782610562685471
 MonoBehaviour:
@@ -2405,6 +2405,12 @@ MonoBehaviour:
   consumableInventory:
   - {fileID: 11400000, guid: 905d257196294ea4985406284249106f, type: 2}
   _gunSheet: {fileID: 1185310814413894656}
+  primeraCargaAB: 1
+  primeraCargaPD: 1
+  primeraCargaCC: 1
+  CCBleft: 0
+  PDBleft: 0
+  ABBleft: 0
 --- !u!114 &1299515273838533185
 MonoBehaviour:
   m_ObjectHideFlags: 0

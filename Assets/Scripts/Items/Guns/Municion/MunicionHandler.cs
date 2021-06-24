@@ -7,10 +7,11 @@ public class MunicionHandler : MonoBehaviour
     public int valor = 1;
     private bool targeteado;
 
-    PlayerStats playerStats;
+    PlayerInventory playerInventory;
+    private PlayerStats _playerStats;
     GameObject[] player;
     private GameObject myplayer;
-
+    public int tipoArma = 1;
     public int MoveSpeed;
 
     public GameObject municion;
@@ -19,7 +20,8 @@ public class MunicionHandler : MonoBehaviour
     {
         player = GameObject.FindGameObjectsWithTag("Player");
         myplayer = player[0];
-        playerStats = myplayer.GetComponent<PlayerStats>();
+        playerInventory = myplayer.GetComponent<PlayerInventory>();
+        _playerStats = myplayer.GetComponent<PlayerStats>();
 
     }
 
@@ -45,20 +47,61 @@ public class MunicionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Destruímos si toca al jugador
+        //DestruÃ­mos si toca al jugador
         if (other.tag.Equals("Player"))
         {
+            cargarMunicion();
             Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Destruímos si toca al jugador
+        //DestruÃ­mos si toca al jugador
         if (collision.collider.tag.Equals("Player"))
         {
-            //playerStats.TakeMoney(valor);
+            cargarMunicion();
             Destroy(gameObject);
+        }
+    }
+
+    public void cargarMunicion()
+    {
+        switch (tipoArma)
+        {
+            case 1:
+                if (playerInventory.PDBleft+valor<100)
+                {
+                    playerInventory.PDBleft = playerInventory.PDBleft + valor;
+                   _playerStats.rodySoundsManager.prepararSonido(4);
+                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.PDBleft+"/"+100);  
+                }
+                
+                break;
+            
+            case 2:
+                
+                if (playerInventory.CCBleft + valor < 30)
+                {
+                    playerInventory.CCBleft = playerInventory.CCBleft + valor;
+                    _playerStats.rodySoundsManager.prepararSonido(4);
+                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.CCBleft + "/" + 30);
+                }
+
+                break;
+            
+            case 3:
+                if (playerInventory.ABBleft + valor < 10)
+                {
+                    playerInventory.ABBleft = playerInventory.ABBleft + valor;
+                    _playerStats.rodySoundsManager.prepararSonido(4);
+                    playerInventory._gunSheet.updateBulletsInfo(playerInventory.ABBleft + "/" + 10);
+                }
+
+                break;
+            default:
+                Debug.Log("Caja de municiÃ³n desconocida");
+                break;
         }
     }
 }
