@@ -5868,7 +5868,7 @@ PrefabInstance:
     - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
       propertyPath: audios.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: 7152a3949df193b4ea6ac815db8cfb45, type: 3}
+      objectReference: {fileID: 8300000, guid: 00879eff8ac379942bfb6ce25e25c74f, type: 3}
     - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
       propertyPath: audios.Array.data[4]
       value: 
@@ -5888,7 +5888,7 @@ PrefabInstance:
     - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
       propertyPath: audios.Array.data[8]
       value: 
-      objectReference: {fileID: 8300000, guid: 8cda61a32e4176e469261501f712e595, type: 3}
+      objectReference: {fileID: 8300000, guid: 0dac8cce34de4834988db100b65abbde, type: 3}
     - target: {fileID: 3576657832206253202, guid: af396153f6d19b54fa9c871f59bf95b3, type: 3}
       propertyPath: audios.Array.data[9]
       value: 
