@@ -368,6 +368,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Help",
+                    "type": "Button",
+                    "id": "1e4ef984-a746-47b1-a77a-68c4760e2ab3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -385,7 +393,7 @@
                 {
                     "name": "",
                     "id": "0916afd2-ef8f-47ac-b6e3-84d9c03ae3e2",
-                    "path": "<Keyboard>/alt",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -473,7 +481,7 @@
                 {
                     "name": "",
                     "id": "522056a7-b5cb-44d7-a9bb-76b96a0371fa",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -588,6 +596,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2239f41-9f81-4702-84fe-ff1691a781d8",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Help",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

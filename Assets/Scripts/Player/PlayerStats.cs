@@ -142,6 +142,11 @@ public class PlayerStats : MonoBehaviour
                 extraHealthBar.setCurrentHealth(extraHealth);
                 timer = 0;
             }
+            if (extraHealth <= 0)
+            {
+                extraHealth = 0;
+                extraHealthActive = false;
+            }
         }
 
         if (contadorMonedasActive)
@@ -177,9 +182,9 @@ public class PlayerStats : MonoBehaviour
                 timerInf += Time.deltaTime;
                 if (timerInf >= infectionSpeed)
                 {
-                    if (extraHealth == 0)
+                    if (extraHealth <= 0)
                     {
-                        currentHealth = currentHealth - vidaGuende;  // vida actual - el danyo que te hacen
+                        currentHealth -= vidaGuende;  // vida actual - el danyo que te hacen
 
                         healthBar.SetCurrentHealth(currentHealth); // actualizar la salud
                         if (currentHealth <= 0)
@@ -192,7 +197,6 @@ public class PlayerStats : MonoBehaviour
                         extraHealth -= vidaGuende;
                         if (extraHealth < 0)
                         {
-                            currentHealth += extraHealth;
                             extraHealth = 0;
                         }
                         healthBar.SetCurrentHealth(currentHealth);
@@ -203,6 +207,15 @@ public class PlayerStats : MonoBehaviour
                     {
                         rodySoundsManager.prepararSonido(0);
                         animatorHandler.PlayTargetAnimation("Dead_01", true);
+                        if (SceneManager.GetActiveScene().name.Equals("nivel1"))
+                        {
+                            ScenesStaticClass.deadInNivel1();
+
+                        }
+                        else if (SceneManager.GetActiveScene().name.Equals("arena_nyapos"))
+                        {
+                            ScenesStaticClass.deadInArenaNyapos();
+                        }
                         SceneManager.LoadScene("GameOver");
                         
                     }
@@ -253,11 +266,10 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage) //funcion que te reduce la vida respecto al danyo que recibes
     {
-        if (extraHealth == 0)
+
+        if (extraHealth <= 0)
         {
             currentHealth = currentHealth - damage;  // vida actual - el danyo que te hacen
-
-            healthBar.SetCurrentHealth(currentHealth); // actualizar la salud
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -271,15 +283,26 @@ public class PlayerStats : MonoBehaviour
                 currentHealth += extraHealth;
                 extraHealth = 0;
             }
-            healthBar.SetCurrentHealth(currentHealth);
-            extraHealthBar.setCurrentHealth(extraHealth);
         }
+
+        healthBar.SetCurrentHealth(currentHealth);
+        extraHealthBar.setCurrentHealth(extraHealth);
+
         rodySoundsManager.prepararSonido(1);
         animatorHandler.PlayTargetAnimation("Damage_01", true); //activar animacion de danyo
         if (currentHealth <= 0)
         {
             rodySoundsManager.prepararSonido(0);
             animatorHandler.PlayTargetAnimation("Dead_01", true);
+            if (SceneManager.GetActiveScene().name.Equals("nivel1"))
+            {
+                ScenesStaticClass.deadInNivel1();
+
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("arena_nyapos"))
+            {
+                ScenesStaticClass.deadInArenaNyapos();
+            }
             SceneManager.LoadScene("GameOver");
 
         }
@@ -308,14 +331,14 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             extraHealthActive = true;
-            extraHealth += currentHealth - maxHealth;
+            extraHealth = extraMaxHealth;
             currentHealth = maxHealth;
             healthBar.SetCurrentHealth(currentHealth);
             extraHealthBar.setCurrentHealth(extraHealth);
-            if (extraHealth > extraMaxHealth)
+            /*if (extraHealth > extraMaxHealth)
             {
                 extraHealth = extraMaxHealth;
-            }
+            }*/
         }
         else
         {

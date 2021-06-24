@@ -7,7 +7,7 @@ public class KeyHandler : MonoBehaviour
     DoorStats doorStats;
     GameObject[] door;
     private GameObject myDoor;
-
+    public GameObject parent;
     void Start()
     {
         door = GameObject.FindGameObjectsWithTag("Puerta");
@@ -28,7 +28,7 @@ public class KeyHandler : MonoBehaviour
         if (collision.collider.tag.Equals("Player"))
         {
             doorStats.addKey();
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 }

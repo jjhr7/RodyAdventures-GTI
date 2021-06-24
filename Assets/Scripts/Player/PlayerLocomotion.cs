@@ -109,7 +109,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (inputHandler.lockOnFlag) //si esta en modo enfoque
         {
-            if (inputHandler.sprintflag || inputHandler.rollflag) //si esta en modo bola o roll
+            if (inputHandler.sprintflag || inputHandler.rollflag || cameraHolder.currentLockOnTarget == null) //si esta en modo bola o roll
             {
                 Vector3 targetDirection = Vector3.zero;
                 targetDirection = cameraHolder.cameraTransform.forward * inputHandler.vertical;

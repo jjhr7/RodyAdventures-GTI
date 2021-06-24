@@ -74,7 +74,7 @@ public class CameraHolder : MonoBehaviour
 
     public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
     {
-        if (inputHandler.lockOnFlag == false && currentLockOnTarget == null)
+        if (inputHandler.lockOnFlag == false && currentLockOnTarget == null || currentLockOnTarget == null)
         {
             lookAngle += (mouseXInput * lookSpeed) / delta;
             pivotAngle -= (mouseYInput * pivotSpeed) / delta;

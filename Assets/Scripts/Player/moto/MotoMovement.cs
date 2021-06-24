@@ -37,9 +37,11 @@ public class MotoMovement : MonoBehaviour
 	public bool braking;
 
 	public GameObject fuego;
+	public motilloAudioManager motilloAudioManager;
 
 	public Text time;
 	float timer;
+	bool tocandoPared;
 	void Start()
 	{
 		//Get references to the Rigidbody and PlayerInput components
@@ -48,6 +50,7 @@ public class MotoMovement : MonoBehaviour
 
 		m_layerMask = 1 << LayerMask.NameToLayer("Characters");
 		m_layerMask = ~m_layerMask;
+		tocandoPared = false;
 	}
 
 	// Update is called once per frame
@@ -65,15 +68,18 @@ public class MotoMovement : MonoBehaviour
 		{
 			fuego.SetActive(true);
 			m_currentThrust = aclAxis * m_fordwardAcl;
+			motilloAudioManager.AcelerarMoto();
 		}
 		else if (aclAxis < -m_deadZone)
 		{
 			fuego.SetActive(false);
 			m_currentThrust = aclAxis * m_BackAcl;
+			
         }
         else
         {
 			fuego.SetActive(false);
+			motilloAudioManager.DejarAcelerar();
 		}
 
 		currentTurn = 0.0f;
@@ -84,10 +90,14 @@ public class MotoMovement : MonoBehaviour
 		}
 		if (timerJump > maxTimeJump)
 		{
-			if (jump)
-			{
-				rigidBody.AddForce(transform.up * jump_power);
-				timerJump = 0;
+            if (!tocandoPared)
+            {
+
+				if (jump)
+				{
+					rigidBody.AddForce(transform.up * jump_power);
+					timerJump = 0;
+				}
 			}
 		}
 
@@ -150,6 +160,7 @@ public class MotoMovement : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+
 		for (int i = 0; i < m_hoverPoints.Length; i++)
 		{
 			var hover_point = m_hoverPoints[i];
@@ -163,12 +174,37 @@ public class MotoMovement : MonoBehaviour
 				UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
 				SceneManager.LoadScene(scene.name);
 			}
+			tocandoPared = true;
 		}
 
 		if (collision.gameObject.tag.Equals("Bala"))
 		{
 				UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
 				SceneManager.LoadScene(scene.name);
+		}
+
+
+		if (collision.gameObject.tag.Equals("Enemy"))
+		{
+			UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(scene.name);
+		}
+	}
+
+    private void OnCollisionExit(Collision collision)
+    {
+		if (collision.gameObject.tag.Equals("ObstaculoMoto"))
+		{
+			tocandoPared = false;
+		}
+	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+		if (other.gameObject.tag.Equals("Enemy"))
+		{
+			UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(scene.name);
 		}
 	}
 }

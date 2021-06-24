@@ -9595,7 +9595,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c2820d4f133181a4f8bb2776980cc01e, type: 2}
-  - {fileID: -3661639628750336703, guid: 3045f5b8397a72349b1280b8e6909caa, type: 3}
+  - {fileID: 2100000, guid: 134e904a045664290884b3a550bcbd53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9715,6 +9715,7 @@ MonoBehaviour:
   municionEspecial: {fileID: 0}
   moto: {fileID: 0}
   audioSource: {fileID: 0}
+  modelo3d: {fileID: 0}
 --- !u!1 &8518227843998431522
 GameObject:
   m_ObjectHideFlags: 0

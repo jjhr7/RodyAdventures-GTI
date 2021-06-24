@@ -86,7 +86,7 @@ public class NyaposMovement : MonoBehaviour
     public AudioClip[] audios;
 
     public cambioMusicaNivel cambioMusicaNivel;
-
+    public GameObject puertaBoss;
     void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
@@ -123,6 +123,7 @@ public class NyaposMovement : MonoBehaviour
     {
         if (empiezaLaPelea)
         {
+            puertaBoss.SetActive(true);
             barraGo.SetActive(true);
             //Recibir Danyo
             if (stats.recibiendoDanyo)
@@ -348,9 +349,13 @@ public class NyaposMovement : MonoBehaviour
                         break;
                 }
             }
-            
 
 
+
+        }
+        else
+        {
+            stats.Salud = 500;
         }
         
 

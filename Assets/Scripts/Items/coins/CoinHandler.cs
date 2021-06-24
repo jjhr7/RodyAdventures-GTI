@@ -30,9 +30,13 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
+            if (Vector3.Distance(myplayer.transform.position, transform.position)<5)
+            {
+                targeteado = true;
+            }
+
             if (targeteado)
             {
-
                 //Calculamos la distancia con el jugador
                 float dist = Vector3.Distance(myplayer.transform.position, transform.position);
                 //Apunta al jugador
@@ -40,15 +44,16 @@ using UnityEngine;
                 //Lo movemos a la velocidad deseada
                 this.transform.position += this.transform.forward * MoveSpeed * Time.deltaTime;
             }
-
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            //Targeteado es true si el jugador entra en el área
+            //Destruímos si toca al jugador
             if (other.tag.Equals("Player"))
             {
-                targeteado = true;
+                //monedaSound.Play();
+                playerStats.TakeMoney(valor);
+                Destroy(gameObject);
             }
         }
 

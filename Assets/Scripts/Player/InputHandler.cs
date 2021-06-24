@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour
     -------------------------------
     */
 
+
     public float horizontal;
     public float vertical;
     public float moveAmount;
@@ -46,6 +47,7 @@ public class InputHandler : MonoBehaviour
     //bools for cambio de enfoque
     public bool right_Stick_Right_Input;
     public bool right_Stick_left_Input;
+    public bool help_input;
 
     PlayerControls inputActions; //para configurar los botones en que var tienen que guardarse
     PlayerAttacker playerAttacker; //para hacer ataques
@@ -71,6 +73,8 @@ public class InputHandler : MonoBehaviour
 
     public RodySoundsManager rodySoundsManager;
 
+    public GameObject ayudaHUD;
+    public GameObject BotonayudaHUD;
     private void Awake()
     {
         playerAttacker = GetComponent<PlayerAttacker>();
@@ -86,7 +90,7 @@ public class InputHandler : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         cameraHolder = FindObjectOfType<CameraHolder>();
         UIManager = FindObjectOfType<UIManager>();
-
+        help_input = false;
 
     }
 
@@ -135,6 +139,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
             // shop / UI
             inputActions.PlayerActions.T.performed += i => shop_Input = true;
+
+            inputActions.PlayerActions.Help.performed += i => OnHelp();
         }
 
         inputActions.Enable();
@@ -200,6 +206,9 @@ public class InputHandler : MonoBehaviour
  
     private void OnRB()
     {
+        if (inventoryFlag)
+            return;
+
         if (playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentWeapon();
@@ -227,6 +236,9 @@ public class InputHandler : MonoBehaviour
     
     private void OnRT()
     {
+        if (inventoryFlag)
+            return;
+
         if (playerInventory.isFireWeaponEquiped)
         {
             playerInventory.EquipCurrentWeapon();
@@ -279,7 +291,12 @@ public class InputHandler : MonoBehaviour
 
     private void OnChangeWeapon1()
     {
-      
+        if(playerManager.isInteracting)
+            return;
+
+        if (inventoryFlag)
+            return;
+        
         playerInventory.ChangeRightWeapon();
         playerInventory.ChangeLeftWeapon();
         
@@ -288,6 +305,10 @@ public class InputHandler : MonoBehaviour
 
     private void OnChangeWeapon2()
     {
+        if(playerManager.isInteracting)
+            return;
+        if (inventoryFlag)
+            return;
         playerInventory.ChangeRightFireWeapon();
         playerInventory.ChangeLeftFireWeapon();
 
@@ -360,6 +381,9 @@ public class InputHandler : MonoBehaviour
     {
         if (inventory_Input && playerManager.isGrounded) //si se pulsa el boton del inventario / UI
         {
+            if (playerManager.isInteracting)
+                return;
+
             inventoryFlag = !inventoryFlag; //descativar/activar si se pulsa el boton
 
             if (inventoryFlag) //si el flag es true
@@ -397,6 +421,9 @@ public class InputHandler : MonoBehaviour
     {
         if (x_Input) //cada vez que se pulse el boton de consumir mini kepot
         {
+            if (inventoryFlag)
+                return;
+
             x_Input = false;
             if (playerManager.isGrounded == false)
                 return;
@@ -412,6 +439,22 @@ public class InputHandler : MonoBehaviour
             playerInventory.setConsumableItemValues(playerInventory.currentConsumable);
         }
         
+    }
+
+    public void OnHelp()
+    {
+        if (help_input)
+        {
+            ayudaHUD.SetActive(false);
+            BotonayudaHUD.SetActive(true);
+            help_input = false;
+        }
+        else
+        {
+            ayudaHUD.SetActive(true);
+            BotonayudaHUD.SetActive(false);
+            help_input = true;
+        }
     }
 }
 

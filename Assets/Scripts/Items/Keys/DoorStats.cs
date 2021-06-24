@@ -26,7 +26,7 @@ public class DoorStats : MonoBehaviour
 
     private void Update()
     {
-        if (numLlaves == numeroMaximoLlaves)
+        if (numLlaves >= numeroMaximoLlaves)
         {
             if (Mathf.Round(pI.localEulerAngles.y)!=80f)
             {
@@ -59,8 +59,11 @@ public class DoorStats : MonoBehaviour
         cojeLlave = true;
         numLlaves++;
         BarraMonedas.SetActive(true);
-        moneyBar.text = numLlaves.ToString();
-       
+        moneyBar.text = numLlaves.ToString() + " / " + numeroMaximoLlaves.ToString();
+        if (numLlaves >= numeroMaximoLlaves)
+        {
+            moneyBar.text = numeroMaximoLlaves.ToString() + " / " + numeroMaximoLlaves.ToString();
+        }
     }
 
 }

@@ -46,11 +46,12 @@ public class PlayerInventory : MonoBehaviour
         
         //UI Armas
         public GunSheet _gunSheet;
-
-        private int bulletsGun1, bulletsGun2;
+        public bool primeraCargaAB = true;
+        public bool primeraCargaPD = true;
+        public bool primeraCargaCC = true;
+        public int CCBleft, PDBleft, ABBleft;
         
         
-
         private void Awake() //se llama al cargar la isntancia del script
         {
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
@@ -59,13 +60,15 @@ public class PlayerInventory : MonoBehaviour
 
                 EquipCurrentFireWeapon();
                 EquipCurrentWeapon();
+
+
             }catch (Exception ex)
             {
-
+                
             }
             
-
-
+            
+        
         }
 
         private void Start() //se llama a start antes que a los metodos update...
@@ -254,6 +257,8 @@ public class PlayerInventory : MonoBehaviour
             consumableItem.currentItemAmount = consumableItem.maxItemAmount/2;
             setConsumableItemValues(currentConsumable);
         }
+
+        
 
 }
 
