@@ -26,9 +26,13 @@ public class MunicionHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(myplayer.transform.position, transform.position) < 5)
+        {
+            targeteado = true;
+        }
+
         if (targeteado)
         {
-
             //Calculamos la distancia con el jugador
             float dist = Vector3.Distance(myplayer.transform.position, transform.position);
             //Apunta al jugador
@@ -41,10 +45,10 @@ public class MunicionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Targeteado es true si el jugador entra en el área
+        //Destruímos si toca al jugador
         if (other.tag.Equals("Player"))
         {
-            targeteado = true;
+            Destroy(gameObject);
         }
     }
 
